@@ -1,0 +1,34 @@
+[
+    {
+        "id":1,
+        "name": "ATD",
+        "logo": "/images/parteners/atd.jpg",
+        "adress": "test",
+        "contact": "test",
+        "description": "test"
+    },
+    {
+        "id":2,
+        "name": "GIZ",
+        "logo": "/images/parteners/giz.jpg",
+        "adress": "test",
+        "contact": "test",
+        "description": "test"
+    },
+    {
+        "id":3,
+        "name": "MOOV",
+        "logo": "/images/parteners/moov.png",
+        "adress": "test",
+        "contact": "test",
+        "description": "test"
+    },
+    {
+        "id":4,
+        "name": "YAS",
+        "logo": "/images/parteners/yas.png",
+        "adress": "test",
+        "contact": "test",
+        "description": "test"
+    }
+]
