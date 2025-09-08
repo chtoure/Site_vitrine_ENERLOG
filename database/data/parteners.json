@@ -1,0 +1,30 @@
+[
+    {
+        "name": "ATD",
+        "logo": "/images/parteners/atd.jpg",
+        "adress": "test",
+        "contact": "test",
+        "description": "test"
+    },
+    {
+        "name": "GIZ",
+        "logo": "/images/parteners/giz.jpg",
+        "adress": "test",
+        "contact": "test",
+        "description": "test"
+    },
+    {
+        "name": "MOOV",
+        "logo": "/images/parteners/moov.png",
+        "adress": "test",
+        "contact": "test",
+        "description": "test"
+    },
+    {
+        "name": "YAS",
+        "logo": "/images/parteners/yas.png",
+        "adress": "test",
+        "contact": "test",
+        "description": "test"
+    }
+]
