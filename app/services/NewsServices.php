@@ -12,6 +12,7 @@ class NewsServices {
         return readJson(NewsServices::filePath,NewsServices::fileName);
     }
     
+
     static function getById(int $idNew): ?array {
         $dataNews = readJson(NewsServices::filePath,NewsServices::fileName);
         $objetNew= array_filter($dataNews, function($new) use ($idNew){
