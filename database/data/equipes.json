@@ -1,0 +1,25 @@
+[
+    {
+    "first_name": " Mouhamed Abdoul-Tawab",
+    "last_name": "TAIROU",
+    "poste": " Community Manager chez ENERLOG TECHNOLOGY & DIGITAL SAS",
+    "image": "/images/equipes/tairou.jpg"
+},
+
+{
+    "first_name": "Jane",
+    "last_name": "Smith",
+    "poste": "Designer",
+    "image": "jane_smith.jpg"
+
+},
+
+
+{
+    "first_name": "Emily",
+    "last_name": "Johnson",
+    "poste": "Project Manager",
+    "image": "emily_johnson.jpg"
+}
+
+]
