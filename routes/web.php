@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    // return view('welcome');
+    return view('home.home');
 
-    return readJson("database\data", "parameters.json");
+    // return readJson("database\data", "parameters.json");
 });
