@@ -6,10 +6,17 @@ use Illuminate\Support\Arr;
 
 class TemoignageService
 {
+
+    public static  $filepath = 'database\data';
+    public static $filename = 'temoignages.json';
+
+
     public static function getAll(): ?array
     {
-        return readJson('database\data\temoignages.json', 'items');
+        return readJson(self::$filepath, self::$filename );
     }
+
+
 
     public static function getById($id): ?array
     {
