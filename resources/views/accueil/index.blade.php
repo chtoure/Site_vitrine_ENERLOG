@@ -3,6 +3,11 @@
 
 @section('content')
 
+        {{-- <p>
+            {{
+                $parameter['name']
+            }}
+        </p> --}}
 
         <section id="slider" class="hero p-0 odd">
             <div class="swiper-container no-slider animation slider-h-100 slider-h-auto">

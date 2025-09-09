@@ -15,39 +15,14 @@
         <meta name="author" content="Codings">
 
 
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
-
-        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/vendor/slider.min.css">
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/vendor/icons.min.css">
-        <link rel="stylesheet" href="assets/css/vendor/icons-fa.min.css">
-        <link rel="stylesheet" href="assets/css/vendor/animation.min.css">
-        <link rel="stylesheet" href="assets/css/vendor/gallery.min.css">
-        <link rel="stylesheet" href="assets/css/vendor/cookie-notice.min.css">
-
-
-        {{-- @vite([
-            'resources/css/app.css',
-            'resources/css/vendor/bootstrap.min.css',
-            'resources/css/vendor/slider.min.css',
-            'resources/css/main.css',
-            'resources/css/vendor/icons.min.css',
-            'resources/css/vendor/icons-fa.min.css',
-            'resources/css/vendor/animation.min.css',
-            'resources/css/vendor/gallery.min.css',
-            'resources/css/vendor/cookie-notice.min.css',
-            'resources/js/app.js'
-        ]) --}}
-
+        <link rel="shortcut icon" href="{{ Vite::asset('resources/images/favicon.ico') }}">
+        <link rel="apple-touch-icon" href="{{ Vite::asset('resources/images/apple-touch-icon.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ Vite::asset('resources/images/apple-touch-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ Vite::asset('resources/images/apple-touch-icon-114x114.png') }}">
 
 
         @vite([
             'resources/css/app.css',
-            'resources/js/app.js'
         ])
 
         <link rel="stylesheet" href="assets/css/default.css">
@@ -241,26 +216,23 @@
                 <i class="fas fa-arrow-up"></i>
             </a>
         </div>        
-        
 
         <script src="https://www.google.com/recaptcha/api.js?render=6Lf-NwEVAAAAAPo_wwOYxFW18D9_EKvwxJxeyUx7"></script>
-
-
-        <script src="assets/js/vendor/jquery.min.js"></script>
-        <script src="assets/js/vendor/jquery.easing.min.js"></script>
-        <script src="assets/js/vendor/jquery.inview.min.js"></script>
-        <script src="assets/js/vendor/popper.min.js"></script>
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
-        <script src="assets/js/vendor/ponyfill.min.js"></script>
-        <script src="assets/js/vendor/slider.min.js"></script>
-        <script src="assets/js/vendor/animation.min.js"></script>
-        <script src="assets/js/vendor/progress-radial.min.js"></script>
-        <script src="assets/js/vendor/bricklayer.min.js"></script>
-        <script src="assets/js/vendor/gallery.min.js"></script>
-        <script src="assets/js/vendor/shuffle.min.js"></script>
-        <script src="assets/js/vendor/cookie-notice.min.js"></script>
-        <script src="assets/js/vendor/particles.min.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="{{ asset('assets/js/vendor/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/jquery.easing.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/jquery.inview.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/popper.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/ponyfill.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/slider.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/animation.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/progress-radial.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/bricklayer.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/gallery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/shuffle.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/cookie-notice.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/particles.min.js') }}"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
 
     </body>
 </html>

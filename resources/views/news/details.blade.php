@@ -1,4 +1,4 @@
- <p>
+ <p> 
             <td>ID: {{ $news['id'] }}</td>
             <td>Name: {{ $news['name'] }}</td>
             <td >
