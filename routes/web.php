@@ -1,10 +1,44 @@
 <?php
 
-use App\services\ServicesService;
+use App\Http\Controllers\ParametersController;
+use App\Http\Controllers\PartenersController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home.home');
+Route::name('public.')->prefix('/')->group(function () {
 
-    // return readJson("database\data", "parameters.json");
+    Route::get('/', [ParametersController::class, 'index'])->name('index');
+    
+    Route::group([
+        'prefix' => 'parameter',
+        'as' => 'parameter.'
+    ], function () {
+        Route::get('', [ParametersController::class, 'index'])->name('index');
+    });
+
+    Route::group([
+        'prefix' => 'parteners',
+        'as' => 'parteners.'
+    ], function () {
+        Route::get('', [PartenersController::class, 'index'])->name('index');
+        Route::get('/{id}', [PartenersController::class, 'detail'])->name('detail');
+    });
+
+    Route::group([
+        'prefix' => 'services',
+        'as' => 'services.'
+    ], function () {
+        Route::get('', [ServiceController::class,'getAllServices'])->name('index');
+        Route::get('/{id}', [ServiceController::class,'getByIdService'])->name('detail');
+    });
+
+    Route::group([
+        'prefix' => 'news',
+        'as' => 'news.'
+    ], function () {
+        Route::get('', [NewsController::class,'getAllNews'])->name('list');
+        Route::get('/{id}', [NewsController::class,'getByIdNews'])->name('detail');
+    });
+
 });
