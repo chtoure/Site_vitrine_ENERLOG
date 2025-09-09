@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\EquipesController;
 use App\Http\Controllers\ParametersController;
 use App\Http\Controllers\PartenersController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TemoignagesController;
 use Illuminate\Support\Facades\Route;
 
 Route::name('public.')->prefix('/')->group(function () {
@@ -39,6 +41,23 @@ Route::name('public.')->prefix('/')->group(function () {
     ], function () {
         Route::get('', [NewsController::class,'getAllNews'])->name('list');
         Route::get('/{id}', [NewsController::class,'getByIdNews'])->name('detail');
+    });
+
+    Route::group([
+        'prefix' => 'equipes',
+        'as' => 'equipes.'
+    ], function () {
+        Route::get('', [EquipesController::class, 'index'])->name('index');
+        Route::get('/{id}', [EquipesController::class, 'show'])->name('show');
+    });
+
+
+    Route::group([
+        'prefix' => 'temoignages',
+        'as' => 'temoignages.'
+    ], function () {
+        Route::get('', [TemoignagesController::class, 'index'])->name('index');
+        Route::get('/{id}', [TemoignagesController::class, 'show'])->name('show');
     });
 
 });
