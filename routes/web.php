@@ -4,24 +4,41 @@ use App\Http\Controllers\ParametersController;
 use App\Http\Controllers\PartenersController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
-use App\services\ServicesService;
 use Illuminate\Support\Facades\Route;
 
+Route::name('public.')->prefix('/')->group(function () {
 
-Route::name('public.')
-    ->prefix('/')
-    ->group(function () {
-        Route::get('/', [ParametersController::class, 'index'])->name('index');
-        Route::get('/parteners', [PartenersController::class, 'index'])->name('parteners');
-        Route::get('/parteners/{id}', [PartenersController::class, 'detail'])->name('partenersDetail');
+    Route::get('/', [ParametersController::class, 'index'])->name('index');
     
+    Route::group([
+        'prefix' => 'parameter',
+        'as' => 'parameter.'
+    ], function () {
+        Route::get('', [ParametersController::class, 'index'])->name('index');
+    });
+
+    Route::group([
+        'prefix' => 'parteners',
+        'as' => 'parteners.'
+    ], function () {
+        Route::get('', [PartenersController::class, 'index'])->name('index');
+        Route::get('/{id}', [PartenersController::class, 'detail'])->name('detail');
+    });
+
+    Route::group([
+        'prefix' => 'services',
+        'as' => 'services.'
+    ], function () {
+        Route::get('', [ServiceController::class,'getAllServices'])->name('index');
+        Route::get('/{id}', [ServiceController::class,'getByIdService'])->name('detail');
+    });
+
+    Route::group([
+        'prefix' => 'news',
+        'as' => 'news.'
+    ], function () {
+        Route::get('', [NewsController::class,'getAllNews'])->name('list');
+        Route::get('/{id}', [NewsController::class,'getByIdNews'])->name('detail');
+    });
+
 });
-
-
-// Routes : Services
-Route::get('/services', [ServiceController::class,'getAllServices'])->name('services.listes');
-Route::get('/services/{id}', [ServiceController::class,'getByIdService'])->name('services.details');
-
-// Routes : News
-Route::get('/news', [NewsController::class,'getAllNews'])->name('news.listes');
-Route::get('/news/{id}', [NewsController::class,'getByIdNews'])->name('news.details');
