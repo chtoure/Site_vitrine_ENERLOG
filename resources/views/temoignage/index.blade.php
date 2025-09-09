@@ -2,26 +2,17 @@
 
 @section('content')
 
-<section>
-    <div class="">
-        <h2>Voici les témoignages</h2>
+<p>
+    @foreach ($temoignages as $temoignage)
+        @foreach ($temoignage as $key => $value)
+            <p>{{ $key }} : {{ $value }}</p>
+        @endforeach
+        <hr>
+    @endforeach
 
-        @forelse($temoignages as $temoignage)
-            <div class="temoignage">
-                <h3>{{ $temoignage['name'] ?? 'Anonyme' }}</h3>
-                <p>{{ $temoignage['content'] ?? 'Aucun contenu' }}</p>
-                @if(!empty($temoignage['image']))
-                    <img src="{{ $temoignage['image'] }}" 
-                         alt="{{ $temoignage['name'] }}" 
-                         width="100" 
-                         style="border-radius: 8px; margin: 10px 0; border: 1px solid #eee;">
-                @endif
-            </div>
-            <hr>
-        @empty
-            <p>Aucun témoignage disponible.</p>
-        @endforelse
-    </div>
-</section>
+    @if (empty($temoignages))
+        <p>Aucun témoignage disponible.</p>
+    @endif
+</p>
 
 @endsection

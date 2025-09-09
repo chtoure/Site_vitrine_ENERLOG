@@ -2,9 +2,10 @@
 
 @section('content')
 
+    <p>
+        @foreach ($un_temoignage as $key => $value)
+            <p>{{ $key }} : {{ $value }}</p>
+        @endforeach
+    </p>
 
-<section>
-    <div class="">
-        {{ $un_temoignage['name' ]}}
-    </div>
-</section>
+@endsection

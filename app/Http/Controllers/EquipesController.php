@@ -15,7 +15,7 @@ class EquipesController extends Controller
 
 
     
-    public function show($id)
+    public function show(int $id)
     {
         $equipe = EquipeService::getById($id);
         if (!$equipe) {

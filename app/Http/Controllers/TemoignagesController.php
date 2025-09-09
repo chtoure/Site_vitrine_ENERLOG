@@ -18,7 +18,7 @@ class TemoignagesController extends Controller
     }
 
 
-    public function show($id)
+    public function show(int $id)
     {
         $un_temoignage=TemoignageService::getById($id);
         if (!$un_temoignage) {

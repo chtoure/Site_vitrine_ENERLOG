@@ -17,7 +17,6 @@ class TemoignageService
     }
 
 
-
     public static function getById($id): ?array
     {
         $data = self::getAll();
