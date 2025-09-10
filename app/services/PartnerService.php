@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-class PartenerService
+class PartnerService
 {
 
     private static string $filename = 'parteners';

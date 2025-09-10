@@ -4,8 +4,9 @@
     "mission": "qualiter t sureter notre devise",
     "valeur": "la qualiter prime avant tout",
     "historique": "Créée en 2018, ENERLOG TECHNOLOGY & DIGITAL SAS est née de la volonté de proposer aux entreprises et aux particuliers togolais des solutions numériques innovantes, simples et accessibles. Au fil des années, la société a élargi son expertise dans la conception de technologies stratégiques adaptées aux besoins spécifiques de chaque secteur. C’est dans cette dynamique qu’est lancée la plateforme Cpay en 2023, un outil innovant destiné à moderniser la gestion de la billetterie, des cartes pétrolières et des programmes de fidélité, avec pour objectif d’offrir aux utilisateurs et aux entreprises une expérience fluide, sécurisée et personnalisée.",
-    "dersciption": "ENERLOG TECHNOLOGY & DIGITAL SAS est une société par actions simplifiée dotée d’un conseil d’administration, spécialisée dans la création de solutions numériques innovantes. Elle accompagne ses partenaires en leur proposant des technologies stratégiques et performantes, conçues pour répondre aux besoins spécifiques de leur secteur et les aider à se développer. Dans cette logique, la société a développé Cpay, une application destinée à la gestion de la billetterie, à la gestion des cartes pétrolières et aux programmes de fidélité pour le bénéfice des consommateurs et des entreprises togolaises. Cette plateforme offre aux utilisateurs une expérience simple et unique et permet aux organisateurs d’événements ainsi qu’aux commerciaux de proposer un accès facile, rapide et sécurisé aux billets et à des programmes de fidélisation personnalisés, tout en intégrant la gestion des cartes pétrolières",
-    "logo":"/images/comptes/facebook.webp",
+    "description": "ENERLOG TECHNOLOGY & DIGITAL SAS est une société par actions simplifiée dotée d’un conseil d’administration, spécialisée dans la création de solutions numériques innovantes. Elle accompagne ses partenaires en leur proposant des technologies stratégiques et performantes, conçues pour répondre aux besoins spécifiques de leur secteur et les aider à se développer. Dans cette logique, la société a développé Cpay, une application destinée à la gestion de la billetterie, à la gestion des cartes pétrolières et aux programmes de fidélité pour le bénéfice des consommateurs et des entreprises togolaises. Cette plateforme offre aux utilisateurs une expérience simple et unique et permet aux organisateurs d’événements ainsi qu’aux commerciaux de proposer un accès facile, rapide et sécurisé aux billets et à des programmes de fidélisation personnalisés, tout en intégrant la gestion des cartes pétrolières",
+    "logo":"images/parameters/logo.png",
+    "hourly": "Mon - Sat - 9:00 - 18:00",
     "images": [
         "/images/parameters/DSC_7034.JPG",
         "/images/parameters/DSC_7038.JPG",
@@ -18,30 +19,35 @@
         "/videos/parameters/parameter-3.mp4"
     ],
     "contact": {
-        "Adress": "Immeuble Style Tahiti en face de lycée le Jourdain",
+        "adress": "Immeuble Style Tahiti en face de lycée le Jourdain",
         "email": "enerlog.togo@gmail.com",
         "phone": "+22893533043"
     },
-    "compte":[
+    "comptes": [
         {
             "logo": "/images/comptes/facebook.webp",
             "name": "Facebook",
-            "link": "facebook.com"
+            "link": "https://facebook.com",
+            "icon": "facebook-f"
         },
         {
             "logo": "/images/comptes/youtube.png",
-            "name": "Youtube",
-            "link": "youtube.com"
+            "name": "YouTube",
+            "link": "https://youtube.com",
+            "icon": "youtube"
         },
         {
             "logo": "/images/comptes/tiktok.png",
-            "name": "Tiktok",
-            "link": "https://www.tiktok.com/@enerlog?_t=ZM-8zYQ57CAHk0&_r=1"
+            "name": "TikTok",
+            "link": "https://www.tiktok.com/@enerlog?_t=ZM-8zYQ57CAHk0&_r=1",
+            "icon": "tiktok"
         },
         {
-            "logo": "/images/comptes/linkdin.webp",
-            "name": "linkdin",
-            "link": "linkdin.com"
+            "logo": "/images/comptes/linkedin.webp",
+            "name": "LinkedIn",
+            "link": "https://linkedin.com",
+            "icon": "linkedin-in"
         }
     ]
+
 }
