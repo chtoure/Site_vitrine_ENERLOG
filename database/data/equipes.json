@@ -3,26 +3,84 @@
     "id": 1,
     "first_name": " Mouhamed Abdoul-Tawab",
     "last_name": "TAIROU",
-    "poste": " Community Manager chez ENERLOG TECHNOLOGY & DIGITAL SAS",
-    "image": "/images/equipes/tairou.jpg"
+    "poste": "Community Manager chez ENERLOG TECHNOLOGY & DIGITAL SAS",
+    "image": "/images/equipes/tairou.jpg",
+    "description": "Plein d’enthousiasme et de talent, BAWA contribue activement à la réussite de nos projets.",
+    "reseaux": {
+        "facebook":"https://facebook.com/aicha.marketing",
+        "twitter": "https://twitter.com/aicha.marketing",
+        "linkedin": "https://linkedin.com/in/aicha-traore-marketing"
+    }
     },
 
 {
     "id": 2,
     "first_name": "Abdou-Djalilou",
     "last_name": "NEKERE",
-    "poste": "Designer",
-    "image": "/images/equipes/nekere.jpg"
+    "poste": "Community Manager chez ENERLOG TECHNOLOGY & DIGITAL SAS",
+    "image": "/images/equipes/nekere.jpg",
+    "description": "Plein d’enthousiasme et de talent, BAWA contribue activement à la réussite de nos projets..",
+    "reseaux": {
+        "facebook":"https://facebook.com/aicha.marketing",
+        "twitter": "https://twitter.com/aicha.marketing",
+        "linkedin": "https://linkedin.com/in/aicha-traore-marketing"
+    }
 
 },
 
 
 {
     "id": 3,
-    "first_name": "Emily",
-    "last_name": "Johnson",
-    "poste": "Project Manager",
-    "image": "emily_johnson.jpg"
+    "first_name": "Sam",
+    "last_name": "BAWA",
+    "poste": "Community Manager chez ENERLOG TECHNOLOGY & DIGITAL SAS",
+    "image": "/images/equipes/sam.jpg",
+    "description": "Plein d’enthousiasme et de talent, BAWA contribue activement à la réussite de nos projets.",
+    "reseaux": {
+        "fecebook":"https://facebook.com/aicha.marketing",
+        "twitter": "https://instagram.com/aicha.marketing",
+        "linkedin": "https://linkedin.com/in/aicha-traore-marketing"
+    }
+}
+,
+{
+    "id": 4,
+    "first_name": "Mamadou",
+    "last_name": "DIALLO",
+    "poste": "Community Manager chez ENERLOG TECHNOLOGY & DIGITAL SAS",
+    "image": "/images/equipes/sam.jpg",
+    "description": "Plein d’enthousiasme et de talent, BAWA contribue activement à la réussite de nos projets.",
+    "reseaux": {
+        "fecebook":"https://facebook.com/aicha.marketing",
+        "twitter": "https://instagram.com/aicha.marketing",
+        "linkedin": "https://linkedin.com/in/aicha-traore-marketing"
+    }
+},
+{
+    "id": 5,
+    "first_name": "Mamadou",
+    "last_name": "DIALLO",
+    "poste": "Community Manager chez ENERLOG TECHNOLOGY & DIGITAL SAS",
+    "image": "/images/equipes/sam.jpg",
+    "description": "Plein d’enthousiasme et de talent, BAWA contribue activement à la réussite de nos projets.",
+    "reseaux": {
+        "facebook":"https://facebook.com/aicha.marketing",
+        "twitter": "https://twitter.com/aicha.marketing",
+        "linkedin": "https://linkedin.com/in/aicha-traore-marketing"
+    }
+},
+{
+    "id": 6,
+    "first_name": "Mamadou",
+    "last_name": "DIALLO",
+    "poste": "Community Manager chez ENERLOG TECHNOLOGY & DIGITAL SAS",
+    "image": "/images/equipes/sam.jpg",
+    "description": "Plein d’enthousiasme et de talent, BAWA contribue activement à la réussite de nos projets.",
+    "reseaux": {
+        "facebook":"https://facebook.com/aicha.marketing",
+        "twitter": "https://twitter.com/aicha.marketing",
+        "linkedin": "https://linkedin.com/in/aicha-traore-marketing"
+    }
 }
 
 ]

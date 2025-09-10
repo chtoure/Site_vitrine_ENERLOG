@@ -29,7 +29,7 @@
 
         <meta name="theme-color" content="#21333e">
 
-        <style>
+        {{-- <style>
             :root {
                 --hero-bg-color: #080d10;
 
@@ -40,7 +40,7 @@
                 --section-5-bg-color: #eef4ed;
                 --section-6-bg-color: #111117;
             }
-        </style>
+        </style> --}}
         
     </head>
 
