@@ -3,11 +3,22 @@
 
 @section('content')
 
-        {{-- <p>
-            {{
-                $parameter['name']
-            }}
-        </p> --}}
+    @php
+        use Illuminate\Support\Str;
+    @endphp
+
+    <style>
+            :root {
+                --hero-bg-color: #080d10;
+
+                --section-1-bg-color: #eef4ed;
+                --section-2-bg-color: #ffffff;
+                --section-3-bg-color: #111117;
+                --section-4-bg-color: #ffffff;
+                --section-5-bg-color: #eef4ed;
+                --section-6-bg-color: #111117;
+            }
+    </style>
 
         <section id="slider" class="hero p-0 odd">
             <div class="swiper-container no-slider animation slider-h-100 slider-h-auto">
@@ -25,17 +36,14 @@
 
                                     <!-- Content -->
                                     <h1 data-aos="zoom-in" data-aos-delay="2000" class="title effect-static-text">
-                                        <span class="pre-title m-0">Human Resources</span>
-                                        Get More <span class="featured bottom"><span>Productivity</span></span>
+                                        <span class="featured bottom"><span>{{$parameter['name']}} </span></span>
                                     </h1>
-                                    <p data-aos="zoom-in" data-aos-delay="2400" class="description bigger">Planning, recruitment and selection process and performance evaluation of employees.</p>
+                                    <p data-aos="zoom-in" data-aos-delay="2400" class="description bigger">{{ Str::limit($parameter['description'], 100, '...') }} </p>
 
                                     <!-- Action -->
                                     <div data-aos="fade-up" data-aos-delay="2800" class="buttons">
                                         <div class="d-sm-inline-flex">
-                                            <a href="#contact" class="smooth-anchor mt-4 btn primary-button">GET IN TOUCH</a>
-                                            <a href="#features" class="smooth-anchor ml-sm-4 mt-4 btn outline-button">READ MORE</a>
-                                        </div>
+                                            <a href="#contact" class="smooth-anchor ml-sm mt-4 btn outline-button">LIRE PLUS</a>
                                     </div>
                                 </div>
                             </div>
@@ -434,9 +442,9 @@
                     <div class="col-12 col-md-8 pr-md-5 align-self-center text">
                         <div class="row intro">
                             <div class="col-12 p-0">
-                                <span class="pre-title m-0">Send a message</span>
-                                <h2>Get in <span class="featured"><span>Touch</span></span></h2>
-                                <p>We will respond to your message as soon as possible.</p>
+                                <span class="pre-title m-0">Envoyer message</span>
+                                <h2>Nous <span class="featured"><span>Contacter</span></span></h2>
+                                <p>Nous repondrons a votre message des que possible.</p>
                             </div>
                         </div>
                         <div class="row">
@@ -445,31 +453,15 @@
                                     <input type="hidden" name="section" value="nexgen_form">
 
                                     <input type="hidden" name="reCAPTCHA">
-                                    <!-- Remove this field if you want to disable recaptcha -->
 
                                     <div class="row form-group-margin">
                                         <div class="col-12 col-md-6 m-0 p-2 input-group">
-                                            <input type="text" name="name" class="form-control field-name" placeholder="Name">
+                                            <input type="text" name="name" class="form-control field-name" placeholder="Nom">
                                         </div>
                                         <div class="col-12 col-md-6 m-0 p-2 input-group">
                                             <input type="email" name="email" class="form-control field-email" placeholder="Email">
                                         </div>
-                                        <div class="col-12 col-md-6 m-0 p-2 input-group">
-                                            <input type="text" name="phone" class="form-control field-phone" placeholder="Phone">
-                                        </div>
-                                        <div class="col-12 col-md-6 m-0 p-2 input-group">
-                                            <i class="icon-arrow-down mr-3"></i>
-                                            <select name="info" class="form-control field-info">
-                                                <option value="" selected disabled>More Info</option>
-                                                <option>Audit & Assurance</option>
-                                                <option>Financial Advisory</option>
-                                                <option>Analytics and M&A</option>
-                                                <option>Middle Marketing</option>
-                                                <option>Legal Consulting</option>
-                                                <option>Regulatory Risk</option>
-                                                <option>Other</option>
-                                            </select>
-                                        </div>
+                                       
                                         <div class="col-12 m-0 p-2 input-group">
                                             <textarea name="message" class="form-control field-message" placeholder="Message"></textarea>
                                         </div>
@@ -493,19 +485,19 @@
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="fas fa-phone-alt mr-2"></i>
-                                        +1 (305) 1234-5678
+                                        {{$parameter['contact']['phone']}}
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="fas fa-envelope mr-2"></i>
-                                        hello@example.com
+                                        {{$parameter['contact']['email']}}
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="fas fa-map-marker-alt mr-2"></i>
-                                        Main Avenue, 987
+                                        {{$parameter['contact']['adress']}}
                                     </a>
                                 </li>
                                 <li class="nav-item">

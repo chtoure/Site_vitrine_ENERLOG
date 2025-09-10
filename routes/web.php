@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\EquipesController;
 use App\Http\Controllers\ParametersController;
-use App\Http\Controllers\PartenersController;
+use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TemoignagesController;
@@ -20,11 +20,11 @@ Route::name('public.')->prefix('/')->group(function () {
     });
 
     Route::group([
-        'prefix' => 'parteners',
-        'as' => 'parteners.'
+        'prefix' => 'partners',
+        'as' => 'partners.'
     ], function () {
-        Route::get('', [PartenersController::class, 'index'])->name('index');
-        Route::get('/{id}', [PartenersController::class, 'detail'])->name('detail');
+        Route::get('', [PartnersController::class, 'index'])->name('index');
+        Route::get('/{id}', [PartnersController::class, 'detail'])->name('detail');
     });
 
     Route::group([

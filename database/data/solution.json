@@ -1,0 +1,31 @@
+
+
+[
+    {
+        "id":1,
+        "name":"cPay",
+        "description":"cPay est une plateforme en ligne et l'application mobile permettant l'achat de billets électroniques, la gestion de cartes de fidélité, et l'accès à des services connexes.",
+        "processus":[
+            {
+                "num":1,
+                "nameProcessus": "Téléchargement de la Plateforme",
+                "descriptionProcessus": "vous pouvez telecharger cPay sur play store"
+            },
+             {
+                "num":2,
+                "nameProcessus": "Création d’un Compte",
+                "descriptionProcessus": "vous suivez les consignes pour creer un compte"
+            },
+             {
+                "num":3,
+                "nameProcessus": "Gestion d’un Compte",
+                "descriptionProcessus": "Vous pouvez gerez votre compte sur l'application"
+            },
+             {
+                "num":4,
+                "nameProcessus": "Protection des Données",
+                "descriptionProcessus": "Collecte des Données, Droits des Utilisateurs et Partage des Données"
+            }
+        ]
+    }
+]
