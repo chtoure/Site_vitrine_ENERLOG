@@ -1,12 +1,12 @@
 [
     {
-    "id": 1,
-    "name": "Giz",
-    "content": "Great service and support!",
-    "image": "/images/temoignages/giz.jpg"
+        "id": 1,
+        "name": "Giz",
+        "content": "Great service and support!",
+        "image": "/images/temoignages/giz.jpg"
     },
 
-    {   "id": 2,
+    {  "id": 2,
         "name": "Yas",
         "content": "Great service and support!",
         "image": "/images/temoignages/yas.png"
