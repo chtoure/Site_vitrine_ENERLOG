@@ -7,6 +7,19 @@
         use Illuminate\Support\Str;
     @endphp
 
+    <style>
+            :root {
+                --hero-bg-color: #080d10;
+
+                --section-1-bg-color: #eef4ed;
+                --section-2-bg-color: #ffffff;
+                --section-3-bg-color: #111117;
+                --section-4-bg-color: #ffffff;
+                --section-5-bg-color: #eef4ed;
+                --section-6-bg-color: #111117;
+            }
+    </style>
+
         <section id="slider" class="hero p-0 odd">
             <div class="swiper-container no-slider animation slider-h-100 slider-h-auto">
                 <div class="swiper-wrapper">
