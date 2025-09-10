@@ -28,7 +28,7 @@
 
                             <nav data-aos="zoom-out-up" data-aos-delay="800" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('public.index')}}">">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('public.index')}}">Accueil</a></li>
                                     <li class="breadcrumb-item"><a href="{{ route('public.partners.index')}}">Partenaires</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Partenaire</li>
                                 </ol>

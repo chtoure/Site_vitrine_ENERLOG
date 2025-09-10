@@ -39,7 +39,7 @@
 
             <a class="navbar-brand" href="/">
 
-                <img src="{{ $parameter['logo'] }}" 
+                <img src="{{ asset($parameter['logo']) }}" 
                     alt="NEXGEN"
                     class="img-fluid"
                     style="max-width:200px; height:auto; object-fit:contain;"
