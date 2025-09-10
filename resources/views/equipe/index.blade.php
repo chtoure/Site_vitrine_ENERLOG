@@ -24,18 +24,18 @@
 
     @media (min-width: 992px) {
         .team-grid {
-            grid-template-columns: repeat(3, minmax(300px, 1fr)); /* ✅ Passé à 3 colonnes comme dans NEXGEN */
+            grid-template-columns: repeat(3, minmax(300px, 1fr));
         }
     }
 
     .team-grid .team-card {
         background: #fff;
-        padding: 1.2rem;
+        padding: 1.5rem;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* ✅ Centre tout le contenu de la carte */
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -44,56 +44,51 @@
         box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
+    /* ✅ CENTRER LA LIGNE IMAGE + NOM */
     .team-grid .team-card .top-section {
         display: flex;
-        gap: 1.2rem;
+        align-items: center;
+        justify-content: center; /* ✅ Centre horizontalement */
+        gap: 1rem;
         width: 100%;
-        align-items: flex-start;
+        margin-bottom: 1rem;
     }
 
     .team-grid .team-card .person {
-        width: 120px;
+        width: 100px;
         height: 100px;
         border-radius: 8px;
         object-fit: cover;
-        flex-shrink: 0;
         box-shadow: 0 3px 10px rgba(0,0,0,0.08);
     }
 
     .team-grid .team-card .text-content {
-        flex: 1;
-        min-width: 0;
+        text-align: center; /* ✅ Centre le nom */
     }
 
     .team-grid .team-card h4 {
-        margin: 0 0 0.5rem 0;
+        margin: 0;
         font-size: 1.25rem;
         font-weight: 500;
         color: #212529;
         line-height: 1.3;
     }
 
-    .team-grid .team-card p {
-        margin: 0 0 0.5rem 0;
-        font-size: 1rem;
-        color: #6c757d;
-        line-height: 1.5;
-    }
-
-    /* ✅ Style pour le poste centré et descendu */
+    /* ✅ POSTE : descendu et centré */
     .team-grid .team-card .poste-centre {
         text-align: center;
         font-weight: 600;
         font-size: 0.95rem;
         color: #212529;
-        margin: 0.5rem 0 1rem 0; /* Petit espace au-dessus et en dessous */
+        margin: 0.5rem 0 1rem 0;
         letter-spacing: 0.03em;
+        width: 100%;
     }
 
     /* ✅ SECTION INFÉRIEURE : TEXTE À GAUCHE */
     .team-grid .team-card .bottom-section {
         width: 100%;
-        margin-top: 0; /* Réduit pour compenser l'espace du poste */
+        text-align: left; /* ✅ Rétablit l'alignement à gauche pour la description */
     }
 
     .team-grid .team-card .bottom-section .text-content {
@@ -109,6 +104,7 @@
         line-height: 1.5;
         font-weight: normal;
         text-transform: none;
+        text-align: left; /* ✅ Important */
     }
 
     /* ✅ RÉSEAUX SOCIAUX : ALIGNÉS À DROITE */
@@ -189,7 +185,7 @@
                     <div class="team-grid">
                         @foreach($equipes as $membre)
                             <div class="team-card">
-                                <!-- Section supérieure : image + nom -->
+                                <!-- ✅ Section supérieure : image + nom (centrés) -->
                                 <div class="top-section">
                                     <img src="{{ asset(ltrim($membre['image'] ?? 'assets/images/team-1.jpg', '/')) }}"
                                          alt="Photo de {{ trim($membre['first_name'] . ' ' . $membre['last_name']) }}"
@@ -206,7 +202,7 @@
                                     {{ $membre['poste'] ?? 'Poste non spécifié' }}
                                 </p>
 
-                                <!-- ✅ Section inférieure : description + réseaux (inchangée) -->
+                                <!-- ✅ Section inférieure : description + réseaux -->
                                 <div class="bottom-section">
                                     <div class="text-content">
                                         <p>{{ $membre['description'] ?? 'Description non disponible.' }}</p>
