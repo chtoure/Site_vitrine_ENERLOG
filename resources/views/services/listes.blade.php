@@ -34,7 +34,7 @@
                     <div class="swiper-slide slide-center">
 
                         <!-- Media -->
-                        <img src="\images\services\Service.jpg" alt="Full Image" class="full-image" data-mask="80">
+                        <img src="{{asset('/images/services/Service.jpg')}}" alt="Full Image" class="full-image" data-mask="80">
 
                         <div class="slide-content row text-center">
                             <div class="col-12 mx-auto inner">
@@ -100,7 +100,7 @@
                                 {{-- <i class="icon icon-organization"></i> --}}
                                 <h4> {{ $service['name'] }} </h4>
                                 <p> {{ $service['description']}} </p>
-                                <a href="page-single-service-1.html"><i class="btn-icon pulse fas fas fa-arrow-right"></i></a>
+                                <a href="{{ route('public.services.detail', $service['id']) }}"><i class="btn-icon pulse fas fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     @endforeach
