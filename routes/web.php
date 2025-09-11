@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EquipesController;
+use App\Http\Controllers\ErrorController;
 use App\Http\Controllers\ParametersController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\NewsController;
@@ -59,5 +60,8 @@ Route::name('public.')->prefix('/')->group(function () {
         Route::get('', [TemoignagesController::class, 'index'])->name('index');
         Route::get('/{id}', [TemoignagesController::class, 'show'])->name('show');
     });
+
+    Route::get('/404', [ErrorController::class, 'pagenotFond'])->name('404');
+    Route::get('/500', [ErrorController::class, 'serverError'])->name('500');
 
 });

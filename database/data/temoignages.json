@@ -2,20 +2,26 @@
     {
         "id": 1,
         "name": "Giz",
-        "content": "Great service and support!",
+        "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus obcaecati tempora quidem itaque minima provident placeat repellat earum. Delectus ratione iusto voluptates itaque, neque esse alias impedit velit nostrum aspernatur!",
         "image": "/images/temoignages/giz.jpg"
     },
 
     {  "id": 2,
         "name": "Yas",
-        "content": "Great service and support!",
+        "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus obcaecati tempora quidem itaque minima provident placeat repellat earum. Delectus ratione iusto voluptates itaque, neque esse alias impedit velit nostrum aspernatur",
         "image": "/images/temoignages/yas.png"
     },
 
     {  "id":3,
         "name": "Moov",
-        "content": "Great service and support!",
+        "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus obcaecati tempora quidem itaque minima provident placeat repellat earum. Delectus ratione iusto voluptates itaque, neque esse alias impedit velit nostrum aspernatur!",
         "image": "/images/temoignages/moov.png"
+    },
+
+    {  "id":4,
+        "name": "Canal+",
+        "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus obcaecati tempora quidem itaque minima provident placeat repellat earum. Delectus ratione iusto voluptates itaque, neque esse alias impedit velit nostrum aspernatur!",
+        "image": "/images/temoignages/canalplus.png"
     }
 
 ]
