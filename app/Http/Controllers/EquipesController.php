@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\EquipeService;
 use App\Services\ParameterService;
+use Illuminate\Foundation\Exceptions\Renderer\Exception;
 use Illuminate\Http\Request;
 
 class EquipesController extends Controller
@@ -11,9 +12,15 @@ class EquipesController extends Controller
     public function index()
 
     {
-        $parameter= ParameterService::get();
-        $equipes = EquipeService::getAll();
-        return view('equipe.index', compact('equipes', 'parameter'));
+        try {
+            $parameter= ParameterService::get();
+            $equipes = EquipeService::getAll();
+            return view('equipe.index', compact('equipes', 'parameter'));
+        } 
+        catch (Exception $e) {
+           return redirect()->route('500');
+        }
+        
     }
 
 

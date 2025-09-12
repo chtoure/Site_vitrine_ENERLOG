@@ -11,7 +11,7 @@
     /* ===== TEAM SECTION — GRID LAYOUT ===== */
     .team-grid {
         display: grid;
-        grid-template-columns: repeat(1, 1fr); /* Mobile */
+        grid-template-columns: repeat(1, 1fr); 
         gap: 1.5rem;
         margin-top: 2rem;
     }
@@ -35,7 +35,7 @@
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         display: flex;
         flex-direction: column;
-        align-items: center; /* ✅ Centre tout le contenu de la carte */
+        align-items: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -44,12 +44,12 @@
         box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
-    /* ✅ CENTRER LA LIGNE IMAGE + NOM */
+    /* === TOP SECTION (image + prénom nom) === */
     .team-grid .team-card .top-section {
         display: flex;
         align-items: center;
-        justify-content: center; /* ✅ Centre horizontalement */
-        gap: 1rem;
+        justify-content: flex-start;
+        gap: 1rem; /* espace fixe entre image et nom */
         width: 100%;
         margin-bottom: 1rem;
     }
@@ -60,21 +60,25 @@
         border-radius: 8px;
         object-fit: cover;
         box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        flex-shrink: 0; /* empêche l’image de rétrécir */
     }
 
     .team-grid .team-card .text-content {
-        text-align: center; /* ✅ Centre le nom */
+        flex: 1; /* prend tout l’espace dispo à droite */
+        min-width: 0; /* permet au texte long de se couper */
+        text-align: left; 
     }
 
     .team-grid .team-card h4 {
         margin: 0;
-        font-size: 1.25rem;
-        font-weight: 500;
+        font-size: 1.1rem;
+        font-weight: 600;
         color: #212529;
         line-height: 1.3;
+        word-wrap: break-word; /* casse les longs mots si besoin */
+        white-space: normal;   /* permet retour à la ligne */
     }
 
-    /* ✅ POSTE : descendu et centré */
     .team-grid .team-card .poste-centre {
         text-align: center;
         font-weight: 600;
@@ -85,10 +89,9 @@
         width: 100%;
     }
 
-    /* ✅ SECTION INFÉRIEURE : TEXTE À GAUCHE */
     .team-grid .team-card .bottom-section {
         width: 100%;
-        text-align: left; /* ✅ Rétablit l'alignement à gauche pour la description */
+        text-align: left; 
     }
 
     .team-grid .team-card .bottom-section .text-content {
@@ -96,7 +99,6 @@
         padding-left: 0;
     }
 
-    /* ✅ DESCRIPTION : MINUSCULE, NON GRAS */
     .team-grid .team-card .bottom-section .text-content p {
         margin: 0 0 0.5rem 0;
         font-size: 0.9rem;
@@ -104,10 +106,9 @@
         line-height: 1.5;
         font-weight: normal;
         text-transform: none;
-        text-align: left; /* ✅ Important */
+        text-align: left; 
     }
 
-    /* ✅ RÉSEAUX SOCIAUX : ALIGNÉS À DROITE */
     .team-grid .team-card .bottom-section .social.share-list {
         display: flex;
         flex-direction: row;
@@ -181,11 +182,11 @@
                         </div>
                     </div>
                 @else
-                    <!-- ✅ GRILLE MODERNE -->
+                    
                     <div class="team-grid">
                         @foreach($equipes as $membre)
                             <div class="team-card">
-                                <!-- ✅ Section supérieure : image + nom (centrés) -->
+                                
                                 <div class="top-section">
                                     <img src="{{ asset(ltrim($membre['image'] ?? 'assets/images/team-1.jpg', '/')) }}"
                                          alt="Photo de {{ trim($membre['first_name'] . ' ' . $membre['last_name']) }}"
@@ -197,12 +198,10 @@
                                     </div>
                                 </div>
 
-                                <!-- ✅ POSTE : descendu et centré -->
                                 <p class="poste-centre">
                                     {{ $membre['poste'] ?? 'Poste non spécifié' }}
                                 </p>
 
-                                <!-- ✅ Section inférieure : description + réseaux -->
                                 <div class="bottom-section">
                                     <div class="text-content">
                                         <p>{{ $membre['description'] ?? 'Description non disponible.' }}</p>
