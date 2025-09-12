@@ -136,15 +136,6 @@
             object-fit: contain;
         }
 
-        .partner-card .card-body {
-            padding: 1rem;
-        }
-
-        .partner-card .card-body h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
 
         .partner-card .card-body p {
             font-size: 0.9rem;
@@ -172,11 +163,6 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-        }
-
-        .partner-card .btn-icon:hover {
-            background: #0056b3;
-            transform: scale(1.1);
         }
 
         @keyframes scrollLeft {

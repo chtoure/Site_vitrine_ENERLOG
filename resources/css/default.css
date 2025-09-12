@@ -38,17 +38,17 @@
     --p-size: 1rem;
     --p-weight: 400;
 
-    --header-bg-color: #21333e;
-    --nav-top-bg-color: #21333e;
-    --nav-sub-bg-color: #21333e;
-    --nav-holder-bg-color: #21333e;
+    --header-bg-color: #FFFFFF;
+    --nav-top-bg-color: #222222;
+    --nav-sub-bg-color: #F29100;
+    --nav-holder-bg-color: #F29100;
     --nav-brand-height: 35px;
-    --nav-item-color: #f9f9f9;
+    --nav-item-color: #0c0b0b;
     --hero-bg-color: #111117;
     --footer-brand-height: 80px;
 
-    --primary-color: #058283;
-    --secondary-color: #00a6a6;
+    --primary-color:  #312782;
+    --secondary-color: #F29100;
     
     --white-color: #ffffff;
     --black-color: #000007;
@@ -75,7 +75,7 @@
 
     --card-bg-color: #ffffff;
 
-    --footer-bg-color: #111117;
+    --footer-bg-color: #222222;
 }
 
 /* #endregion Root */

@@ -34,7 +34,7 @@
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand navbar-fixed sub">
+    <nav class="navbar navbar-expand navbar-fixed sub text-black">
         <div class="container header">
 
             <a class="navbar-brand" href="/">
@@ -48,7 +48,7 @@
 
             <div class="ml-auto"></div>
 
-            <ul class="navbar-nav items">
+            <ul class="navbar-nav items text-black" >
                 <li class="nav-item dropdown">
                     <a href="{{ route('public.index')}}" class="nav-link">ACCUEIL</a>
                 </li>
@@ -57,12 +57,21 @@
 
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="" class="nav-link">EQUIPE</i></a>
+                    <a href="{{ route('public.equipes.index')}}" class="nav-link">EQUIPE</i></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="{{ route('public.partners.index')}}" class="nav-link">PRATENAIRE</a>
 
                 </li>
+                <li class="nav-item dropdown">
+                    <a href="{{ route('public.news.index')}}" class="nav-link">ACTUALITES</a>
+
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="{{ route('public.temoignages.index')}}" class="nav-link">TEMOIGNAGES</a>
+
+                </li>
+                
             </ul>
 
 
@@ -73,7 +82,47 @@
                     
                 </li>
             </ul>
+
+            <ul class="navbar-nav toggle">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#menu">
+                        <i class="icon-menu m-0"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
 
 </header>
+
+
+
+
+
+
+<div id="menu" class="p-0 modal fade" role="dialog" aria-labelledby="menu" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-slideout" role="document">
+        <div class="modal-content full">
+
+            <ul class="navbar-nav items text-black" >
+                <li class="nav-item dropdown">
+                    <a href="{{ route('public.index')}}" class="nav-link">ACCUEIL</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="{{ route('public.services.index')}}" class="nav-link">SERVICES</i></a>
+
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="{{ route('public.equipes.index')}}" class="nav-link">EQUIPE</i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="{{ route('public.partners.index')}}" class="nav-link">PRATENAIRE</a>
+
+                </li>
+
+            </ul>
+
+            
+        </div>
+    </div>
+</div>

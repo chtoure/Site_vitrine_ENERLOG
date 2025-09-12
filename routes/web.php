@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmailsController;
 use App\Http\Controllers\EquipesController;
 use App\Http\Controllers\ErrorController;
 use App\Http\Controllers\ParametersController;
@@ -40,7 +41,7 @@ Route::name('public.')->prefix('/')->group(function () {
         'prefix' => 'news',
         'as' => 'news.'
     ], function () {
-        Route::get('', [NewsController::class,'getAllNews'])->name('list');
+        Route::get('', [NewsController::class,'getAllNews'])->name('index');
         Route::get('/{id}', [NewsController::class,'getByIdNews'])->name('detail');
     });
 
@@ -63,5 +64,12 @@ Route::name('public.')->prefix('/')->group(function () {
 
     Route::get('/404', [ErrorController::class, 'pagenotFond'])->name('404');
     Route::get('/500', [ErrorController::class, 'serverError'])->name('500');
+
+    Route::group([
+        'prefix' => 'emails',
+        'as' => 'emails.'
+    ], function () {
+        Route::post('', [EmailsController::class, 'contact'])->name('contact');
+    });
 
 });
