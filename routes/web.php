@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmailsController;
 use App\Http\Controllers\EquipesController;
 use App\Http\Controllers\ParametersController;
 use App\Http\Controllers\PartnersController;
@@ -58,6 +59,13 @@ Route::name('public.')->prefix('/')->group(function () {
     ], function () {
         Route::get('', [TemoignagesController::class, 'index'])->name('index');
         Route::get('/{id}', [TemoignagesController::class, 'show'])->name('show');
+    });
+
+    Route::group([
+        'prefix' => 'emails',
+        'as' => 'emails.'
+    ], function () {
+        Route::post('', [EmailsController::class, 'contact'])->name('contact');
     });
 
 });
