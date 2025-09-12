@@ -4,7 +4,7 @@
         "id":1,
         "name":"Carte rechargeable et de fidélité (Aminci)",
         "description":"Ce service est offert par la plateforme Cpay. C'est une carte rechargeable post payé ou prépayé auxquelles les clients des services pétroliers pourront souscrire. ! Ce service offre à la compagnie pétrolière la possibilité de définir la limitation géographique de la carte rechargeable et aussi le seuil minimum et maximum de recharge et/ou de la consommation en fonction de la durée de la souscription de son client. ! Aminci c’est aussi, les carte cadeau ou des cartes pour les programmes de fidélisation que toute entreprise peut créer, vendre et permettre à ses clients de bénéficier. ",
-        "images":[],
+        "images":["/images/services/solution_carte.jpeg","/images/services/logo_carte.jpg"],
         "content": [
             "Le car washing",
             "L’achat du carburant",
@@ -18,7 +18,7 @@
         "id":2,
         "name":"La billetterie digitalisée",
         "description":"C’est un service que Cpay offre pour permettre à l'organisateur d’évènement de créer des tickets personnalisés au format. Ensuite de les vendre via la plateforme cPay. ! Ce service a le mérite de permettre à l’organisateur de confirmer les avantages que peux avoir son client suivant les différents tickets qu’il a créé. Ses avantages pourraient donc être consommés par son client. ! Cette fonctionnalité offre donc la possibilité aux clients de l’organisateur une expérience unique. ",
-        "images":[],
+        "images":["/images/services/enerlog-icone-e-billet.png"],
         "content": []
     },
     
@@ -26,7 +26,7 @@
         "id":3,
         "name":"Accessibilité & inclusivité",
         "description":"cPay est conçu pour toucher un large public à travers ses moyens de paiement mobile en espèce ou par carte (Visa, Master carte…), cela offre les possibilités aux clients d’acheter leurs billets ou de participer aux programmes de fidélité sans aucun souci. ! Il prend en compte la connectivité du pays en proposant des options adaptées la baisse de connexions, cPay offre la possibilité d’acheter ses tickets même lorsque votre client ne dispose pas de connexion internet grâce à notre stratégie de maillage et de partenariat B to B. ! cPay disposera donc des points de ventes agréé offrant la possibilité d’acheter en espèces pour les utilisateurs qui ne dispose pas d’une connexion internet.",
-        "images":[],
+        "images":["/images/services/accessibilite-numerique-elearning-rgaa-cover_medium.jpg"],
         "content": [
             
         ]
@@ -36,7 +36,7 @@
         "id":4,
         "name":"Valeur ajoutée",
         "description":"Cpay mets à disposition des entreprises des outils tels que la fidélisation intégrée et un tableau de bord permettant une vue générale sur les mouvements du chiffre d'affaires.",
-        "images":[],
+        "images":["/images/services/Logo-Valeur-ajoutee.png"],
         "content": [
             
         ]
@@ -46,7 +46,7 @@
         "id":5,
         "name": "Livraison de colis",
         "description":"Enerlog propose des services de livraisons locales",
-        "images":[],
+        "images":["/images/services/livraison_collis.jpg"],
         "content":[]
     },
 
@@ -54,7 +54,7 @@
         "id":6,
         "name": "Tracking & géolocalisation",
         "description":"Enerlog propose des services de Tracking & géolocalisation",
-        "images":[],
+        "images":["/images/services/tracking.webp"],
         "content":[]
     }
 ]

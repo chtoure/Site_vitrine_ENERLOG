@@ -2,6 +2,23 @@
 
 @section('content')
 
+    @php
+        function makeLinksClickable($text) {
+            return preg_replace(
+                '/(https?:\/\/[^\s]+)/',
+                '<a href="$1" target="_blank">$1</a>',
+                $text
+            );
+
+        }
+
+        function getDomain($url) {
+            $host = parse_url($url, PHP_URL_HOST);
+            return $host ?? $url;
+        }
+
+
+    @endphp
   <style>
             :root {
                 --hero-bg-color: #080d10;
@@ -65,7 +82,7 @@
                             <div class="col-12 align-self-center">
                                  @foreach(explode('!', $news['content']) as $paragraph)
                                     @if(trim($paragraph) !== '') 
-                                        <p>{{ trim($paragraph) }}</p>
+                                        <p>{!! makeLinksClickable(trim($paragraph)) !!}</p>
                                     @endif
                                 @endforeach
                             </div>
@@ -97,44 +114,33 @@
         </section>
 
         <!-- About -->
-        <section id="about" class="section-2 highlights image-right">
-            <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 pr-md-5 align-self-center text">
-                    <div data-aos="fade-up"  class="row intro">
-                        <div class="col-12 p-0">
-                            <span class="pre-title m-0">Making dreams come true</span>
-                            <h2><span class="featured"><span>What</span></span> Initiative?</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras iaculis diam varius diam ultricies lacinia. Mauris lacus tellus, ultrices eu volutpat sit amet, finibus a ipsum.</p>
-                            <p>Curabitur convallis, diam a egestas iaculis, neque lorem interdum felis, in viverra lacus tortor in leo.</p>
+        @if(is_array($news['link']) && count($news['link']) > 0)
+            <section id="about" class="section-2 highlights image-right">
+                <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 pr-md-5 align-self-center text">
+                        <div data-aos="fade-up"  class="row intro">
+                            <div class="col-12 p-0">
+                                <span class="pre-title m-0">Liens De l'Actualité</span>
+                                <h2><span class="featured"><span>Liens</span></span> Disponibles</h2>
+                                <p>Cette Actualité {{ $news['name'] }} est un evenement dans le quel la société ENERLOG TECHNOLOGY & DIGITAL SAS a mis plus d'effort pour faire que cet evenement est plus de visibilté. Ainsi vous pouvez voir les liens qui font la publicités a droite.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 pr-md-5 align-self-center text">
-                    <div class="row items">                             
-                        <div data-aos="fade-up" class="col-12 col-md-6 p-0 pr-md-4 item">
-                            <h4>Lorem ipsum</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                        </div>           
-                        <div data-aos="fade-up" class="col-12 col-md-6 p-0 item">
-                            <h4>Lorem ipsum</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                        </div> 
-                    </div>
-                    <div class="row items"> 
-                        <div data-aos="fade-up" class="col-12 col-md-6 p-0 item">
-                            <h4>Lorem ipsum</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                        </div>  
-                        <div data-aos="fade-up" class="col-12 col-md-6 p-0 pr-md-4 item">
-                            <h4>Lorem ipsum</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                    <div class="col-12 col-md-6 pr-md-5 align-self-center text">
+                        <div class="row items">
+                                @foreach($news['link'] as $link)
+                                    <div data-aos="fade-up" class="col-12 col-md-6 p-0 item">
+                                        <a href="{{$link}}">{{getDomain($link)}}</a>
+                                    </div> 
+                                @endforeach                      
                         </div>
+                        
                     </div>
                 </div>
-            </div>
-            </div>
-        </section>
+                </div>
+            </section>
+        @endif   
 
 
 

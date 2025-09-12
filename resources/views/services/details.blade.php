@@ -26,9 +26,12 @@
                     <div class="swiper-slide slide-center">
 
                         <!-- Media -->
-                        <video class="full-image to-bottom" data-mask="70" playsinline autoplay muted loop>
+                        {{-- <video class="full-image to-bottom" data-mask="70" playsinline autoplay muted loop>
                             <source src="assets/videos/work.mp4" type="video/mp4" />
-                        </video> 
+                        </video>  --}}
+
+                        <!-- Media -->
+                        <img src="{{ asset($service['images'][0]) }}" alt="Full Image" class="full-image" data-mask="80">
 
                         <div class="slide-content row text-center">
                             <div class="col-12 mx-auto inner">

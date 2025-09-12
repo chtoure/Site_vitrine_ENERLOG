@@ -1,6 +1,7 @@
 @extends('component.app')
 
 @section('content')
+
  @php
         use Illuminate\Support\Str;
     @endphp
@@ -51,26 +52,29 @@
                 <div class="container">
                     <div class="row items filter-items">
                         @foreach ($dataNews as $news)
-                            <div class="col-12 col-md-6 col-lg-4 item filter-item">
-                                <div class="row card p-0 text-center">
+                            <div class="col-12 col-md-6 col-lg-4 item filter-item d-flex align-items-stretch">
+                                <div class="card p-0 text-center w-100">
                                     <div class="image-over">
-                                       @if(!empty($news['images']) && isset($news['images'][0]))
-                                            <img src="{{ asset($news['images'][0]) }}" alt="Lorem ipsum">
+                                    @if(!empty($news['images']) && isset($news['images'][0]))
+                                            <img src="{{ asset($news['images'][0]) }}" alt="Lorem ipsum" class="card-img-top img-fluid" style="object-fit: cover; height: 200px;">
                                         @endif
-
                                     </div>
                                     <div class="card-caption col-12 p-0">
-                                        <div class="card-body">
-                                            <a href="#">
+                                        <div class="card-body d-flex flex-column">
+                                            <a href="{{route('public.news.detail', $news['id'])}}">
                                                 <h4>{{ $news['name'] }}</h4>
                                                 <p>{{ Str::limit($news['content'], 100, '...')}}</p>
                                             </a>
+                                            <div class="mt-auto">
+                                                {{-- Bouton ou lien si besoin --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>  
                         @endforeach
                     </div>
+
 
                     <!-- Pagination -->
                    <div class="row mt-4">
