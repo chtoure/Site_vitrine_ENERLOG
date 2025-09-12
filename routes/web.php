@@ -41,7 +41,7 @@ Route::name('public.')->prefix('/')->group(function () {
         'prefix' => 'news',
         'as' => 'news.'
     ], function () {
-        Route::get('', [NewsController::class,'getAllNews'])->name('list');
+        Route::get('', [NewsController::class,'getAllNews'])->name('index');
         Route::get('/{id}', [NewsController::class,'getByIdNews'])->name('detail');
     });
 

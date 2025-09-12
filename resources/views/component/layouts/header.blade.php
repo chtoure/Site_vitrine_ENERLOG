@@ -63,6 +63,14 @@
                     <a href="{{ route('public.partners.index')}}" class="nav-link">PRATENAIRE</a>
 
                 </li>
+                <li class="nav-item dropdown">
+                    <a href="{{ route('public.news.index')}}" class="nav-link">ACTUALITES</a>
+
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="{{ route('public.temoignages.index')}}" class="nav-link">TEMOIGNAGES</a>
+
+                </li>
                 
             </ul>
 
