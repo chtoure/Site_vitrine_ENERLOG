@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "name":"Officialisation de la plateforme CPay ",
+        "link":[
+            "https://24heureinfo.com/societe/au-togo-enerlog-revolutionne-la-billetterie-avec-cpay/",
+            "https://lomebougeinfo.tg/enerlogtechnology-et-digital-lancement-de-la-plateforme-cpay/"
+        ],
+        "content":"La société Enerlog a officialisé samedi 23 novembre 2024 à Lomé, sa plateforme CPay destinée à la gestion de la billetterie et  à la production des cartes de fidélité. ! L’innovation vise à faciliter aux organisateurs d’événements, la vente  de billets sécurisés et personnalisables,  tout en fidélisant les utilisateurs. Accessible sur le web  via  https://cpay.enerlog.net/corpus/accueil/connexion et aussi sous forme d’application, CPay permet aux entreprises de divers secteurs (hôtellerie, restauration, supermarchés) de mettre en place des programmes de fidélisation attractifs pour leurs clients. ! « Nous garantissons la sécurité des transactions avec des mécanismes avancés, incluant un cryptage de données », a indiqué le CEO de Enerlog, NEKERE Abdou-Djalilou. L’innovation peut être utilisée au  Togo, tout comme dans les autres pays de l’Union économique et monétaire ouest-africaine (UEMOA). ",
+        "images":["/images/news/lancement_officiel.png","/images/news/Officialisation.jpg","/images/news/cPay-officialisation.png","/images/news/cpay-presentation2.jpg"]
+    },
+    {
+        "id":2,
+        "name":"Foire Kermesse The Game: Enerlog Technology",
+        "link":[
+            "https://reperesdafrique.tg/index.php/2024/12/21/foire-kermesse-the-game-enerlog-technology-et-digital-facilite-lacces-aux-visiteurs-a-travers-la-plateforme-cpay/",
+            "https://vm.tiktok.com/ZMAB6WdgK/"
+        ],
+        "content":"Enerlog sponsorise la Foire Kermesse The Game en mettant a disposition, la plateforme cPay pour l'achat des tickes. lors de cet evenement Enerlog Technology et Digital a profiter presenter sa solution : ! « Notre solution que nous apportons à la foire kermesse The Game, c’est ce que nous appelons cPay. Enerlog cPay, c’est une application qui est spécialisée dans la gestion des tickets, la vente des tickets en ligne et aussi les cartes rechargeables. Aujourd’hui, nous avons décidé de supporter l’événement parce que c’est aussi des jeunes qui sont en train d’initier cette foire et nous voulons aussi accompagner. ! Avec cPay, déjà l’organisateur de l’événement, il gère sur la plateforme (https://cpay.ernerlog.net). Quand vous tapez ce lien, vous accédez à la plateforme cPay et vous en tant qu’organisateur d’événement, vous créez un compte marchand  et depuis votre espace, vous allez pouvoir créer votre événement et vous mettez les tickets à disposition de vos clients. Vous générez un code QR qui va permettre aux clients de pouvoir scanner. Lorsqu’ils scannent, ils ont accès à vos différents tickets que vous avez mis à disposition pour l’événement, ils vont pouvoir acheter en ligne. ! Non seulement ça, il y a aussi une autre possibilité qui est de générer aussi les tickets physiques que vous pouvez aussi mettre à la disposition de vos distributeurs chez qui les clients peuvent aussi acheter et bien en avant que vous ne puissiez générer les tickets, vous allez charger votre compte. Suite au recharge de compte, vous allez pouvoir générer les tickets », a laissé entendre M.Tairou Mouhamed Abdoul Tawal, community manager chez Enerlog Technology et Digital.d",
+        "images":["/images/news/foire_kermes.jpg","/images/news/foire1.jpg","/images/news/foire2.jpg"]
+    },
+
+    
+    {
+        "id":3,
+        "name":"TABASKI TOUR 2025 : Enerlog Technology et Digital",
+        "link":["https://www.facebook.com/reel/1487316475972970/","https://www.facebook.com/reel/688110144143811/"],
+        "content":"Ce tour musical, parrainé par #YasTogo et mettant en vedette l'artiste #KingBala, a parcouru plusieurs villes du Togo, notamment Dapaong, pour des soirées de clôture en juin 2025. ! L'événement visait à célébrer la fête de la Tabaski à travers la musique, en apportant de l'animation et des moments festifs au public.! Ainsi Enerlog Technology et Digital a contribuer en mettant a disposition la plateforme cPay pour la vente des tickets de cet evenement.",
+        "images":["/images/news/Tour_Tabasaki.png"]
+    },
+    {
+        "id":4,
+        "name":"AGOE Show Awards Edition 6 : Enerlog Technology et Digital",
+        "link":["https://www.facebook.com/AGOESHOWAWARDS/","https://www.facebook.com/ZikDePartoutOfficiel/posts/ago%C3%A9-show-awards-6%E1%B5%89-%C3%A9dition-l%C3%A9v%C3%A9nement-de-prestige-qui-c%C3%A9l%C3%A8bre-les-talents-lexce/1020412400204099/"],
+        "content":"Les AGOÈ Show Awards Edition 6 ont récompensé les talents de la culture togolaise, célébrant des artistes et créateurs dans diverses catégories. Cet événement avait pour thème l'« Unité dans la diversité » et a eu lieu le vendredi 1er août 2025. Des partenaires comme Enerlog Technology ont contribué au succès de cette édition, qui a mis en lumière l'excellence à travers la culture togolaise. ! La société Enerlog à facilité le vote des artistes et talents préférés aux AGOE Show Awards edition 6 en mettant a disposition la plateforme cPay. ! Ainsi grace aux soutiens des partenaires comme Enerlog Technology, on a put  mettre en lumière l'excellence togolaise en célébrant les talents dans un contexte de diversité culturelle.  ",
+        "images":["/images/news/agoe_show_1.jpeg","/images/news/agoe_show_2.jpeg","/images/news/agoe_show_3.jpeg","/images/news/agoe_show_4.jpeg","/images/news/agoe_show_5.jpeg","/images/news/agoe_show_6.jpeg"]
+    }
+]
