@@ -767,12 +767,12 @@ aside {
 }
 
 .container {
-    max-width: 1170px;
+    max-width: 1370px;
     padding: 0;
 }
 
 .container.header {
-    max-width: 1140px;
+    max-width: 1340px;
 }
 
 .container.header.full {
@@ -1839,7 +1839,7 @@ header .navbar-expand {
     top: 0;
     z-index: 2;
     width: 100%;
-    padding: 20px 25px;
+    padding: 0 25px;
 }
 
 header .navbar-expand.relative {
@@ -2228,6 +2228,7 @@ header .navbar-expand .navbar-brand .featured .first {
 .slider-h-auto .swiper-slide {
     min-height: 75vh;
 }
+
 
 .slider-h-auto.no-slider .inner {
     top: 0;
@@ -4726,4 +4727,4 @@ footer .copyright p {
     /* #endregion General */
 }
 
-/* #endregion All Media Queries */
+

@@ -8,7 +8,6 @@
 
      <style>
             :root {
-                --hero-bg-color: #080d10;
                 --section-1-bg-color: #eef4ed;
                 --section-2-bg-color: #ffffff;
                 --section-3-bg-color: #111117; --section-3-bg-image: url('../../assets/images/bg-1.jpg');
