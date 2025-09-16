@@ -54,6 +54,10 @@ class NewsController extends Controller
         $news = NewsServices::getById($idNew);
         $parameter= ParameterService::get();
 
+        if (!$news) {
+            return redirect()->route('public.404');
+        }
+
 
         return view(
             'news.details',

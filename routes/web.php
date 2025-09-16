@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AproposController;
 use App\Http\Controllers\EmailsController;
 use App\Http\Controllers\EquipesController;
 use App\Http\Controllers\ErrorController;
@@ -19,6 +20,13 @@ Route::name('public.')->prefix('/')->group(function () {
         'as' => 'parameter.'
     ], function () {
         Route::get('', [ParametersController::class, 'index'])->name('index');
+    });
+
+    Route::group([
+        'prefix' => 'apropos',
+        'as' => 'apropos.'
+    ], function () {
+        Route::get('', [AproposController::class, 'index'])->name('index');
     });
 
     Route::group([
