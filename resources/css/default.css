@@ -33,7 +33,7 @@
     --h2-font: 'Poppins', sans-serif;
     --h2-size: 3rem;
     --h2-weight: 700;
-
+    
     --p-font: 'Montserrat', sans-serif;
     --p-size: 1rem;
     --p-weight: 400;
@@ -43,8 +43,8 @@
     --nav-sub-bg-color: #F29100;
     --nav-holder-bg-color: #F29100;
     --nav-brand-height: 35px;
-    --nav-item-color: #F29100;
-    --hero-bg-color: #111117;
+    --nav-item-color: #111117;
+    --hero-bg-color: rgb(66, 66, 66);
     --footer-brand-height: 80px;
 
     --primary-color:  #312782;
@@ -184,4 +184,3 @@
 }
 
 /* #endregion Effect */
-
