@@ -37,7 +37,9 @@ class EmailsController extends Controller
             return back()->with('success', 'Votre message a bien été envoyé !');
 
         } catch (\Exception $e) {
-            return response()->view('errors.page500', [], 500);
+            return response()->view('errors.page500', [
+                'parameter' => $parameter
+            ], 500);
         }
     }
 
