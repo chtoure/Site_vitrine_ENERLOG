@@ -3,7 +3,7 @@
 @section('content')
  <style>
             :root {
-                --section-1-bg-color: #111117;
+                --section-1-bg-color: rgb(66, 66, 66);
             }
         </style>
 

@@ -40,7 +40,7 @@
 
                                 <div data-aos="fade-up" data-aos-delay="2800" class="buttons">
                                     <div class="d-sm-inline-flex">
-                                        <a href="#" class="smooth-anchor ml-sm mt-4 btn outline-button"  >LIRE PLUS</a>
+                                        <a href="{{route('public.apropos.index')}}" class=" ml-sm mt-4 btn outline-button"  >LIRE PLUS</a>
                                     </div>
                                 </div>
                         </div>
@@ -57,7 +57,7 @@
         <div class="overflow-holder">
             <div class="row text-center intro">
                 <div class="col-12">
-                    <h2> <span class="featured"><span>{{$parameter['valeur']}}</span></span></h2>
+                    <h2> <span class="featured"><span>Actualités</span></span></h2>
                 </div>
             </div>
 
@@ -152,7 +152,7 @@
                 <div class="row text-center intro">
                     <div class="col-12">
                         <span class="pre-title">Nous offrons des services de qualité</span>
-                        <h2 class="mb-0">Quelques & <span class="featured"><span>Services</span></span></h2>
+                        <h2 class="mb-0">Quelques <span class="featured"><span>Services</span></span></h2>
                     </div>
                 </div>
 

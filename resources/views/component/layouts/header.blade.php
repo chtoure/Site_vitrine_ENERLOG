@@ -190,6 +190,10 @@
                 <li class="nav-item dropdown">
                     <a href="{{ route('public.index')}}" class="nav-link">ACCUEIL</a>
                 </li>
+                 <li class="nav-item dropdown">
+                    <a href="{{ route('public.apropos.index')}}" class="nav-link">APROPOS</i></a>
+
+                </li>
                 <li class="nav-item dropdown">
                     <a href="{{ route('public.services.index')}}" class="nav-link">SERVICES</i></a>
 
@@ -249,6 +253,10 @@
                     <a href="{{ route('public.index')}}" class="nav-link modern-link">
                         <span class="nav-text">ACCUEIL</span>
                     </a>
+                </li>
+                 <li class="nav-item dropdown">
+                    <a href="{{ route('public.apropos.index')}}" class="nav-link">APROPOS</i></a>
+
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('public.services.index')}}" class="nav-link modern-link">
