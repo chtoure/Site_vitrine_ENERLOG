@@ -27,6 +27,10 @@ class PartnersController extends Controller
         $partner=PartnerService::getId($id);
         $parameter= ParameterService::get();
 
+        if (!$partner) {
+            return redirect()->route('public.404');
+        }
+
         return view(
             'partner.detail',
             [
@@ -36,35 +40,3 @@ class PartnersController extends Controller
         );
     }
 }
-
-
-
-
-
-
-
-// public function index ()
-//     {
-//         $partnersJson= PartnerService::getAll();
-
-//         $page = request()->get('page', 1);
-
-//         $perPage = 3;
-
-//         $items = collect($partnersJson);
-
-//         $partners = new LengthAwarePaginator(
-//             $items->forPage($page, $perPage),
-//             $items->count(),
-//             $perPage,
-//             $page,
-//             ['path' => Paginator::resolveCurrentPath()]
-//         );
-
-//         return view(
-//             'partner.index',
-//             [
-//                 'partners'=>$partners
-//             ]
-//         );
-//     }

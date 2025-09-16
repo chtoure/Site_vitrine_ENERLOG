@@ -34,7 +34,9 @@ Route::name('public.')->prefix('/')->group(function () {
         'as' => 'partners.'
     ], function () {
         Route::get('', [PartnersController::class, 'index'])->name('index');
-        Route::get('/{id}', [PartnersController::class, 'detail'])->name('detail');
+        Route::get('/{id}', [PartnersController::class, 'detail'])
+            ->where('id', '[0-9]+')
+            ->name('detail');
     });
 
     Route::group([
@@ -42,7 +44,9 @@ Route::name('public.')->prefix('/')->group(function () {
         'as' => 'services.'
     ], function () {
         Route::get('', [ServiceController::class,'getAllServices'])->name('index');
-        Route::get('/{id}', [ServiceController::class,'getByIdService'])->name('detail');
+        Route::get('/{id}', [ServiceController::class,'getByIdService'])
+            ->where('id', '[0-9]+')
+            ->name('detail');
     });
 
     Route::group([
@@ -50,7 +54,9 @@ Route::name('public.')->prefix('/')->group(function () {
         'as' => 'news.'
     ], function () {
         Route::get('', [NewsController::class,'getAllNews'])->name('index');
-        Route::get('/{id}', [NewsController::class,'getByIdNews'])->name('detail');
+        Route::get('/{id}', [NewsController::class,'getByIdNews'])
+            ->where('id', '[0-9]+')
+            ->name('detail');
     });
 
     Route::group([
@@ -58,7 +64,9 @@ Route::name('public.')->prefix('/')->group(function () {
         'as' => 'equipes.'
     ], function () {
         Route::get('', [EquipesController::class, 'index'])->name('index');
-        Route::get('/{id}', [EquipesController::class, 'show'])->name('show');
+        Route::get('/{id}', [EquipesController::class, 'show'])
+            ->where('id', '[0-9]+')
+            ->name('show');
     });
 
 
@@ -67,11 +75,13 @@ Route::name('public.')->prefix('/')->group(function () {
         'as' => 'temoignages.'
     ], function () {
         Route::get('', [TemoignagesController::class, 'index'])->name('index');
-        Route::get('/{id}', [TemoignagesController::class, 'show'])->name('show');
+        Route::get('/{id}', [TemoignagesController::class, 'show'])
+            ->where('id', '[0-9]+')
+            ->name('show');
     });
 
-    Route::get('/404', [ErrorController::class, 'pagenotFond'])->name('404');
     Route::get('/500', [ErrorController::class, 'serverError'])->name('500');
+    Route::get('/404', [ErrorController::class, 'pagenotFond'])->name('404');
 
     Route::group([
         'prefix' => 'emails',
@@ -80,4 +90,10 @@ Route::name('public.')->prefix('/')->group(function () {
         Route::post('', [EmailsController::class, 'contact'])->name('contact');
     });
 
+    Route::fallback(function () {
+        return app(ErrorController::class)->pagenotFond();
+    });
+
 });
+
+

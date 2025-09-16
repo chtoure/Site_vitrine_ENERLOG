@@ -3,18 +3,10 @@
 @section('content')
  <style>
             :root {
-                --nav-holder-bg-color: #111117;
-
                 --section-1-bg-color: #111117;
-                --section-2-bg-color: #eef4ed;
-                --section-3-bg-color: #111117; --section-3-bg-image: url('../../assets/images/bg-7.jpg');
-                --section-4-bg-color: #eef4ed;
-                --section-5-bg-color: #111117;
-                --section-6-bg-color: #eef4ed;
             }
         </style>
 
-          <!-- Section 1 -->
         <section class="section-1 odd offers">
             <div class="container smaller">
                 <div class="row intro">
