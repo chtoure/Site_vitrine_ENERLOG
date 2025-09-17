@@ -7,6 +7,20 @@
         --hero-bg-color: #080d10;
         --section-1-bg-color: #eef4ed;
     }
+
+    /* Style du logo des témoignages */
+    #testimonials .card .logo {
+        max-height: 200px;  /* Augmente encore la taille */
+        width: auto;
+        object-fit: contain;
+        margin: 20px auto;  /* Ajoute de l'espace autour pour ne pas coller les textes */
+        display: block;
+    }
+
+    /* Espacement supplémentaire entre les sections de la carte */
+    #testimonials .card p {
+        margin-top: 10px;
+    }
 </style>
 
 <!-- Hero -->
@@ -55,12 +69,11 @@
                 @foreach($temoignages as $temoignage)
                     <div data-aos="fade-up" class="col-12 col-md-6 item">
                         <div class="card">
-                            <div class="col-12">
+                            <div class="col-12 text-center">
                                 <!-- Logo ou image du client -->
                                 <img src="{{ asset(ltrim($temoignage['image'] ?? 'assets/images/logo-1.png', '/')) }}"
                                      alt="{{ $temoignage['name'] ?? 'Client' }}"
-                                     class="logo"
-                                     style="max-height: 60px; width: auto; object-fit: contain;">
+                                     class="logo">
 
                                 <!-- Témoignage -->
                                 <p>{{ $temoignage['content'] ?? 'Témoignage non disponible.' }}</p>
@@ -68,7 +81,7 @@
                                 <!-- Nom du client -->
                                 <p><strong>{{ $temoignage['name'] ?? 'Anonyme' }}</strong></p>
 
-                                <!-- Icône de citation (comme dans NEXGEN) -->
+                                <!-- Icône de citation -->
                                 <i class="quote-right fas fa-quote-right"></i>
                             </div>
                         </div>
