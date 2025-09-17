@@ -28,6 +28,10 @@ class ServiceController extends Controller
         $service = ServicesService::getById($idServ);
         $parameter= ParameterService::get();
 
+        if (!$service) {
+            return redirect()->route('public.404');
+        }
+
         return view(
             'services.details',
             ['service' => $service,  'parameter' => $parameter ]

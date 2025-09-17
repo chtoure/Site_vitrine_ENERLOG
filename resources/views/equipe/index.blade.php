@@ -4,7 +4,6 @@
 
 <style>
     :root {
-        --hero-bg-color: #080d10;
         --section-1-bg-color: #ffffff;
     }
 

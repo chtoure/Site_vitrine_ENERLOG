@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\EquipeService;
+use App\services\NewsServices;
 use App\Services\ParameterService;
 use App\Services\PartnerService;
 use App\services\ServicesService;
@@ -21,6 +22,7 @@ class ParametersController extends Controller
         $services= ServicesService::getAll();
         $partners= PartnerService::getAll();
         $temoignages= TemoignageService::getAll();
+        $news= NewsServices::getAll();
 
         return view('accueil.index', [ 
             'parameter' => $parameter,
@@ -28,7 +30,8 @@ class ParametersController extends Controller
             'equipe' => $equipe,
             'services' => $services,
             'partners' => $partners,
-            'temoignages' => $temoignages
+            'temoignages' => $temoignages,
+            'news'=> $news
         ]);
     }
     

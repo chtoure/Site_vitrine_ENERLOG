@@ -8,17 +8,17 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>NEXGEN - Business, Consulting, Finance, Insurance, Startup and Technology</title>
+        <title>{{$parameter['name']}}</title>
 
         <meta name="description" content="Business, Consulting, Finance, Insurance, Startup and Technology">
         <meta name="subject" content="Business, Consulting, Finance, Insurance, Startup and Technology">
         <meta name="author" content="Codings">
 
 
-        <link rel="shortcut icon" href="{{ Vite::asset('resources/images/favicon.ico') }}">
-        <link rel="apple-touch-icon" href="{{ Vite::asset('resources/images/apple-touch-icon.png') }}">
+        <link rel="shortcut icon" href="{{ asset($parameter['logo']) }}">
+        {{-- <link rel="apple-touch-icon" href="{{ Vite::asset('resources/images/apple-touch-icon.png') }}">
         <link rel="apple-touch-icon" sizes="72x72" href="{{ Vite::asset('resources/images/apple-touch-icon-72x72.png') }}">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ Vite::asset('resources/images/apple-touch-icon-114x114.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ Vite::asset('resources/images/apple-touch-icon-114x114.png') }}"> --}}
 
 
         @vite([
