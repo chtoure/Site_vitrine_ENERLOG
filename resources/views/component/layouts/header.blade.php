@@ -3,27 +3,27 @@
     <style>
 
         .menu-header {
-        padding: 2rem 2rem 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        z-index: 2;
-        backdrop-filter: blur(10px);
+            padding: 2rem 2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
         }
 
         .menu-title {
-        font-family: var(--h2-font);
-        font-size: var(--h2-size);
-        font-weight: var(--h2-weight);
-        margin: 0;
-        color: var(--white-color);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        background: var(--primary-color);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+            font-family: var(--h2-font);
+            font-size: 2rem;
+            font-weight: var(--h2-weight);
+            margin: 0;
+            color: var(--white-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: var(--primary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .btn-close-custom {
