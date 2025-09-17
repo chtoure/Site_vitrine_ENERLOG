@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\services\NewsServices;
 use App\Services\ParameterService;
+use App\Services\SeoService;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
@@ -44,6 +45,13 @@ class NewsController extends Controller
             ['path' => request()->url(), 'query' => request()->query()]
         );
 
+        SeoService::setMeta(
+            $parameter['name'] ?? 'ENERLOG',
+            "ENERLOG - La liste des actualités de l'entreprise.",
+            route('public.news.index'),
+            asset($parameter['logo']) 
+        );
+
         return view('news.listes', [
             'dataNews' => $dataNews,
             'parameter' => $parameter
@@ -58,6 +66,12 @@ class NewsController extends Controller
             return redirect()->route('public.404');
         }
 
+        SeoService::setMeta(
+            $parameter['name'] ?? 'ENERLOG',
+            "ENERLOG - La Page de details de l'actualité ".$news['name'],
+            route('public.news.detail', $news['id']),
+            asset($parameter['logo']) 
+        );
 
         return view(
             'news.details',
