@@ -7,18 +7,11 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>{{$parameter['name']}}</title>
-
-        <meta name="description" content="Business, Consulting, Finance, Insurance, Startup and Technology">
-        <meta name="subject" content="Business, Consulting, Finance, Insurance, Startup and Technology">
-        <meta name="author" content="Codings">
+        {!! \Artesaos\SEOTools\Facades\SEOTools::generate() !!}
 
 
         <link rel="shortcut icon" href="{{ asset($parameter['logo']) }}">
-        {{-- <link rel="apple-touch-icon" href="{{ Vite::asset('resources/images/apple-touch-icon.png') }}">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ Vite::asset('resources/images/apple-touch-icon-72x72.png') }}">
-        <link rel="apple-touch-icon" sizes="114x114" href="{{ Vite::asset('resources/images/apple-touch-icon-114x114.png') }}"> --}}
+        
 
 
         @vite([
@@ -33,13 +26,13 @@
 
     <body class="home">
 
-        <div id="preloader" data-timeout="2000" class="odd preloader counter">
+        {{-- <div id="preloader" data-timeout="2000" class="odd preloader counter">
             <div data-aos="fade-up" data-aos-delay="500" class="row justify-content-center text-center items">
                 <div data-percent="100" class="radial">
                     <span></span>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         @include('component.layouts.header')
 
