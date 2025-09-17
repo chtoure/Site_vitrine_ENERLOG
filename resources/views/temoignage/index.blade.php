@@ -10,7 +10,7 @@
 
     /* Style du logo des témoignages */
     #testimonials .card .logo {
-        max-height: 200px;  /* Augmente encore la taille */
+        max-height: 300px;  /* Augmente encore la taille */
         width: auto;
         object-fit: contain;
         margin: 20px auto;  /* Ajoute de l'espace autour pour ne pas coller les textes */
@@ -24,26 +24,47 @@
 </style>
 
 <!-- Hero -->
-<section id="slider" class="hero p-0 odd featured">
-    <div class="swiper-container no-slider animation slider-h-50 slider-h-auto">
+<section id="slider" class="hero p-0 odd featured" style="position: relative; overflow: hidden;">
+
+    <!-- Background flouté -->
+    <div class="background-blur" 
+        style="
+            background: url('{{ asset('/images/temoignages/equipe.jpg') }}') center center / cover no-repeat;
+            position: absolute;
+            inset: 0;
+            filter: blur(6px);
+            transform: scale(1.1); /* évite les bords vides après le blur */
+        ">
+    </div>
+
+    <!-- Overlay sombre pour lisibilité -->
+    <div class="overlay" 
+        style="background: rgba(0,0,0,0.4); position: absolute; inset: 0;">
+    </div>
+
+    <div class="swiper-container no-slider animation slider-h-50 slider-h-auto" style="position: relative; z-index: 2;">
         <div class="swiper-wrapper">
             <div class="swiper-slide slide-center">
-                <img src="assets/images/bg-wide.jpg" alt="Full Image" class="full-image" data-mask="80">
+
                 <div class="slide-content row text-center">
                     <div class="col-12 mx-auto inner">
+
                         <nav data-aos="zoom-out-up" data-aos-delay="800" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Accueil</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Témoignages</li>
                             </ol>
                         </nav>
+
                         <h1 class="mb-0 title effect-static-text">Ils témoignent</h1>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Testimonials -->
 <section id="testimonials" class="section-1 offers testimonials">
