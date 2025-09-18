@@ -7,7 +7,6 @@
         --section-1-bg-color: #ffffff;
     }
 
-    /* ===== TEAM SECTION — GRID LAYOUT ===== */
     .team-grid {
         display: grid;
         grid-template-columns: repeat(1, 1fr); 
@@ -43,39 +42,43 @@
         box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
-    /* === TOP SECTION (image + prénom nom) === */
+    /* === TOP SECTION (image + prénom nom sur la même ligne) === */
     .team-grid .team-card .top-section {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        gap: 1rem; /* espace fixe entre image et nom */
+        justify-content: space-between;
+        gap: 1rem;
         width: 100%;
         margin-bottom: 1rem;
     }
 
     .team-grid .team-card .person {
-        width: 100px;
-        height: 100px;
+        width: 60px; /* taille réduite */
+        height: 60px;
         border-radius: 8px;
         object-fit: cover;
         box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        flex-shrink: 0; /* empêche l’image de rétrécir */
+        flex-shrink: 0;
     }
 
     .team-grid .team-card .text-content {
-        flex: 1; /* prend tout l’espace dispo à droite */
-        min-width: 0; /* permet au texte long de se couper */
-        text-align: left; 
+        flex: 1;
+        min-width: 0;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        height: 60px;
     }
 
     .team-grid .team-card h4 {
-        margin: 0;
+        margin: 0 0 0 auto;
         font-size: 1.1rem;
         font-weight: 600;
         color: #212529;
         line-height: 1.3;
-        word-wrap: break-word; /* casse les longs mots si besoin */
-        white-space: normal;   /* permet retour à la ligne */
+        word-wrap: break-word;
+        white-space: normal;
+        text-align: left;
     }
 
     .team-grid .team-card .poste-centre {
@@ -116,10 +119,11 @@
         padding: 0;
         margin: 0;
         list-style: none;
+        margin-left: auto; /* pousse les icônes complètement à droite */
     }
 
     .team-grid .team-card .bottom-section .social.share-list .nav-item {
-        margin-left: 1rem;
+        margin-left: 1.5rem; /* espace augmenté */
     }
 
     .team-grid .team-card .bottom-section .social.share-list .nav-item:first-child {
