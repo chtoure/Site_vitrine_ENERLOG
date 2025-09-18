@@ -222,46 +222,48 @@
         </div>
     </section>
 
-    <section id="testimonials" class="section-5 carousel testimonials">
-        <div class="overflow-holder">
-            <div class="container">
-                <div class="row text-center intro">
-                    <div class="col-12">
-                        <span class="pre-title">Témoignages Clients</span>
-                        <h2>Avis <span class="featured"><span>de Confiance</span></span></h2>
-                        <p class="text-max-800">
-                            Nous travaillons avec passion pour offrir des solutions qui ont un impact réel sur la vie de nos clients. 
-                            Ces témoignages reflètent la confiance et la satisfaction de ceux qui collaborent avec nous.
-                        </p>
-                    </div>
-                </div>
-                <div class="swiper-container mid-slider items" data-perview="3"> 
-                    <div class="swiper-wrapper">
 
-                        @foreach (array_slice($temoignages, 0, 3) as $temoignage)
-                            <div class="swiper-slide slide-center item">
-                                <div class="row card">
-                                    <div class="col-12">
-                                        <img src="{{asset($temoignage['image'])}}" alt="Logo" class="logo">
-                                        <p>{{$temoignage['content']}}</p>
-                                        <i class="quote-right fas fa-quote-right"></i>
-                                    </div>
+
+
+
+    <section id="testimonials" class="section-1 offers featured">
+        <div class="container">
+            <div class="row items">
+                <div class="col-12 col-md-4 pr-md-5 text">
+                    <div data-aos="fade-up"  class="row intro">
+                        <div class="col-12 p-0">
+                            <span class="pre-title m-0">Témoignages Clients</span>
+                            <h2>Avis <span class="featured"><span>de Confiance</span></span></h2>
+                            <p>Nous travaillons avec passion pour offrir des solutions qui ont un impact réel sur la vie de nos clients. 
+                            Ces témoignages reflètent la confiance et la satisfaction de ceux qui collaborent avec nous.</p>
+                            <div class="row">
+                                <div class="col-12 p-0 input-group align-self-center">
+                                    <a href="{{ route('public.temoignages.index')}}" class="btn primary-button">VOIR PLUS</a>
                                 </div>
                             </div>
-                            
-                        @endforeach
-                    </div>
-                    <div data-aos="fade-up" class="buttons">
-                        <div class="d-sm-inline-flex mb-5 mb-md-0">
-                            <a href="{{ route('public.temoignages.index')}}" class="mt-2 btn outline-button">VOIR PLUS</a>
                         </div>
                     </div>
                 </div>
+
+                @foreach (array_slice($temoignages, 0, 2) as $temoignage)
+                    <div data-aos="fade-up" class="col-12 col-md-4 item">
+                        <div class="card">
+                            <div class="col-12">
+                                <img src="{{asset($temoignage['image'])}}" alt="Logo" class="logo" style="width: 100%; height: 150px;">
+                                <h4>{{$temoignage['name']}}</h4>
+                                <p>{{ Str::limit($temoignage['content'], 50, '...') }}</</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+
+                
+
+
             </div>
         </div>
     </section>
-
-
 
     <section id="contact" class="section-6 odd form contact">
         <div class="container">

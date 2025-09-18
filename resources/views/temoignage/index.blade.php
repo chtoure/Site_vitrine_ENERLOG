@@ -7,14 +7,63 @@
         --hero-bg-color: #080d10;
         --section-1-bg-color: #eef4ed;
     }
+
+    /* Images carrées et uniformes */
+    .temoignage-card-img {
+        display: block;
+        margin: 24px auto 18px auto;
+        width: 120px;      /* Taille réduite */
+        height: 95px;      /* Hauteur réduite */
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        background: #fff;
+    }
+
+    /* Cartes de même hauteur mais plus basses */
+    .temoignage-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        padding: 1.2rem;
+        margin-bottom: 1.2rem;
+        text-align: center;
+        min-height: 270px; /* Hauteur réduite */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Icône de citation alignée à droite */
+    .quote-icon-right {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: auto;
+    }
+    .quote-icon-right i {
+        font-size: 1.5rem;
+        color: #b6b6b6;
+    }
 </style>
 
 <!-- Hero -->
-<section id="slider" class="hero p-0 odd featured">
-    <div class="swiper-container no-slider animation slider-h-50 slider-h-auto">
+<section id="slider" class="hero p-0 odd featured" style="position: relative; overflow: hidden;">
+    <div class="background-blur" 
+        style="
+            background: url('{{ asset('/images/temoignages/te.jpg') }}') center center / cover no-repeat;
+            position: absolute;
+            inset: 0;
+            filter: blur(6px);
+            transform: scale(1.1);
+        ">
+    </div>
+    <div class="overlay" 
+        style="background: rgba(0,0,0,0.4); position: absolute; inset: 0;">
+    </div>
+    <div class="swiper-container no-slider animation slider-h-50 slider-h-auto" style="position: relative; z-index: 2;">
         <div class="swiper-wrapper">
             <div class="swiper-slide slide-center">
-                <img src="assets/images/bg-wide.jpg" alt="Full Image" class="full-image" data-mask="80">
                 <div class="slide-content row text-center">
                     <div class="col-12 mx-auto inner">
                         <nav data-aos="zoom-out-up" data-aos-delay="800" aria-label="breadcrumb">
@@ -54,21 +103,20 @@
             <div class="row justify-content-center items">
                 @foreach($temoignages as $temoignage)
                     <div data-aos="fade-up" class="col-12 col-md-6 item">
-                        <div class="card">
-                            <div class="col-12">
-                                <!-- Logo ou image du client -->
-                                <img src="{{ asset(ltrim($temoignage['image'] ?? 'assets/images/logo-1.png', '/')) }}"
-                                     alt="{{ $temoignage['name'] ?? 'Client' }}"
-                                     class="logo"
-                                     style="max-height: 60px; width: auto; object-fit: contain;">
+                        <div class="temoignage-card">
+                            <!-- Image agrandie et uniforme du témoin -->
+                            <img src="{{ asset(ltrim($temoignage['image'] ?? 'assets/images/logo-1.png', '/')) }}"
+                                 alt="{{ $temoignage['name'] ?? 'Client' }}"
+                                 class="temoignage-card-img">
 
-                                <!-- Témoignage -->
-                                <p>{{ $temoignage['content'] ?? 'Témoignage non disponible.' }}</p>
+                            <!-- Témoignage -->
+                            <p style="margin-bottom: 1rem;">{{ $temoignage['content'] ?? 'Témoignage non disponible.' }}</p>
 
-                                <!-- Nom du client -->
-                                <p><strong>{{ $temoignage['name'] ?? 'Anonyme' }}</strong></p>
+                            <!-- Nom du client -->
+                            <p><strong>{{ $temoignage['name'] ?? 'Anonyme' }}</strong></p>
 
-                                <!-- Icône de citation (comme dans NEXGEN) -->
+                            <!-- Icône de citation alignée à droite -->
+                            <div class="quote-icon-right">
                                 <i class="quote-right fas fa-quote-right"></i>
                             </div>
                         </div>
