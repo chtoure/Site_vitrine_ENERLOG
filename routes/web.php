@@ -23,8 +23,8 @@ Route::name('public.')->prefix('/')->group(function () {
     });
 
     Route::group([
-        'prefix' => 'apropos',
-        'as' => 'apropos.'
+        'prefix' => 'about',
+        'as' => 'about.'
     ], function () {
         Route::get('', [AproposController::class, 'index'])->name('index');
     });
