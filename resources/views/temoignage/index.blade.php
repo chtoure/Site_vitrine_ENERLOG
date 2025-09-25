@@ -10,31 +10,65 @@
 
     /* Images carrées et uniformes */
     .temoignage-card-img {
-        display: block;
-        margin: 24px auto 18px auto;
-        width: 120px;      /* Taille réduite */
-        height: 95px;      /* Hauteur réduite */
+        width: 90px;
+        height: 90px;
         object-fit: cover;
-        border-radius: 10px;
+        border-radius: 12px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.07);
         background: #fff;
+        margin: 0;
+        flex-shrink: 0;
     }
 
-    /* Cartes de même hauteur mais plus basses */
+    /* Grille responsive personnalisée */
+    .temoignage-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1.2rem 1rem; 
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    @media (min-width: 900px) {
+        .temoignage-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
     .temoignage-card {
         background: #fff;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        padding: 1.2rem;
-        margin-bottom: 1.2rem;
+        padding: 1rem;
         text-align: center;
-        min-height: 270px; /* Hauteur réduite */
+        min-height: 270px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* Icône de citation alignée à droite */
+    /* Ligne logo + nom */
+    .temoignage-header-row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; 
+        gap: 1rem;
+        margin-bottom: 3px;
+        width: 100%;
+        padding-left: 1.2rem;
+    }
+    .temoignage-header-row .temoignage-nom {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #212529;
+        margin: 0;
+        text-align: center; 
+        flex: 0.5;            
+        word-break: break-word;
+    }
+
     .quote-icon-right {
         display: flex;
         justify-content: flex-end;
@@ -100,25 +134,23 @@
                 </div>
             </div>
         @else
-            <div class="row justify-content-center items">
+            <div class="temoignage-grid">
                 @foreach($temoignages as $temoignage)
-                    <div data-aos="fade-up" class="col-12 col-md-6 item">
-                        <div class="temoignage-card">
-                            <!-- Image agrandie et uniforme du témoin -->
+                    <div class="temoignage-card" data-aos="fade-up">
+                        <!-- Ligne logo + nom -->
+                        <div class="temoignage-header-row">
                             <img src="{{ asset(ltrim($temoignage['image'] ?? 'assets/images/logo-1.png', '/')) }}"
                                  alt="{{ $temoignage['name'] ?? 'Client' }}"
                                  class="temoignage-card-img">
+                            <span class="temoignage-nom">{{ $temoignage['name'] ?? 'Anonyme' }}</span>
+                        </div>
 
-                            <!-- Témoignage -->
-                            <p style="margin-bottom: 1rem;">{{ $temoignage['content'] ?? 'Témoignage non disponible.' }}</p>
+                        <!-- Témoignage -->
+                        <p style="margin-bottom: 1rem;">{{ $temoignage['content'] ?? 'Témoignage non disponible.' }}</p>
 
-                            <!-- Nom du client -->
-                            <p><strong>{{ $temoignage['name'] ?? 'Anonyme' }}</strong></p>
-
-                            <!-- Icône de citation alignée à droite -->
-                            <div class="quote-icon-right">
-                                <i class="quote-right fas fa-quote-right"></i>
-                            </div>
+                        <!-- Icône de citation alignée à droite -->
+                        <div class="quote-icon-right">
+                            <i class="quote-right fas fa-quote-right"></i>
                         </div>
                     </div>
                 @endforeach
