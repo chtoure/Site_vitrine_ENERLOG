@@ -1,12 +1,10 @@
 <nav class=" backdrop-blur-sm sticky top-0 z-50 w-full border-b border-[#F29100]/30 shadow-lg" x-data="{ isOpen: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-            <!-- Logo -->
             <div class="flex items-center">
                 <a href="{{ url('/') }}" class="flex items-center space-x-2">
                     <div class="text-2xl font-bold">
-                        <span class="text-[#F29100]">ENER</span>
-                        <span class="">LOG</span>
+                        <img src="{{asset($parameter['logo'])}}" alt="logo" class="h-10 w-auto">
                     </div>
                 </a>
             </div>
@@ -18,7 +16,7 @@
                         ['name' => 'Accueil', 'href' => route('public.index')],
                         ['name' => 'À propos', 'href' => url('/about')],
                         ['name' => 'Services', 'href' => route('public.services.index')],
-                        ['name' => 'Partenaire', 'href' => route('public.partners.index')],
+                        ['name' => 'News', 'href' => route('public.news.index')],
                         ['name' => 'Contact', 'href' => url('/contact')],
                     ];
                 @endphp
@@ -30,15 +28,16 @@
                 @endforeach
             </div>
 
-            <!-- Right side contact info -->
             <div class="hidden md:flex items-center space-x-4">
 
                 <button class="bg-[#F29100] hover:bg-[#F29100]/90 text-white shadow-md border-0 px-4 py-2 rounded-md text-sm">
-                    Cree Compte
+                    <a href="{{$parameter['login_url']}}" class="w-full h-full">Cree Compte</a>
+                    
                 </button>
             </div>
 
-            <!-- Mobile menu button -->
+
+            
             <div class="md:hidden">
                 <button @click="isOpen = !isOpen" class="hover:bg-white/10 text-primary p-2 rounded-md">
                     <template x-if="!isOpen">
@@ -66,7 +65,7 @@
             @endforeach
             <div class="px-3 py-2">
                 <button class="w-full bg-[#F29100] hover:bg-[#F29100]/90 text-white px-4 py-2 rounded-md text-sm">
-                    Cree un Compte
+                    <a href="{{$parameter['login_url']}}" class="w-full h-full">Cree Compte</a>
                 </button>
             </div>
         </div>

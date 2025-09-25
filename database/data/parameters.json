@@ -7,6 +7,7 @@
     "description": "ENERLOG TECHNOLOGY & DIGITAL SAS est une société par actions simplifiée dotée d’un conseil d’administration, spécialisée dans la création de solutions numériques innovantes. Elle accompagne ses partenaires en leur proposant des technologies stratégiques et performantes, conçues pour répondre aux besoins spécifiques de leur secteur et les aider à se développer. Dans cette logique, la société a développé Cpay, une application destinée à la gestion de la billetterie, à la gestion des cartes pétrolières et aux programmes de fidélité pour le bénéfice des consommateurs et des entreprises togolaises. Cette plateforme offre aux utilisateurs une expérience simple et unique et permet aux organisateurs d’événements ainsi qu’aux commerciaux de proposer un accès facile, rapide et sécurisé aux billets et à des programmes de fidélisation personnalisés, tout en intégrant la gestion des cartes pétrolières",
     "logo":"images/parameters/logo.png",
     "hourly": "Mon - Sat - 9:00 - 18:00",
+    "login_url": "https://cpay.enerlog.net/corpus/accueil/connexion",
     "map_url": "https://maps.app.goo.gl/sVDq44NHMAd4p1WR9",
     "images": [
         "/images/parameters/DSC_7034.JPG",
