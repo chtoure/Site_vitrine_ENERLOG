@@ -6,77 +6,49 @@ use App\services\NewsServices;
 use App\Services\ParameterService;
 use App\Services\SeoService;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Collection;
-
 
 class NewsController extends Controller
 {
-    
-    //  public function getAllNews() {
-    //     $dataNews = NewsServices::getAll() ;
-    //     $parameter= ParameterService::get();
-
-
-    //     return view(
-    //         'news.listes',
-    //         ['dataNews' => $dataNews,'parameter' => $parameter]
-    //     ) ;
-    // }
-
-
-    public function getAllNews() {
-        $allNews = NewsServices::getAll(); // ça retourne un array
+    public function getAllNews()
+    {
+        // Récupère toutes les news (array)
+        $allNews = NewsServices::getAll();
         $parameter = ParameterService::get();
 
-        // Convertir array → Collection
-        $collection = collect($allNews);
-
-        // Pagination manuelle
-        $perPage = 3; // 9 news par page (3 lignes × 3 cards)
-        $currentPage = request()->get('page', 1);
-        $pagedData = $collection->slice(($currentPage - 1) * $perPage, $perPage)->values();
-
-        $dataNews = new LengthAwarePaginator(
-            $pagedData,
-            $collection->count(),
-            $perPage,
-            $currentPage,
-            ['path' => request()->url(), 'query' => request()->query()]
-        );
-
+        // Metas SEO
         SeoService::setMeta(
             $parameter['name'] ?? 'ENERLOG',
             "ENERLOG - La liste des actualités de l'entreprise.",
             route('public.news.index'),
-            asset($parameter['logo']) 
+            asset($parameter['logo'] ?? '')
         );
 
+        // On envoie TOUTES les actualités à la vue (plus de pagination)
         return view('news.listes', [
-            'dataNews' => $dataNews,
+            'dataNews'  => $allNews,
             'parameter' => $parameter
         ]);
     }
+public function getByIdNews(int $idNew)
+{
+    $news = NewsServices::getById($idNew);
+    $parameter = ParameterService::get();
 
-    public function getByIdNews(int $idNew) {
-        $news = NewsServices::getById($idNew);
-        $parameter= ParameterService::get();
-
-        if (!$news) {
-            return redirect()->route('public.404');
-        }
-
-        SeoService::setMeta(
-            $parameter['name'] ?? 'ENERLOG',
-            "ENERLOG - La Page de details de l'actualité ".$news['name'],
-            route('public.news.detail', $news['id']),
-            asset($parameter['logo']) 
-        );
-
-        return view(
-            'news.details',
-            ['news' => $news,'parameter' => $parameter ]
-        );
+    if (!$news) {
+        return redirect()->route('public.404');
     }
+
+    SeoService::setMeta(
+        $parameter['name'] ?? 'ENERLOG',
+        "ENERLOG - La Page de details de l'actualité ".$news['name'],
+        route('public.news.detail', $news['id']), 
+        asset($parameter['logo'])
+    );
+
+    return view(
+        'news.details',
+        ['news' => $news, 'parameter' => $parameter]
+    );
+}
 
 }
