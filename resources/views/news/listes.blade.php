@@ -5,19 +5,20 @@
 
     {{-- HERO --}}
     <section class="bg-white py-16">
-        <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl">
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    Découvrez l’actualité et les innovations d’Enerlog
+                    Actualités & tendances Enerlog
                 </h1>
                 <p class="text-lg text-gray-600 mb-8">
                     Restez connecté aux dernières nouvelles d’Enerlog : projets phares, avancées technologiques et initiatives qui 
                     façonnent l’avenir du numérique. Chaque article reflète notre vision, notre expertise et notre engagement à accompagner 
                     nos partenaires vers des solutions toujours plus performantes et durables.
                 </p>
-                <a href="{{ url('/register') }}" class="inline-block px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
-                    Créer un compte
-                </a>
+               <button onclick="window.open('{{$parameter['login_url']}}', '_blank')" 
+                    class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg">
+                    Créer un Compte
+                </button>
             </div>
         </div>
     </section>
@@ -30,7 +31,7 @@
         @endphp
 
         <section class="py-16 {{ $loop->even ? 'bg-white' : '' }}">
-            <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     {{-- Texte --}}

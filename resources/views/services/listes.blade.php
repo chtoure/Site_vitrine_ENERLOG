@@ -14,7 +14,11 @@
                     et un service d’excellence au Togo.Notre équipe expérimentée accompagne vos projets de la conception à la mise en œuvre, 
                     en mettant notamment à disposition la plateforme CPay et des solutions numériques sur mesure.
                 </p>
-                <button href="https://cpay.enerlog.net/corpus/accueil/connexion" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg">Creer un Compte</button>
+                <button onclick="window.open('{{$parameter['login_url']}}', '_blank')" 
+                    class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg">
+                    Créer un Compte
+                </button>
+
             </div>
         </div>
     </section>
