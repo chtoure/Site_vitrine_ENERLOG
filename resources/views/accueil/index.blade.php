@@ -9,7 +9,7 @@
 
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
-            <img src="{{ asset('/modern-digital-dashboard-interface.jpg') }}" 
+            <img src="{{ asset('/images/templates/equipe_1.JPG') }}" 
                 alt="Interface moderne de gestion digitale ENERLOG" 
                 class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-br from-[#222222]/95 via-[#222222]/90 to-[#312782]/80"></div>
@@ -46,20 +46,16 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
-                    <a href="#devis" class="inline-flex items-center justify-center px-12 py-6 text-xl font-semibold text-white border-2 border-white/20 rounded-2xl backdrop-blur-md hover:bg-white/10 hover:border-white/30 transition-all duration-300">
-                        Cree un compte
-                    </a>
+                    <button
+                        onclick="window.open('{{$parameter['login_url']}}', '_blank')"
+                        class="inline-flex items-center justify-center px-12 py-6 text-xl font-semibold text-white border-2 border-white/20 rounded-2xl backdrop-blur-md hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+                    >
+                        Créer un compte
+                    </button>
                 </div>
 
             </div>
 
-            <div class="absolute top-20 right-20 w-20 h-20 bg-[#F29100]/10 rounded-3xl backdrop-blur-sm border border-[#F29100]/20 flex items-center justify-center animate-float">
-                <div class="w-3 h-3 bg-[#F29100] rounded-full"></div>
-            </div>
-
-            <div class="absolute bottom-32 left-20 w-16 h-16 bg-[#312782]/15 rounded-2xl backdrop-blur-sm border border-[#312782]/30 flex items-center justify-center animate-pulse">
-                <div class="w-2 h-2 bg-[#312782] rounded-full"></div>
-            </div>
 
         </div>
 
@@ -108,8 +104,8 @@
                                     <div class="flex items-center justify-between">
                                         <h3 class="text-xl font-semibold text-[#222222]">{{ $service['name'] }}</h3>
                                         <div class="flex items-center space-x-2">
-                                            <span class="text-2xl font-bold text-[#F29100]">9.99</span>
-                                            <span class="text-sm text-gray-500">/month</span>
+                                            <span class="text-xl font-bold text-[#F29100]">{{ $service['price'] }}fcfa</span>
+                                            <span class="text-sm text-gray-500">/mois</span>
                                         </div>
                                     </div>
                                     <p class="text-gray-600 leading-relaxed">{{ Str::limit($service['description'], 150, '...') }}</p>
@@ -143,7 +139,7 @@
                                         class="inline-flex items-center justify-center bg-[#F29100] hover:bg-[#F29100]/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-3 rounded-lg text-sm font-semibold backdrop-blur-sm"
                                         title="Voir détails"
                                     >
-                                        <a href="{{route('public.services.index')}}" class="inline-flex items-center justify-center h-full w-full">
+                                        <a href="{{route('public.services.index')}}#{{$service['id']}}" class="inline-flex items-center justify-center h-full w-full">
                                             Détails
                                             <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
@@ -152,11 +148,11 @@
                                         
                                     </button>
                                     <button
-                                        @click="window.open('{{$parameter['login_url']}}', '_blank')"
+                                        onclick="window.open('{{$parameter['login_url']}}', '_blank')"
                                         class="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[#312782] transition-all duration-300 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg text-sm font-semibold"
                                         title="En savoir plus"
                                     >
-                                        Cree Compte
+                                        Créer un compte
                                     </button>
                                 </div>
                             @endforeach
@@ -168,7 +164,7 @@
                                     x-show="activeTab === {{ $index }}"
                                     class="bg-[#312782] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
                                 >
-                                    À partir de $9.99/mois
+                                    À partir de {{ $tab['price'] }}FCFA/mois
                                 </div>
                             @endforeach
                         </div>
@@ -197,11 +193,14 @@
                         class="group border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
                     >
                         <div class="relative overflow-hidden">
-                            <img
-                                src="{{ $new['images'][0] }}"
-                                alt="{{ $new['name'] }}"
-                                class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
-                            />
+                            <div class="w-full h-56 object-cover">
+                                <img
+                                    src="{{ $new['images'][0] }}"
+                                    alt="{{ $new['name'] }}"
+                                    class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-700"
+                                />
+                            </div>
+                            
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                             <div class="absolute top-4 right-4">
                                 <span class="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
@@ -220,8 +219,7 @@
                             
                             <div class="flex flex-col gap-3">
                                 <a 
-                                    href="{{ $new['link'][0] }}" 
-                                    target="_blank"
+                                    href="{{ route('public.news.detail',  $new['id']) }}" 
                                     class="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg transition"
                                 >
                                     Lire l'article
@@ -232,7 +230,7 @@
                                 
                                 @if(count($new['link']) > 1)
                                     <a 
-                                        href="{{ $new['link'][1] }}" 
+                                        href="{{ $new['link'][0] }}" 
                                         target="_blank"
                                         class="w-full inline-flex items-center justify-center gap-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground px-4 py-2 rounded-lg transition"
                                     >
@@ -243,6 +241,12 @@
                         </div>
                     </article>
                 @endforeach
+            </div>
+            <div class="mt-6">
+                <a href="{{route('public.news.index')}}" 
+                    class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg">
+                    Voir plus
+                </a>
             </div>
         </div>
     </section>
@@ -449,44 +453,17 @@
         }
     </script>
 
-    <section class="py-20">
-        <div class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-2">
-            <div class=col-4 "text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">Frequently Asked Questions</h2>
+    <section id="faqs" class="py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">Questions Fréquemment Posées</h2>
                 <p class="text-xl text-muted-foreground max-w-2xl mx-auto italic">
-                    Find answers to common questions about ScrewFast tools and services.
+                    Trouvez des réponses aux questions courantes sur les outils et services ScrewFast.
                 </p>
             </div>
 
+
             <div class=" max-w-3xl mx-auto space-y-4" x-data="{ openIndex: 0 }">
-                @php
-                    $faqs = [
-                        [
-                            'question' => 'What types of projects are ScrewFast tools suitable for?',
-                            'answer' => 'ScrewFast tools are designed for a wide range of construction and hardware projects, from residential renovations to large-scale commercial builds. Our tools are engineered to meet professional standards and handle demanding applications.',
-                        ],
-                        [
-                            'question' => 'How do I know which ScrewFast product is right for my needs?',
-                            'answer' => 'Our expert team provides personalized consultations to help you select the perfect tools for your specific project requirements. Contact our sales team for detailed product recommendations based on your needs.',
-                        ],
-                        [
-                            'question' => 'What kind of warranty and support do you offer?',
-                            'answer' => 'All ScrewFast tools come with comprehensive warranties and our dedicated support team provides 24/7 assistance. We also offer extensive documentation and training resources to ensure you get the most out of your tools.',
-                        ],
-                        [
-                            'question' => 'Can I integrate ScrewFast tools with my existing workflow?',
-                            'answer' => 'ScrewFast tools are designed for seamless integration with existing construction workflows. Our team can help you implement our solutions with minimal disruption to your current processes.',
-                        ],
-                        [
-                            'question' => 'Do you offer training for new users?',
-                            'answer' => 'Yes, we provide comprehensive training programs for all our tools and services. This includes on-site training, online resources, and ongoing support to ensure your team can effectively use our products.',
-                        ],
-                        [
-                            'question' => 'What makes ScrewFast different from other tool providers?',
-                            'answer' => 'ScrewFast combines cutting-edge technology with proven reliability. Our tools are built to professional standards, backed by exceptional customer service, and supported by comprehensive documentation and training resources.',
-                        ],
-                    ];
-                @endphp
 
                 @foreach($faqs as $index => $faq)
                     <div class="bg-white rounded-2xl shadow overflow-hidden">
@@ -505,18 +482,12 @@
                             </span>
                         </button>
                         <div x-show="openIndex === {{ $index }}" x-transition class="px-6 pb-6">
-                            <p class="text-muted-foreground leading-relaxed italic">{{ $faq['answer'] }}</p>
+                            <p class="text-muted-foreground leading-relaxed italic">{{ $faq['reponse'] }}</p>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
     </section>
-
-
-
-
-
-
 
 @endsection

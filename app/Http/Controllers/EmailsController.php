@@ -19,7 +19,7 @@ class EmailsController extends Controller
 
         try {
             $parameter = ParameterService::get();
-            $contactEmail = $parameter['contact']['email'] ?? 'takpaagilbert@gmail.com';
+            $contactEmail = $parameter['contact']['email'] ?? 'tourenaruto447@gmail.com';
 
             // $contactEmail =$validated['email'];
 

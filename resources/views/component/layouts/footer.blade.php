@@ -12,66 +12,50 @@
                     technologique de confiance.
                 </p>
 
-                {{-- Contact Info --}}
-                <div class="space-y-3 text-sm">
-                    <div class="flex items-center space-x-3 text-white/70 hover:text-[#F29100] transition-colors">
-                        <div class="w-8 h-8 bg-[#F29100]/20 rounded-lg flex items-center justify-center border border-[#F29100]/30">
-                            {{-- Mail Icon --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#F29100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l-4 4m4-4l4-4"/>
-                            </svg>
-                        </div>
-                        <span>contact@enerlog.fr</span>
-                    </div>
-                    <div class="flex items-center space-x-3 text-white/70 hover:text-[#F29100] transition-colors">
-                        <div class="w-8 h-8 bg-[#F29100]/20 rounded-lg flex items-center justify-center border border-[#F29100]/30">
-                            {{-- Phone Icon --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#F29100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l3 7-2 2 3 7H3l1-2-1-2 1-2-1-2z"/>
-                            </svg>
-                        </div>
-                        <span>+33 1 23 45 67 89</span>
-                    </div>
-                    <div class="flex items-center space-x-3 text-white/70 hover:text-[#F29100] transition-colors">
-                        <div class="w-8 h-8 bg-[#F29100]/20 rounded-lg flex items-center justify-center border border-[#F29100]/30">
-                            {{-- MapPin Icon --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#F29100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.656 0 3-1.344 3-3S13.656 5 12 5 9 6.344 9 8s1.344 3 3 3z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21s9-5.333 9-11c0-4.418-3.582-8-8-8s-8 3.582-8 8c0 5.667 9 11 9 11z"/>
-                            </svg>
-                        </div>
-                        <span>Paris, France</span>
-                    </div>
-                </div>
+                
             </div>
 
             @php
                 $footerLinks = [
-                    'services' => [
-                        ['name' => 'Tickets Événements', 'href' => url('/tickets')],
-                        ['name' => 'Livraison Colis', 'href' => url('/livraison')],
-                        ['name' => 'Cartes Pétrolières', 'href' => url('/cartes')],
-                        ['name' => 'Tracking GPS', 'href' => url('/tracking')],
-                    ],
                     'company' => [
-                        ['name' => 'À propos', 'href' => url('/about')],
-                        ['name' => 'Références', 'href' => url('/references')],
-                        ['name' => 'Carrières', 'href' => url('/careers')],
-                        ['name' => 'Contact', 'href' => url('/contact')],
+                        ['name' => 'À propos', 'href' => route('public.about.index')],
+                        ['name' => 'News', 'href' => route('public.news.index')],
+                        ['name' => 'Services', 'href' => route('public.services.index')],
                     ],
                 ];
             @endphp
 
             <div>
-                <h3 class="font-semibold text-[#F29100] mb-4 text-lg">Services</h3>
+                <h3 class="font-semibold text-[#F29100] mb-4 text-lg">Contacts</h3>
                 <ul class="space-y-3">
-                    @foreach($footerLinks['services'] as $link)
-                        <li>
-                            <a href="{{ $link['href'] }}" class="text-white/70 hover:text-[#F29100] transition-colors text-sm hover:translate-x-1 transform duration-200 block">
-                                {{ $link['name'] }}
-                            </a>
-                        </li>
-                    @endforeach
+                    
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-3 text-white/70 hover:text-[#F29100] transition-colors">
+                            <div class="w-8 h-8 bg-[#F29100]/20 rounded-lg flex items-center justify-center border border-[#F29100]/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#F29100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l-4 4m4-4l4-4"/>
+                                </svg>
+                            </div>
+                            <span>{{$parameter['contact']['email']}}</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-white/70 hover:text-[#F29100] transition-colors">
+                            <div class="w-8 h-8 bg-[#F29100]/20 rounded-lg flex items-center justify-center border border-[#F29100]/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#F29100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l3 7-2 2 3 7H3l1-2-1-2 1-2-1-2z"/>
+                                </svg>
+                            </div>
+                            <span>{{$parameter['contact']['phone']}}</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-white/70 hover:text-[#F29100] transition-colors">
+                            <div class="w-8 h-8 bg-[#F29100]/20 rounded-lg flex items-center justify-center border border-[#F29100]/30">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#F29100]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.656 0 3-1.344 3-3S13.656 5 12 5 9 6.344 9 8s1.344 3 3 3z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21s9-5.333 9-11c0-4.418-3.582-8-8-8s-8 3.582-8 8c0 5.667 9 11 9 11z"/>
+                                </svg>
+                            </div>
+                            <span>{{$parameter['contact']['adress']}}</span>
+                        </div>
+                    </div>
                 </ul>
             </div>
 
@@ -94,17 +78,9 @@
         <div class="border-t border-[#F29100]/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div class="text-sm text-white/60 mb-4 md:mb-0">© 2025 ENERLOG. Tous droits réservés.</div>
 
-            @php
-                $socialLinks = [
-                    ['name' => 'Facebook', 'href' => '#', 'icon' => 'facebook'],
-                    ['name' => 'Twitter', 'href' => '#', 'icon' => 'twitter'],
-                    ['name' => 'LinkedIn', 'href' => '#', 'icon' => 'linkedin'],
-                    ['name' => 'Instagram', 'href' => '#', 'icon' => 'instagram'],
-                ];
-            @endphp
             <div class="flex space-x-3">
-                @foreach($socialLinks as $social)
-                    <a href="{{ $social['href'] }}" class="w-10 h-10 bg-[#F29100]/20 hover:bg-[#F29100]/30 rounded-lg flex items-center justify-center text-[#F29100] hover:text-white transition-all duration-200 hover:scale-110 border border-[#F29100]/30" aria-label="{{ $social['name'] }}">
+                @foreach($parameter['comptes'] as $social)
+                    <button onclick="window.open('{{ $social['link'] }}', '_blank')" class="w-10 h-10 bg-[#F29100]/20 hover:bg-[#F29100]/30 rounded-lg flex items-center justify-center text-[#F29100] hover:text-white transition-all duration-200 hover:scale-110 border border-[#F29100]/30" aria-label="{{ $social['name'] }}">
                         @if($social['icon'] === 'facebook')
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5 3.657 9.128 8.438 9.879v-6.987H7.898v-2.892h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.462h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.892h-2.33v6.987C18.343 21.128 22 17 22 12z"/></svg>
                         @elseif($social['icon'] === 'twitter')
@@ -114,7 +90,7 @@
                         @elseif($social['icon'] === 'instagram')
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.34 3.608 1.315.975.976 1.253 2.243 1.315 3.608.058 1.266.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.34 2.633-1.315 3.608-.976.975-2.243 1.253-3.608 1.315-1.266.058-1.645.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.34-3.608-1.315-.975-.976-1.253-2.243-1.315-3.608-.058-1.266-.069-1.645-.069-4.85s.012-3.584.07-4.85c.062-1.366.34-2.633 1.315-3.608.976-.975 2.243-1.253 3.608-1.315 1.266-.058 1.645-.069 4.85-.069zm0-2.163C8.741 0 8.332.012 7.052.07 5.775.127 4.648.443 3.678 1.413 2.708 2.383 2.392 3.51 2.335 4.787 2.277 6.067 2.265 6.476 2.265 12s.012 5.933.07 7.213c.057 1.277.373 2.404 1.343 3.374.97.97 2.097 1.286 3.374 1.343C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.277-.057 2.404-.373 3.374-1.343.97-.97 1.286-2.097 1.343-3.374.058-1.28.07-1.689.07-7.213s-.012-5.933-.07-7.213c-.057-1.277-.373-2.404-1.343-3.374C19.352.443 18.225.127 16.948.07 15.668.012 15.259 0 12 0z"/><path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 1-2.881 0 1.44 1.44 0 0 1 2.881 0z"/></svg>
                         @endif
-                    </a>
+                    </button>
                 @endforeach
             </div>
         </div>

@@ -24,7 +24,7 @@
     ],
     "contact": {
         "adress": "Immeuble Style Tahiti en face de lycée le Jourdain",
-        "email": "takpaagilbert@gmail.com",
+        "email": "tourenaruto447@gmail.com",
         "phone": "+22893533043"
     },
     "comptes": [
@@ -32,7 +32,7 @@
             "logo": "/images/comptes/facebook.webp",
             "name": "Facebook",
             "link": "https://facebook.com",
-            "icon": "facebook-f"
+            "icon": "facebook"
         },
         {
             "logo": "/images/comptes/youtube.png",
@@ -50,7 +50,7 @@
             "logo": "/images/comptes/linkedin.webp",
             "name": "LinkedIn",
             "link": "https://linkedin.com",
-            "icon": "linkedin-in"
+            "icon": "linkedin"
         }
     ]
 
