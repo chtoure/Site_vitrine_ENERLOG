@@ -130,7 +130,7 @@
                             <div class="flex-1">
                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">FAQ</h3>
                                 <p class="text-gray-600 mb-3">Explorez nos questions et reponses.</p>
-                                <a href="{{route('public.accueil')}}#faqs" class="flex items-center gap-2 text-gray-700 hover:text-gray-900">
+                                <a href="{{route('public.index')}}#faqs" class="flex items-center gap-2 text-gray-700 hover:text-gray-900">
                                     Visiter FAQ
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
