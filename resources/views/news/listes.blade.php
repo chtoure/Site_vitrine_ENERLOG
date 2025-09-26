@@ -15,7 +15,7 @@
                     façonnent l’avenir du numérique. Chaque article reflète notre vision, notre expertise et notre engagement à accompagner 
                     nos partenaires vers des solutions toujours plus performantes et durables.
                 </p>
-                <a href="{{ url('/register') }}" class="inline-block px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
+                <a href="{{ $parameter['login_url'] }}" class="inline-block px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
                     Créer un compte
                 </a>
             </div>
