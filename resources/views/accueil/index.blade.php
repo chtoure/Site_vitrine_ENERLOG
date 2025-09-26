@@ -12,7 +12,7 @@
             <img src="{{ asset('/images/templates/equipe_1.JPG') }}" 
                 alt="Interface moderne de gestion digitale ENERLOG" 
                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-br from-[#222222]/95 via-[#222222]/90 to-[#312782]/80"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
             <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.03\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"1\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
         </div>
         
@@ -23,19 +23,16 @@
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="text-center max-w-5xl mx-auto space-y-12">
-                <div class="inline-flex items-center px-8 py-4 rounded-full bg-[#222222]/60 border border-[#F29100]/20 backdrop-blur-xl">
-                    <div class="w-3 h-3 bg-[#F29100] rounded-full mr-4 animate-pulse"></div>
-                    <span class="text-white text-sm font-medium tracking-wide">Solutions Digitales Innovantes</span>
-                </div>
+
 
                 <div class="space-y-8">
-                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                         <span class="text-white italic">{{$parameter["name"]}}</span>
                         <br>
                         
                     </h1>
-                    <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light italic">
-                        {{ Str::limit($parameter['description'], 100, '...') }}
+                    <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-bold italic">
+                        {{ Str::limit($parameter['description'], 200, '...') }}
                     </p>
                 </div>
 
@@ -299,7 +296,7 @@
                                 {{ $process['name'] }} — {{ $process['description'] }}
                             </h2>
                             <div class="relative inline-block">
-                                <img src="{{ asset($process['image']) }}" alt="Processus - {{ $process['name'] }}" class="max-w-full h-auto rounded-2xl border-4 border-foreground shadow-xl">
+                                <img src="{{ asset($process['image']) }}" alt="Processus - {{ $process['name'] }}" class="max-w-full max-h-[500px] rounded-2xl border-4 border-foreground shadow-xl">
                             </div>
                         </div>
                     @endforeach
