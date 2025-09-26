@@ -10,6 +10,8 @@ use App\Services\SeoService;
 use App\services\ServicesService;
 use App\services\SolutionService;
 use App\Services\TemoignageService;
+use App\Services\FAQService;
+
 
 class ParametersController extends Controller
 {
@@ -23,6 +25,8 @@ class ParametersController extends Controller
         $partners = PartnerService::getAll();
         $temoignages = TemoignageService::getAll();
         $news = NewsServices::getAll();
+        $faqs = FAQService::getAll();
+
 
         SeoService::setMeta(
             $parameter['name'] ?? 'ENERLOG',
@@ -39,6 +43,7 @@ class ParametersController extends Controller
             'partners' => $partners,
             'temoignages' => $temoignages,
             'news' => $news,
+            'faqs' => $faqs,
         ]);
     }
 
