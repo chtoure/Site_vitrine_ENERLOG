@@ -197,11 +197,14 @@
                         class="group border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
                     >
                         <div class="relative overflow-hidden">
-                            <img
-                                src="{{ $new['images'][0] }}"
-                                alt="{{ $new['name'] }}"
-                                class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
-                            />
+                            <div class="w-full h-56 object-cover">
+                                <img
+                                    src="{{ $new['images'][0] }}"
+                                    alt="{{ $new['name'] }}"
+                                    class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-700"
+                                />
+                            </div>
+                            
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                             <div class="absolute top-4 right-4">
                                 <span class="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
@@ -450,8 +453,8 @@
     </script>
 
     <section class="py-20">
-        <div class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-2">
-            <div class=col-4 "text-center mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-2">
+            <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">Frequently Asked Questions</h2>
                 <p class="text-xl text-muted-foreground max-w-2xl mx-auto italic">
                     Find answers to common questions about ScrewFast tools and services.
@@ -512,11 +515,5 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
 
 @endsection

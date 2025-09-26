@@ -1,36 +1,69 @@
-
-
 [
     {
-        "id":1,
-        "name":"cPay",
-        "description":"cPay est une plateforme en ligne et l'application mobile permettant l'achat de billets électroniques, la gestion de cartes de fidélité, et l'accès à des services connexes ...",
-        "process":[
+        "id": 1,
+        "name": "cPay",
+        "description": "cPay est une plateforme en ligne et une application mobile permettant l'achat de billets électroniques, la gestion de cartes de fidélité et l'accès à des services connexes...",
+        "process": [
             {
                 "id": 1,
                 "name": "Web",
-                "image":"/images/solutions/process1.jpeg",
+                "image": "/images/solutions/process1.png",
                 "description": "Interface web moderne.",
                 "steps": [
-                    { "id": 1, "name": "Téléchargement", "description": "Pour telecharger la plateforme Cpay vous devez vous rendre sur play store.", "link": "https://play.google.com/store/apps/details?id=enerlog.cpay.cpay" },
-                    { "id": 2, "name": "Création d’un Compte", "description": "Apres avoir accedez a la plateforme vous devez cree un compte ou vous loger", "link": "https://cpay.enerlog.net/corpus/accueil/connexion" },
-                    { "id": 3, "name": "Gestion d’un Compte", "description": "Vous pouvez gerez votre compte sur l'application" },
-                    { "id": 4, "name": "Protection des Données", "description": "Collecte des Données, Droits des Utilisateurs et Partage des Données" }
+                    {
+                        "id": 1,
+                        "name": "Téléchargement",
+                        "description": "Pour télécharger la plateforme cPay, vous devez vous rendre sur le Play Store.",
+                        "link": "https://play.google.com/store/apps/details?id=enerlog.cpay.cpay"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Création d’un Compte",
+                        "description": "Après avoir accédé à la plateforme, vous devez créer un compte ou vous connecter.",
+                        "link": "https://cpay.enerlog.net/corpus/accueil/connexion"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Gestion d’un Compte",
+                        "description": "Vous pouvez gérer votre compte sur l'application."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Protection des Données",
+                        "description": "Collecte des données, droits des utilisateurs et partage des données."
+                    }
                 ]
             },
             {
                 "id": 2,
                 "name": "Mobile",
-                "image":"/images/solutions/process2.jpeg",
-                "description": "Interface Mobile moderne.",
+                "image": "/images/solutions/process2.png",
+                "description": "Interface mobile moderne.",
                 "steps": [
-                    { "id": 1, "name": "Accedez a la platefome", "description": "Pour commener vous devez accedr a l'interfae web de la plateforme.", "link": "https://cpay.enerlog.net/corpus/accueil/connexion" },
-                    { "id": 2, "name": "Création d’un Compte", "description": "Apres avoir accedez a la plateforme vous devez cree un compte ou vous loger", "link": "https://cpay.enerlog.net/corpus/accueil/connexion" },
-                    { "id": 3, "name": "Gestion d’un Compte", "description": "Vous pouvez gerez votre compte sur l'application" },
-                    { "id": 4, "name": "Protection des Données", "description": "Collecte des Données, Droits des Utilisateurs et Partage des Données" }
+                    {
+                        "id": 1,
+                        "name": "Accédez à la plateforme",
+                        "description": "Pour commencer, vous devez accéder à l'interface web de la plateforme.",
+                        "link": "https://cpay.enerlog.net/corpus/accueil/connexion"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Création d’un Compte",
+                        "description": "Après avoir accédé à la plateforme, vous devez créer un compte ou vous connecter.",
+                        "link": "https://cpay.enerlog.net/corpus/accueil/connexion"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Gestion d’un Compte",
+                        "description": "Vous pouvez gérer votre compte sur l'application."
+                    },
+                    {
+                        "id": 4,
+                        "name": "Protection des Données",
+                        "description": "Collecte des données, droits des utilisateurs et partage des données."
+                    }
                 ]
             }
         ]
     }
 ]
-
