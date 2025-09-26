@@ -9,15 +9,13 @@
                 </a>
             </div>
 
-            <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-8">
                 @php
                     $navigation = [
                         ['name' => 'Accueil', 'href' => route('public.index')],
-                        ['name' => 'À propos', 'href' => url('/about')],
+                        ['name' => 'À propos', 'href' => route('public.about.index')],
                         ['name' => 'Services', 'href' => route('public.services.index')],
                         ['name' => 'News', 'href' => route('public.news.index')],
-                        ['name' => 'Contact', 'href' => url('/contact')],
                     ];
                 @endphp
 
@@ -29,14 +27,10 @@
             </div>
 
             <div class="hidden md:flex items-center space-x-4">
-
                 <button class="bg-[#F29100] hover:bg-[#F29100]/90 text-white shadow-md border-0 px-4 py-2 rounded-md text-sm">
                     <a href="{{$parameter['login_url']}}" class="w-full h-full">Cree Compte</a>
-                    
                 </button>
             </div>
-
-
             
             <div class="md:hidden">
                 <button @click="isOpen = !isOpen" class="hover:bg-white/10 text-primary p-2 rounded-md">
@@ -55,7 +49,6 @@
         </div>
     </div>
 
-    <!-- Mobile menu -->
     <div x-show="isOpen" class="md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-b border-[#F29100]/30">
             @foreach($navigation as $item)

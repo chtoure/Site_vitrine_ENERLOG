@@ -9,7 +9,7 @@
             {
                 "id": 1,
                 "name": "Web",
-                "image":"/3d-rendered-construction-tool-packages-in-yellow-a.jpg",
+                "image":"/images/solutions/process1.jpeg",
                 "description": "Interface web moderne.",
                 "steps": [
                     { "id": 1, "name": "Téléchargement", "description": "Pour telecharger la plateforme Cpay vous devez vous rendre sur play store.", "link": "https://play.google.com/store/apps/details?id=enerlog.cpay.cpay" },
@@ -21,7 +21,7 @@
             {
                 "id": 2,
                 "name": "Mobile",
-                "image":"/construction-tools-equipment.png",
+                "image":"/images/solutions/process2.jpeg",
                 "description": "Interface Mobile moderne.",
                 "steps": [
                     { "id": 1, "name": "Accedez a la platefome", "description": "Pour commener vous devez accedr a l'interfae web de la plateforme.", "link": "https://cpay.enerlog.net/corpus/accueil/connexion" },

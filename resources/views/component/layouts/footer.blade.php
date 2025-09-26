@@ -1,14 +1,12 @@
-<footer class="bg-gradient-to-b from-[#222222] to-[#222222]/95 border-t border-[#F29100]/30">
+<footer class="bg-gradient-to-b from-[#222222] to-[#222222]/95 border-t border-[#F29100]/30 pt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-            {{-- Brand Section --}}
-            <div class="lg:col-span-2">
-                <div class="flex items-center space-x-2 mb-6">
-                    <div class="text-3xl font-bold">
-                        <span class="text-[#F29100]">ENER</span>
-                        <span class="text-white">LOG</span>
-                    </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
+            <div class="items-center space-x-2 mb-6">
+                <div class="text-3xl font-bold">
+                    <img src="{{asset($parameter['logo'])}}" alt="logo" class="h-24 w-auto">
                 </div>
+            </div>
+            <div>
                 <p class="text-white/80 mb-8 max-w-sm leading-relaxed">
                     Solutions digitales innovantes pour la gestion d'événements, logistique et paiements. Votre partenaire
                     technologique de confiance.
@@ -47,7 +45,6 @@
                 </div>
             </div>
 
-            {{-- Footer Links --}}
             @php
                 $footerLinks = [
                     'services' => [
@@ -61,18 +58,6 @@
                         ['name' => 'Références', 'href' => url('/references')],
                         ['name' => 'Carrières', 'href' => url('/careers')],
                         ['name' => 'Contact', 'href' => url('/contact')],
-                    ],
-                    'support' => [
-                        ['name' => 'Centre d\'aide', 'href' => url('/help')],
-                        ['name' => 'Documentation', 'href' => url('/docs')],
-                        ['name' => 'Support 24/7', 'href' => url('/support')],
-                        ['name' => 'Statut Service', 'href' => url('/status')],
-                    ],
-                    'legal' => [
-                        ['name' => 'Confidentialité', 'href' => url('/privacy')],
-                        ['name' => 'Conditions', 'href' => url('/terms')],
-                        ['name' => 'Sécurité', 'href' => url('/security')],
-                        ['name' => 'Cookies', 'href' => url('/cookies')],
                     ],
                 ];
             @endphp
@@ -102,39 +87,13 @@
                     @endforeach
                 </ul>
             </div>
-
-            <div>
-                <h3 class="font-semibold text-[#F29100] mb-4 text-lg">Support</h3>
-                <ul class="space-y-3">
-                    @foreach($footerLinks['support'] as $link)
-                        <li>
-                            <a href="{{ $link['href'] }}" class="text-white/70 hover:text-[#F29100] transition-colors text-sm hover:translate-x-1 transform duration-200 block">
-                                {{ $link['name'] }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="font-semibold text-[#F29100] mb-4 text-lg">Légal</h3>
-                <ul class="space-y-3">
-                    @foreach($footerLinks['legal'] as $link)
-                        <li>
-                            <a href="{{ $link['href'] }}" class="text-white/70 hover:text-[#F29100] transition-colors text-sm hover:translate-x-1 transform duration-200 block">
-                                {{ $link['name'] }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
         </div>
 
-        {{-- Bottom Section --}}
+
+
         <div class="border-t border-[#F29100]/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div class="text-sm text-white/60 mb-4 md:mb-0">© 2025 ENERLOG. Tous droits réservés.</div>
 
-            {{-- Social Links --}}
             @php
                 $socialLinks = [
                     ['name' => 'Facebook', 'href' => '#', 'icon' => 'facebook'],
@@ -159,5 +118,7 @@
                 @endforeach
             </div>
         </div>
+
+        
     </div>
 </footer>

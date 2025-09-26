@@ -180,6 +180,73 @@
 
     <style>[x-cloak]{display:none !important;}</style>
 
+    <section class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Nos Actualités
+                </h2>
+                <p class="text-muted-foreground text-lg max-w-2xl mx-auto italic">
+                    Suivez nos dernières innovations et collaborations
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @foreach(array_slice($news, 0, 3)  as $new)
+                    <article 
+                        class="group border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                    >
+                        <div class="relative overflow-hidden">
+                            <img
+                                src="{{ $new['images'][0] }}"
+                                alt="{{ $new['name'] }}"
+                                class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                                    {{ $new['id'] }}
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-card-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                                {{ $new['name'] }}
+                            </h3>
+                            <p class="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3 italic">
+                                {{ $new['content'] }}
+                            </p>
+                            
+                            <div class="flex flex-col gap-3">
+                                <a 
+                                    href="{{ $new['link'][0] }}" 
+                                    target="_blank"
+                                    class="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg transition"
+                                >
+                                    Lire l'article
+                                    <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                    </svg>
+                                </a>
+                                
+                                @if(count($new['link']) > 1)
+                                    <a 
+                                        href="{{ $new['link'][1] }}" 
+                                        target="_blank"
+                                        class="w-full inline-flex items-center justify-center gap-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground px-4 py-2 rounded-lg transition"
+                                    >
+                                        Source alternative
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    </article>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     <div 
         x-data='{
             processes: @json($solution['process']),
@@ -278,17 +345,12 @@
         x-init="init()"
         class="py-20 px-4 sm:px-6 lg:px-8  relative overflow-hidden">
 
-        {{-- décorations --}}
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,hsl(var(--primary)/0.1),transparent)] opacity-50"></div>
         <div class="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-float"></div>
         <div class="absolute bottom-20 right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl animate-float delay-300"></div>
 
         <div class="max-w-7xl mx-auto relative z-10">
-            {{-- Header --}}
             <div class="text-center mb-16">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl mb-6 shadow-lg">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2h5"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">
                     Nos <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Partenaires</span>
                 </h2>
@@ -297,7 +359,6 @@
                 </p>
             </div>
 
-            {{-- Carousel --}}
             <div class="relative mb-12" @mouseenter="pause()" @mouseleave="play()">
                 <div class="bg-card/60 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/20 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl"></div>
@@ -319,7 +380,6 @@
                         </div>
                     </div>
 
-                    {{-- Dots --}}
                     <div class="flex justify-center mt-8 gap-2">
                         <template x-for="(p, i) in partners" :key="i">
                             <button @click="goTo(i)"
@@ -389,53 +449,16 @@
         }
     </script>
 
-
     <section class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="text-center space-y-4 mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-balance">Fast-Track Your Projects</h2>
-                <p class="text-muted-foreground max-w-2xl mx-auto">
-                    ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!
-                </p>
-            </div>
-
-            <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border border-border/50">
-                <div class="p-8">
-                    <blockquote class="text-lg text-center text-muted-foreground mb-6">
-                        "ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!"
-                    </blockquote>
-                    <div class="flex items-center justify-center space-x-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
-                            <img src="/construction-manager-headshot.png" alt="Samantha Ruiz" class="w-full h-full object-cover">
-                        </div>
-                        <div class="text-center">
-                            <div class="font-semibold text-foreground">Samantha Ruiz</div>
-                            <div class="text-sm text-muted-foreground">Chief Operations Officer</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-
-
-
-
-
-
-    <section class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+        <div class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-2">
+            <div class=col-4 "text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">Frequently Asked Questions</h2>
-                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                <p class="text-xl text-muted-foreground max-w-2xl mx-auto italic">
                     Find answers to common questions about ScrewFast tools and services.
                 </p>
             </div>
 
-            <div class="max-w-3xl mx-auto space-y-4" x-data="{ openIndex: 0 }">
+            <div class=" max-w-3xl mx-auto space-y-4" x-data="{ openIndex: 0 }">
                 @php
                     $faqs = [
                         [
@@ -482,7 +505,7 @@
                             </span>
                         </button>
                         <div x-show="openIndex === {{ $index }}" x-transition class="px-6 pb-6">
-                            <p class="text-muted-foreground leading-relaxed">{{ $faq['answer'] }}</p>
+                            <p class="text-muted-foreground leading-relaxed italic">{{ $faq['answer'] }}</p>
                         </div>
                     </div>
                 @endforeach
