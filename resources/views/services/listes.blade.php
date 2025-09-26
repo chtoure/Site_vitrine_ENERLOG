@@ -18,7 +18,6 @@
                     class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg">
                     Créer un Compte
                 </button>
-
             </div>
         </div>
     </section>
@@ -27,7 +26,7 @@
     @foreach ($dataServices as $service)
             @if($loop->odd)
                 <!-- Layout A : texte à gauche, images à droite -->
-                <section class="py-16">
+                <section id="{{$service['id']}}" class="py-16">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
@@ -57,7 +56,7 @@
                 </section>
             @else
             <!-- Layout B : images à gauche, texte à droite -->
-            <section class="py-16 bg-white">
+            <section id="{{$service['id']}}" class="py-16 bg-white">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
