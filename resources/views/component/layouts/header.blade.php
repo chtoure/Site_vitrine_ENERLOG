@@ -1,4 +1,4 @@
-<nav class=" backdrop-blur-sm sticky top-0 z-50 w-full border-b border-[#F29100]/30 shadow-lg" x-data="{ isOpen: false }">
+<nav class=" backdrop-blur-lg sticky top-0 z-50 w-full border-b border-[#F29100]/30 shadow-lg" x-data="{ isOpen: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
             <div class="flex items-center">
@@ -27,8 +27,11 @@
             </div>
 
             <div class="hidden md:flex items-center space-x-4">
-                <button class="bg-[#F29100] hover:bg-[#F29100]/90 text-white shadow-md border-0 px-4 py-2 rounded-md text-sm">
-                    <a href="{{$parameter['login_url']}}" class="w-full h-full">Cree Compte</a>
+                <button
+                    onclick="window.open('{{$parameter['login_url']}}', '_blank')"
+                    class="bg-[#F29100] hover:bg-[#F29100]/90 text-white shadow-md border-0 px-4 py-2 rounded-md text-sm"
+                >
+                    Créer un compte
                 </button>
             </div>
             
