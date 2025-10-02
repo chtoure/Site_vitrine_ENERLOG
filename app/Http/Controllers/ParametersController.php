@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AbonnementService;
 use App\Services\EquipeService;
 use App\services\NewsServices;
 use App\Services\ParameterService;
@@ -19,6 +20,8 @@ class ParametersController extends Controller
     public function index()
     {
         $parameter = ParameterService::get();
+        $abonnements = AbonnementService::getAll();
+
         $solution = SolutionService::getById(1);
         $equipe = EquipeService::getAll();
         $services = ServicesService::getAll();
@@ -37,6 +40,7 @@ class ParametersController extends Controller
 
         return view('accueil.index', [
             'parameter' => $parameter,
+            'abonnements' => $abonnements,
             'solution' => $solution,
             'equipe' => $equipe,
             'services' => $services,

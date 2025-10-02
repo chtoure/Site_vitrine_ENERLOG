@@ -17,7 +17,7 @@
         </div>
         
         <div class="absolute inset-0 z-5">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#F29100]/8 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/8 rounded-full blur-3xl animate-pulse"></div>
             <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#312782]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
-                    <a href="{{route('public.services.index')}}" class="group relative inline-flex items-center justify-center px-12 py-6 text-xl font-semibold text-white bg-[#F29100] rounded-2xl shadow-2xl hover:shadow-[#F29100]/40 transition-all duration-300 hover:scale-105 hover:bg-[#F29100]/90">
+                    <a href="{{route('public.services.index')}}" class="group relative inline-flex items-center justify-center px-12 py-6 text-xl font-semibold text-white bg-secondary rounded-2xl shadow-2xl hover:shadow-secondary/40 transition-all duration-300 hover:scale-105 hover:bg-secondary/90">
                         <span class="relative z-10">Découvrir nos services</span>
                         <svg class="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -81,13 +81,13 @@
                     @foreach(array_slice($services, 0, 3) as $index => $service)
                         <div
                             class="cursor-pointer transition-all duration-300 border rounded-xl shadow-lg p-6 bg-white hover:shadow-xl"
-                            :class="activeTab === {{ $index }} ? 'border-[#F29100] bg-gradient-to-r from-[#F29100]/5 to-[#312782]/5 shadow-xl' : 'border-gray-200 hover:border-[#F29100]/30'"
+                            :class="activeTab === {{ $index }} ? 'border-secondary bg-gradient-to-r from-secondary/5 to-[#312782]/5 shadow-xl' : 'border-gray-200 hover:border-secondary/30'"
                             @click="activeTab = {{ $index }}"
                         >
                             <div class="flex items-start space-x-4">
                                 <div
                                     class="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 overflow-hidden"
-                                    :class="activeTab === {{ $index }} ? 'bg-[#F29100] shadow-lg' : 'bg-gray-100'"
+                                    :class="activeTab === {{ $index }} ? 'bg-secondary shadow-lg' : 'bg-gray-100'"
                                 >
                                     <img 
                                         src="{{ asset($service['images'][0]) }}" 
@@ -101,7 +101,7 @@
                                     <div class="flex items-center justify-between">
                                         <h3 class="text-xl font-semibold text-[#222222]">{{ $service['name'] }}</h3>
                                         <div class="flex items-center space-x-2">
-                                            <span class="text-xl font-bold text-[#F29100]">{{ $service['price'] }}fcfa</span>
+                                            <span class="text-xl font-bold text-secondary">{{ $service['price'] }}fcfa</span>
                                             <span class="text-sm text-gray-500">/mois</span>
                                         </div>
                                     </div>
@@ -133,7 +133,7 @@
                             @foreach($services as $index => $tab)
                                 <div x-show="activeTab === {{ $index }}" class="flex flex-col gap-2">
                                     <button
-                                        class="inline-flex items-center justify-center bg-[#F29100] hover:bg-[#F29100]/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-3 rounded-lg text-sm font-semibold backdrop-blur-sm"
+                                        class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-3 rounded-lg text-sm font-semibold backdrop-blur-sm"
                                         title="Voir détails"
                                     >
                                         <a href="{{route('public.services.index')}}#{{$service['id']}}" class="inline-flex items-center justify-center h-full w-full">
@@ -241,7 +241,7 @@
             </div>
             <div class="mt-6">
                 <a href="{{route('public.news.index')}}" 
-                    class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg">
+                    class="bg-secondary hover:bg-secondary-600 text-white px-6 py-3 rounded-lg">
                     Voir plus
                 </a>
             </div>
@@ -261,11 +261,11 @@
             }
         }'
         x-cloak
-        class="min-h-screen p-4 md:p-8">
+        class=" p-4 md:p-8">
         <div class="max-w-7xl mx-auto mb-8">
             <div class="text-center mb-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance text-[#222222]">
-                    Processus <span class="font-bold text-[#F29100]">{{$solution['name']}}</span>.
+                    Processus <span class="font-bold text-secondary">{{$solution['name']}}</span>.
                 </h2>
                 <p class="text-xl text-muted-foreground max-w-2xl mx-auto italic">
                     {{$solution['description']}}
@@ -273,12 +273,12 @@
             </div>
 
             <div class="flex justify-center mb-8">
-                <div class="bg-card border-2 border-manga-purple/20 rounded-full p-1 shadow-lg flex gap-2">
+                <div class="border-2 border-manga-purple/20 rounded-xl p-1 shadow-lg flex gap-2">
                     @foreach($solution['process'] as $process)
                         <button
                             @click="changeProcess({{ $loop->index }})"
-                            :class="currentView == {{ $process['id'] }} ? 'bg-primary text-white' : 'bg-[#F29100]'"
-                            class="rounded-full px-6 py-2 font-bold"
+                            :class="currentView == {{ $process['id'] }} ? 'bg-primary text-white' : 'bg-secondary'"
+                            class="rounded-xl px-6 py-2 font-bold"
                         >
                             {{ $process['name'] }}
                         </button>
@@ -288,8 +288,8 @@
         </div>
 
         <div class="max-w-6xl mx-auto">
-            <div class="border-4 border-foreground shadow-2xl overflow-hidden bg-white rounded-xl">
-                <div class="p-8">
+            <div class="border-2 border-foreground shadow-2xl overflow-hidden bg-white rounded-xl">
+                {{-- <div class="p-8">
                     @foreach ($solution['process'] as $process)
                         <div x-show="currentView == {{ $process['id'] }}" class="text-center" x-cloak>
                             <h2 class="text-2xl font-bold text-foreground mb-6">
@@ -300,9 +300,9 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
+                </div> --}}
 
-                <div class="bg-gradient-to-r from-manga-purple/10 to-manga-orange/10 p-6 border-t-4 border-foreground">
+                <div class="bg-gradient-to-r from-manga-purple/10 to-manga-orange/10 p-6 border-foreground">
                     <h3 class="text-xl font-bold text-foreground mb-4 text-center">Étapes du Processus</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                         <template x-for="step in steps" :key="step.id">
@@ -324,7 +324,7 @@
             </div>
 
             <div class="mt-8 text-center">
-                <div class="border-4 border-foreground shadow-xl rounded-xl">
+                <div class="border-2 border-foreground shadow-xl rounded-xl">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2" x-text="selectedStep ? ('Détails étape ' + selectedStep.id + ' - ' + selectedStep.name) : 'Aucune étape sélectionnée'"></h3>
                         <p class="text-sm opacity-90" x-text="selectedStep ? selectedStep.description : ''"></p>
@@ -332,7 +332,7 @@
                         <template x-if="selectedStep && selectedStep.link">
                             <p class="mt-3 italic">
                                 veuillez cliquer sur le lien:
-                                <a :href="selectedStep.link" target="_blank" class="underline text-[#F29100]" x-text="selectedStep.link"></a>
+                                <a :href="selectedStep.link" target="_blank" class="underline text-secondary" x-text="selectedStep.link"></a>
                             </p>
                         </template>
                     </div>
@@ -353,7 +353,7 @@
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                    Nos <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Partenaires</span>
+                    Nos <span class="bg-primary to-accent bg-clip-text text-transparent">Partenaires</span>
                 </h2>
                 <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
                     Nous collaborons avec les leaders de l'industrie...
@@ -361,7 +361,7 @@
             </div>
 
             <div class="relative mb-12" @mouseenter="pause()" @mouseleave="play()">
-                <div class="bg-card/60 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/20 relative overflow-hidden">
+                <div class=" backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-200 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl"></div>
 
                     <div class="relative z-10">
@@ -428,7 +428,7 @@
             },
 
             play() {
-            // ⚠️ ne recrée un interval que s’il n’existe pas déjà
+
             if (!this.intervalId) {
                 this.intervalId = setInterval(() => {
                 this.currentIndex = (this.currentIndex + 1) % this.partners.length;
@@ -439,7 +439,7 @@
             pause() {
             if (this.intervalId) {
                 clearInterval(this.intervalId);
-                this.intervalId = null; // ⚠️ reset ici
+                this.intervalId = null;
             }
             },
 
@@ -450,8 +450,72 @@
         }
     </script>
 
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">
+                    Tarification simple et transparente
+                </h2>
+                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                    Choisissez l’abonnement qui correspond le mieux à vos besoins. Tous les forfaits incluent nos fonctionnalités essentielles, sans frais cachés.
+                </p>
+            </div>
+
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                @foreach($abonnements as $abonnement)
+                    <div class="relative bg-white rounded-2xl shadow-lg border p-6 {{ $abonnement['plan']=='Premium' ? 'border-orange-500 shadow-lg scale-105' : '' }}">
+                        @if($abonnement['plan']=="Premium")
+                            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                <div class="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-4 py-1 rounded-full text-xs font-medium flex items-center space-x-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27z"/>
+                                    </svg>
+                                    <span>{{$abonnement['plan']}}</span>
+                                </div>
+                            </div>
+                        @endif
+
+                        <div class="text-center pb-8">
+                            <h3 class="text-2xl font-bold">{{ $abonnement['plan'] }}</h3>
+                            <p class="text-sm text-muted-foreground mt-2">{{ $abonnement['description'] }}</p>
+                            <div class="mt-4 flex items-baseline justify-center">
+                                <span class="text-4xl font-bold">${{ $abonnement['price'] }}</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <ul class="space-y-3">
+                                @foreach(array_keys($abonnement['content']) as $feature)
+                                    <li class="flex items-center space-x-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        <span class="text-sm text-muted-foreground">{{ $feature }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+
+                            <a href="{{$parameter['login_url']}}" target="_blank" class="w-full inline-block text-center py-3 rounded-lg font-medium bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600 border border-gray-300 hover:bg-gray-100">
+                                Chosir ce plan
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+    
     <section id="faqs" class="py-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-6">
+        <div class="grid grid-cols-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">Questions Fréquemment Posées</h2>
                 <p class="text-xl text-muted-foreground max-w-2xl mx-auto italic">
@@ -459,8 +523,7 @@
                 </p>
             </div>
 
-
-            <div class=" max-w-3xl mx-auto space-y-4" x-data="{ openIndex: 0 }">
+            <div class=" max-w-4xl mx-auto space-y-4" x-data="{ openIndex: 0 }">
 
                 @foreach($faqs as $index => $faq)
                     <div class="bg-white rounded-2xl shadow overflow-hidden">
