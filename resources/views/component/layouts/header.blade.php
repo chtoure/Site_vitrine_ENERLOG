@@ -20,7 +20,7 @@
                 @endphp
 
                 @foreach($navigation as $item)
-                    <a href="{{ $item['href'] }}" class="text-black/90 hover:text-[#F29100] text-sm font-medium transition-colors hover:bg-white/10 px-3 py-2 rounded-md">
+                    <a href="{{ $item['href'] }}" class="text-black/90 hover:text-secondary text-sm font-medium transition-colors hover:bg-white/10 px-3 py-2 rounded-md">
                         {{ $item['name'] }}
                     </a>
                 @endforeach
@@ -29,7 +29,7 @@
             <div class="hidden md:flex items-center space-x-4">
                 <button
                     onclick="window.open('{{$parameter['login_url']}}', '_blank')"
-                    class="bg-[#F29100] hover:bg-[#F29100]/90 text-white shadow-md border-0 px-4 py-2 rounded-md text-sm"
+                    class="bg-secondary hover:bg-[#F29100]/90 text-white shadow-md border-0 px-4 py-2 rounded-md text-sm"
                 >
                     Créer un compte
                 </button>
@@ -55,13 +55,13 @@
     <div x-show="isOpen" class="md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-b border-[#F29100]/30">
             @foreach($navigation as $item)
-                <a href="{{ $item['href'] }}" @click="isOpen = false" class="text-black/90 hover:text-[#F29100] hover:bg-white/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">
+                <a href="{{ $item['href'] }}" @click="isOpen = false" class="text-black/90 hover:text-secondary hover:bg-white/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">
                     {{ $item['name'] }}
                 </a>
             @endforeach
             <div class="px-3 py-2">
-                <button class="w-full bg-[#F29100] hover:bg-[#F29100]/90 text-white px-4 py-2 rounded-md text-sm">
-                    <a href="{{$parameter['login_url']}}" class="w-full h-full">Cree Compte</a>
+                <button class="w-full bg-secondary hover:bg-[#F29100]/90 text-white px-4 py-2 rounded-md text-sm">
+                    <a href="{{$parameter['login_url']}}" class="w-full h-full">Créer un compte</a>
                 </button>
             </div>
         </div>
