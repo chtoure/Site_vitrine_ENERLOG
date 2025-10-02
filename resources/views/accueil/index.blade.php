@@ -261,7 +261,7 @@
             }
         }'
         x-cloak
-        class="min-h-screen p-4 md:p-8">
+        class=" p-4 md:p-8">
         <div class="max-w-7xl mx-auto mb-8">
             <div class="text-center mb-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance text-[#222222]">
@@ -361,7 +361,7 @@
             </div>
 
             <div class="relative mb-12" @mouseenter="pause()" @mouseleave="play()">
-                <div class="bg-card/60 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/20 relative overflow-hidden">
+                <div class=" backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-200 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl"></div>
 
                     <div class="relative z-10">
@@ -453,90 +453,41 @@
     <section class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">Simple, Transparent Pricing</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">
+                    Tarification simple et transparente
+                </h2>
                 <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Choose the plan that fits your project needs. All plans include our core features with no hidden fees.
+                    Choisissez l’abonnement qui correspond le mieux à vos besoins. Tous les forfaits incluent nos fonctionnalités essentielles, sans frais cachés.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                @php
-                    $plans = [
-                        [
-                            'name' => 'Starter Kit',
-                            'price' => 49,
-                            'period' => 'month',
-                            'description' => 'Perfect for small projects and individual contractors',
-                            'features' => [
-                                'Basic tool access',
-                                'Email support',
-                                'Monthly maintenance',
-                                'Standard documentation',
-                                'Community access',
-                            ],
-                            'popular' => false,
-                        ],
-                        [
-                            'name' => 'Professional Toolbox',
-                            'price' => 99,
-                            'period' => 'month',
-                            'description' => 'Ideal for growing businesses and regular projects',
-                            'features' => [
-                                'Premium tool access',
-                                'Priority support',
-                                'Weekly maintenance',
-                                'Custom integrations',
-                                'Advanced documentation',
-                                'Training resources',
-                                'Project management tools',
-                            ],
-                            'popular' => true,
-                        ],
-                        [
-                            'name' => 'Enterprise Suite',
-                            'price' => 199,
-                            'period' => 'month',
-                            'description' => 'For large organizations with complex requirements',
-                            'features' => [
-                                'Full tool suite access',
-                                '24/7 dedicated support',
-                                'Daily maintenance',
-                                'Custom integrations',
-                                'White-label options',
-                                'On-site training',
-                                'Advanced analytics',
-                                'API access',
-                            ],
-                            'popular' => false,
-                        ],
-                    ];
-                @endphp
 
-                @foreach($plans as $plan)
-                    <div class="relative bg-white rounded-2xl shadow-lg border p-6 {{ $plan['popular'] ? 'border-orange-500 shadow-lg scale-105' : '' }}">
-                        @if($plan['popular'])
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                @foreach($abonnements as $abonnement)
+                    <div class="relative bg-white rounded-2xl shadow-lg border p-6 {{ $abonnement['plan']=='Premium' ? 'border-orange-500 shadow-lg scale-105' : '' }}">
+                        @if($abonnement['plan']=="Premium")
                             <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
                                 <div class="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-4 py-1 rounded-full text-xs font-medium flex items-center space-x-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27z"/>
                                     </svg>
-                                    <span>MOST POPULAR</span>
+                                    <span>{{$abonnement['plan']}}</span>
                                 </div>
                             </div>
                         @endif
 
                         <div class="text-center pb-8">
-                            <h3 class="text-2xl font-bold">{{ $plan['name'] }}</h3>
-                            <p class="text-sm text-muted-foreground mt-2">{{ $plan['description'] }}</p>
+                            <h3 class="text-2xl font-bold">{{ $abonnement['plan'] }}</h3>
+                            <p class="text-sm text-muted-foreground mt-2">{{ $abonnement['description'] }}</p>
                             <div class="mt-4 flex items-baseline justify-center">
-                                <span class="text-4xl font-bold">${{ $plan['price'] }}</span>
-                                <span class="text-muted-foreground ml-1">/{{ $plan['period'] }}</span>
+                                <span class="text-4xl font-bold">${{ $abonnement['price'] }}</span>
                             </div>
                         </div>
 
                         <div class="space-y-6">
                             <ul class="space-y-3">
-                                @foreach($plan['features'] as $feature)
+                                @foreach(array_keys($abonnement['content']) as $feature)
                                     <li class="flex items-center space-x-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
@@ -546,25 +497,22 @@
                                 @endforeach
                             </ul>
 
-                            <a href="#" class="w-full inline-block text-center py-3 rounded-lg font-medium
-                                {{ $plan['popular'] ? 'bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600' : 'border border-gray-300 text-gray-700 hover:bg-gray-100' }}">
-                                {{ $plan['popular'] ? 'Get Started' : 'Choose Plan' }}
+                            <a href="{{$parameter['login_url']}}" target="_blank" class="w-full inline-block text-center py-3 rounded-lg font-medium bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600 border border-gray-300 hover:bg-gray-100">
+                                Chosir ce plan
                             </a>
                         </div>
                     </div>
                 @endforeach
             </div>
 
-            <div class="text-center mt-12">
-                <p class="text-muted-foreground mb-4">
-                    Need a custom solution? We offer tailored packages for enterprise clients.
-                </p>
-                <a href="#" class="inline-block px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100">
-                    Contact Sales
-                </a>
-            </div>
         </div>
     </section>
+
+
+
+
+
+
     
     <section id="faqs" class="py-20">
         <div class="grid grid-cols-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-6">
@@ -574,7 +522,6 @@
                     Trouvez des réponses aux questions courantes sur les outils et services ScrewFast.
                 </p>
             </div>
-
 
             <div class=" max-w-4xl mx-auto space-y-4" x-data="{ openIndex: 0 }">
 
