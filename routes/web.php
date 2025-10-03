@@ -44,9 +44,9 @@ Route::name('public.')->prefix('/')->group(function () {
         'as' => 'services.'
     ], function () {
         Route::get('', [ServiceController::class,'getAllServices'])->name('index');
-        // Route::get('/{id}', [ServiceController::class,'getByIdService'])
-        //     ->where('id', '[0-9]+')
-        //     ->name('detail');
+        Route::get('/{id}', [ServiceController::class,'getByIdService'])
+            ->where('id', '[0-9]+')
+            ->name('detail');
     });
 
     Route::group([
