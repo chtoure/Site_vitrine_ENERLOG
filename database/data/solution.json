@@ -6,7 +6,7 @@
         "process": [
             {
                 "id": 1,
-                "name": "Web",
+                "name": "Mobile",
                 "image": "/images/solutions/process1.png",
                 "description": "Interface web moderne.",
                 "steps": [
@@ -36,7 +36,7 @@
             },
             {
                 "id": 2,
-                "name": "Mobile",
+                "name": "Web",
                 "image": "/images/solutions/process2.png",
                 "description": "Interface mobile moderne.",
                 "steps": [
