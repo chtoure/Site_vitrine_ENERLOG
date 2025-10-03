@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AbonnementService;
 use App\Services\EquipeService;
 use App\services\NewsServices;
 use App\Services\ParameterService;
@@ -10,6 +11,8 @@ use App\Services\SeoService;
 use App\services\ServicesService;
 use App\services\SolutionService;
 use App\Services\TemoignageService;
+use App\Services\FAQService;
+
 
 class ParametersController extends Controller
 {
@@ -17,12 +20,16 @@ class ParametersController extends Controller
     public function index()
     {
         $parameter = ParameterService::get();
+        $abonnements = AbonnementService::getAll();
+
         $solution = SolutionService::getById(1);
         $equipe = EquipeService::getAll();
         $services = ServicesService::getAll();
         $partners = PartnerService::getAll();
         $temoignages = TemoignageService::getAll();
         $news = NewsServices::getAll();
+        $faqs = FAQService::getAll();
+
 
         SeoService::setMeta(
             $parameter['name'] ?? 'ENERLOG',
@@ -33,12 +40,14 @@ class ParametersController extends Controller
 
         return view('accueil.index', [
             'parameter' => $parameter,
+            'abonnements' => $abonnements,
             'solution' => $solution,
             'equipe' => $equipe,
             'services' => $services,
             'partners' => $partners,
             'temoignages' => $temoignages,
             'news' => $news,
+            'faqs' => $faqs,
         ]);
     }
 

@@ -1,189 +1,83 @@
 @extends('component.app')
 
 @section('content')
+<div class="min-h-screen bg-gray-50">
 
-    @php
-        function makeLinksClickable($text) {
-            return preg_replace(
-                '/(https?:\/\/[^\s]+)/',
-                '<a href="$1" target="_blank">$1</a>',
-                $text
-            );
+    {{-- Header Section --}}
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ $news['name'] }}</h1>
+                <p class="text-lg text-gray-600 mb-6">
+                    {{ $news['content'] }}
+                </p>
 
-        }
+                {{-- Bouton vers le lien officiel si dispo --}}
+                @if(!empty($news['link']) && is_array($news['link']))
+                    <a href="{{ $news['link'][0] }}" target="_blank"
+                       class="inline-block px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
+                        Voir l'actualité complète
+                    </a>
+                @endif
+            </div>
+        </div>
+    </section>
 
-        function getDomain($url) {
-            $host = parse_url($url, PHP_URL_HOST);
-            return $host ?? $url;
-        }
-
-
-    @endphp
-  <style>
-            :root {
-                --section-1-bg-color: #ffffff;
-                --section-2-bg-color: #eef4ed;
-                --section-3-bg-color: #111117; --section-3-bg-image: url('../../assets/images/bg-1.jpg');
-                --section-4-bg-color: #ffffff;
-            }
-        </style>
-
-
-
-            <!-- Hero -->
-        <section id="slider" class="hero p-0 odd featured">
-            <div class="swiper-container no-slider animation slider-h-50 slider-h-auto">
-                <div class="swiper-wrapper">
-
-                    <!-- Item 1 -->
-                    <div class="swiper-slide slide-center">
-
-                        <!-- Media -->
-                        <img src="{{asset($news['images'][0])}}" alt="Full Image" class="full-image" data-mask="80"> 
-
-                        <div class="slide-content row text-center">
-                            <div class="col-12 mx-auto inner">
-
-                                <!-- Content -->
-                                <nav data-aos="zoom-out-up" data-aos-delay="800" aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="/">Accueil</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">{{ $news['name'] }}</li>
-                                    </ol>
-                                </nav>
-                                <h1 class="mb-0 title effect-static-text">{{ $news['name'] }}</h1>
-                            </div>
+    {{-- Images Section --}}
+    @if(!empty($news['images']))
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @foreach($news['images'] as $image)
+                        <div class="overflow-hidden rounded-lg shadow">
+                            <img src="{{ asset($image) }}" alt="{{ $news['name'] }}" class="object-cover w-full h-64">
                         </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </section>
+    @endif
 
-        <!-- Single -->
-        <section id="single" class="section-1 single">
-            <div class="container">
-                <div class="row">
-                    
-                    <!-- Main -->
-                    <div class="col-12 col-lg-8 p-0 text">
-                        <div class="row intro m-0">
-                            <div class="col-12">
-                                <span class="pre-title m-0">Enerlog Actualité</span>
-                                <div class="title-icon">
-                                    
-                                    <h2><span class="featured"><span><i class="icon icon-present"></i></span></span>{{ $news['name'] }}</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 align-self-center">
-                                 @foreach(explode('!', $news['content']) as $paragraph)
-                                    @if(trim($paragraph) !== '') 
-                                        <p>{!! makeLinksClickable(trim($paragraph)) !!}</p>
-                                    @endif
-                                @endforeach
-                            </div>
-                        </div>        
-                    </div>
-                    
-                    <!-- Sidebar -->
-                    <aside class="col-12 col-lg-4 pl-lg-5 p-0 float-right sidebar">                    
-                        <div class="row">
-                            <div class="col-12 align-self-center text-left">
-                                <h4>Actualité Photos</h4>
-                                
-                                <!-- Gallery -->
-                                <div class="row justify-content-center">
-                                     @if(is_array($news['images']))
-                                            @foreach($news['images'] as $img)
-                                                <a class="col-6 pl-0 item" href="{{asset($img)}}">
-                                                    <img src="{{asset($img)}}" alt="Project" class="w-100">
-                                                </a>
-                                            @endforeach
-                                    @endif
-                            
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
+    {{-- Pourquoi suivre nos actualités --}}
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <div>
+                    @if(!empty($news['images'][0]))
+                        <img src="{{ asset($news['images'][0]) }}" alt="{{ $news['name'] }}" class="rounded-lg">
+                    @else
+                        <img src="{{ asset('images/default-news.jpg') }}" alt="Enerlog" class="rounded-lg">
+                    @endif
                 </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Pourquoi suivre nos actualités ?</h2>
+                    <p class="text-gray-600 mb-8">
+                        Nos actualités vous permettent de rester connectés à l’innovation, aux projets en cours et aux 
+                        réussites qui façonnent l’avenir du numérique avec Enerlog. Chaque article est une opportunité 
+                        de découvrir nos avancées et notre engagement.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
+                            <p class="text-gray-700">Des projets innovants qui transforment les entreprises.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
+                            <p class="text-gray-700">Une expertise numérique partagée avec transparence.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
+                            <p class="text-gray-700">Un accompagnement sur mesure pour chaque partenaire.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About -->
-        @if(is_array($news['link']) && count($news['link']) > 0)
-            <section id="about" class="section-2 highlights image-right">
-                <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6 pr-md-5 align-self-center text">
-                        <div data-aos="fade-up"  class="row intro">
-                            <div class="col-12 p-0">
-                                <span class="pre-title m-0">Liens De l'Actualité</span>
-                                <h2><span class="featured"><span>Liens</span></span> Disponibles</h2>
-                                <p>Cette Actualité {{ $news['name'] }} est un evenement dans le quel la société ENERLOG TECHNOLOGY & DIGITAL SAS a mis plus d'effort pour faire que cet evenement est plus de visibilté. Ainsi vous pouvez voir les liens qui font la publicités a droite.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 pr-md-5 align-self-center text">
-                        <div class="row items">
-                                @foreach($news['link'] as $link)
-                                    <div data-aos="fade-up" class="col-12 col-md-6 p-0 item">
-                                        <a href="{{$link}}">{{getDomain($link)}}</a>
-                                    </div> 
-                                @endforeach                      
-                        </div>
-                        
-                    </div>
-                </div>
-                </div>
-            </section>
-        @endif   
-
-
-
-
-
-
-
-
-
-
-
+</div>
 @endsection
-
-
-
-
- {{-- <p> 
-            <td>ID: {{ $news['id'] }}</td>
-            <td>Name:</td>
-            <td >
-                <ul>Content :</ul> 
-                <ul> {{ $news['content'] }} </ul>
-            </td>
-            <td>
-                Images:
-                @if(is_array($news['images']))
-                    <ul>
-                        @foreach($news['images'] as $img)
-                            <li>{{ $img }}</li>
-                        @endforeach
-                    </ul>
-                @else
-                    {{ $news['images'] }}
-                @endif
-            </td>
-            <td>
-                Link:
-                @if(is_array($news['link']))
-                    <ul>
-                        @foreach($news['link'] as $link)
-                            <li>{{ $link }}</li>
-                        @endforeach
-                    </ul>
-                @else
-                    {{ $news['link'] }}
-                @endif
-            </td>
-        </p> --}}

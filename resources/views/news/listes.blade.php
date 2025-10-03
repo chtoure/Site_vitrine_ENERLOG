@@ -1,154 +1,74 @@
 @extends('component.app')
 
 @section('content')
+<div class="min-h-screen bg-gray-50">
 
- @php
-        use Illuminate\Support\Str;
-    @endphp
+    {{-- HERO --}}
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Actualités & tendances Enerlog
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Restez connecté aux dernières nouvelles d’Enerlog : projets phares, avancées technologiques et initiatives qui 
+                    façonnent l’avenir du numérique. Chaque article reflète notre vision, notre expertise et notre engagement à accompagner 
+                    nos partenaires vers des solutions toujours plus performantes et durables.
+                </p>
+               <button onclick="window.open('{{$parameter['login_url']}}', '_blank')" 
+                    class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg">
+                    Créer un Compte
+                </button>
+            </div>
+        </div>
+    </section>
 
-     <style>
-            :root {
-                --section-1-bg-color: #eef4ed;
-                --section-2-bg-color: #ffffff;
-                --section-3-bg-color: #111117; --section-3-bg-image: url('../../assets/images/bg-1.jpg');
-            }
-        </style>
+    {{-- Liste des actualités --}}
+    @foreach($dataNews as $index => $item)
+        @php
+            $images = $item['images'] ?? [];
+            $imgCount = is_array($images) ? count($images) : 0;
+        @endphp
 
-                <!-- Hero -->
-        <section id="slider" class="hero p-0 odd featured">
-            <div class="swiper-container no-slider animation slider-h-50 slider-h-auto">
-                <div class="swiper-wrapper">
+        <section class="py-16 {{ $loop->even ? 'bg-white' : '' }}">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    <!-- Item 1 -->
-                    <div class="swiper-slide slide-center">
+                    {{-- Texte --}}
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">{{ $item['name'] }}</h2>
+                        <p class="text-gray-600 mb-6">
+                            {{ \Illuminate\Support\Str::limit($item['content'] ?? '', 350, '...') }}
+                        </p>
 
-                        <!-- Media -->
-                        <img src="{{ asset('images\news\news.jpg') }}" alt="Full Image" class="full-image" data-mask="80">
+                        {{-- Lien vers le détail --}}
+                        <a href="{{ route('public.news.detail', $item['id']) }}"
+                           class="inline-block px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
+                            Lire plus
+                        </a>
+                    </div>
 
-                        <div class="slide-content row text-center">
-                            <div class="col-12 mx-auto inner">
-
-                                <!-- Content -->
-                                <nav data-aos="zoom-out-up" data-aos-delay="800" aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="/">Accueil</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Actualités</li>
-                                    </ol>
-                                </nav>
-
-                                <h1 class="mb-0 title effect-static-text">Actualités</h1>
+                    {{-- Images --}}
+                    <div>
+                        @if($imgCount === 1)
+                            <img src="{{ asset($images[0]) }}" alt="{{ $item['name'] }}" class="w-full h-96 md:h-[480px] object-cover rounded-lg">
+                        @elseif($imgCount > 1)
+                            <div class="grid grid-cols-2 gap-4">
+                                @foreach(array_slice($images, 0, 2) as $image)
+                                    <img src="{{ asset($image) }}" alt="{{ $item['name'] }}" class="w-full h-48 md:h-60 object-cover rounded-lg">
+                                @endforeach
                             </div>
-                        </div>
+                        @else
+                            <div class="w-full h-48 md:h-60 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+                                Pas d'image disponible
+                            </div>
+                        @endif
                     </div>
 
                 </div>
             </div>
         </section>
+    @endforeach
 
-        <!-- Blog -->
-        <section id="blog" class="section-1 showcase blog-grid filter-section projects">
-            <div class="overflow-holder">
-                <div class="container">
-                    <div class="row items filter-items">
-                        @foreach ($dataNews as $news)
-                            <div class="col-12 col-md-6 col-lg-4 item filter-item d-flex align-items-stretch">
-                                <div class="card p-0 text-center w-100">
-                                    <div class="image-over">
-                                    @if(!empty($news['images']) && isset($news['images'][0]))
-                                            <img src="{{ asset($news['images'][0]) }}" alt="Lorem ipsum" class="card-img-top img-fluid" style="object-fit: cover; height: 200px;">
-                                        @endif
-                                    </div>
-                                    <div class="card-caption col-12 p-0">
-                                        <div class="card-body d-flex flex-column">
-                                            <a href="{{route('public.news.detail', $news['id'])}}">
-                                                <h4>{{ $news['name'] }}</h4>
-                                                <p>{{ Str::limit($news['content'], 100, '...')}}</p>
-                                            </a>
-                                            <div class="mt-auto">
-                                                {{-- Bouton ou lien si besoin --}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  
-                        @endforeach
-                    </div>
-
-
-                    <!-- Pagination -->
-                   <div class="row mt-4">
-                        <div class="col-12">
-                            <nav>
-                                <ul class="pagination justify-content-center">
-
-                                    {{-- Précédent --}}
-                                    <li class="page-item {{ $dataNews->onFirstPage() ? 'disabled' : '' }}">
-                                        <a class="page-link" href="{{ $dataNews->previousPageUrl() }}" tabindex="-1">
-                                            <i class="icon-arrow-left"></i>
-                                        </a>
-                                    </li>
-
-                                    {{-- Pages --}}
-                                    @for ($i = 1; $i <= $dataNews->lastPage(); $i++)
-                                        <li class="page-item {{ $i == $dataNews->currentPage() ? 'active' : '' }}">
-                                            <a class="page-link" href="{{ $dataNews->url($i) }}">{{ $i }}</a>
-                                        </li>
-                                    @endfor
-
-                                    {{-- Suivant --}}
-                                    <li class="page-item {{ $dataNews->hasMorePages() ? '' : 'disabled' }}">
-                                        <a class="page-link" href="{{ $dataNews->nextPageUrl() }}">
-                                            <i class="icon-arrow-right"></i>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    
-
+</div>
 @endsection
-
-
-
-
-{{-- @foreach ($dataNews as $news)
-        <p>
-            <td>ID: {{ $news['id'] }}</td>
-            <td>Name: {{ $news['name'] }}</td>
-            <td >
-                <ul>Content :</ul> 
-                <ul> {{ $news['content'] }} </ul>
-            </td>
-            <td>
-                Images:
-                @if(is_array($news['images']))
-                    <ul>
-                        @foreach($news['images'] as $img)
-                            <li>{{ $img }}</li>
-                        @endforeach
-                    </ul>
-                @else
-                    {{ $news['images'] }}
-                @endif
-            </td>
-            <td>
-                Link:
-                @if(is_array($news['link']))
-                    <ul>
-                        @foreach($news['link'] as $link)
-                            <li>{{ $link }}</li>
-                        @endforeach
-                    </ul>
-                @else
-                    {{ $news['link'] }}
-                @endif
-            </td>
-        </p>
-    @endforeach --}}

@@ -23,21 +23,21 @@ Route::name('public.')->prefix('/')->group(function () {
     });
 
     Route::group([
-        'prefix' => 'apropos',
-        'as' => 'apropos.'
+        'prefix' => 'about',
+        'as' => 'about.'
     ], function () {
         Route::get('', [AproposController::class, 'index'])->name('index');
     });
 
-    Route::group([
-        'prefix' => 'partners',
-        'as' => 'partners.'
-    ], function () {
-        Route::get('', [PartnersController::class, 'index'])->name('index');
-        Route::get('/{id}', [PartnersController::class, 'detail'])
-            ->where('id', '[0-9]+')
-            ->name('detail');
-    });
+    // Route::group([
+    //     'prefix' => 'partners',
+    //     'as' => 'partners.'
+    // ], function () {
+    //     Route::get('', [PartnersController::class, 'index'])->name('index');
+    //     Route::get('/{id}', [PartnersController::class, 'detail'])
+    //         ->where('id', '[0-9]+')
+    //         ->name('detail');
+    // });
 
     Route::group([
         'prefix' => 'services',
@@ -59,26 +59,26 @@ Route::name('public.')->prefix('/')->group(function () {
             ->name('detail');
     });
 
-    Route::group([
-        'prefix' => 'equipes',
-        'as' => 'equipes.'
-    ], function () {
-        Route::get('', [EquipesController::class, 'index'])->name('index');
-        Route::get('/{id}', [EquipesController::class, 'show'])
-            ->where('id', '[0-9]+')
-            ->name('show');
-    });
+    // Route::group([
+    //     'prefix' => 'equipes',
+    //     'as' => 'equipes.'
+    // ], function () {
+    //     Route::get('', [EquipesController::class, 'index'])->name('index');
+    //     Route::get('/{id}', [EquipesController::class, 'show'])
+    //         ->where('id', '[0-9]+')
+    //         ->name('show');
+    // });
 
 
-    Route::group([
-        'prefix' => 'temoignages',
-        'as' => 'temoignages.'
-    ], function () {
-        Route::get('', [TemoignagesController::class, 'index'])->name('index');
-        Route::get('/{id}', [TemoignagesController::class, 'show'])
-            ->where('id', '[0-9]+')
-            ->name('show');
-    });
+    // Route::group([
+    //     'prefix' => 'temoignages',
+    //     'as' => 'temoignages.'
+    // ], function () {
+    //     Route::get('', [TemoignagesController::class, 'index'])->name('index');
+    //     Route::get('/{id}', [TemoignagesController::class, 'show'])
+    //         ->where('id', '[0-9]+')
+    //         ->name('show');
+    // });
 
     Route::get('/500', [ErrorController::class, 'serverError'])->name('500');
     Route::get('/404', [ErrorController::class, 'pagenotFond'])->name('404');

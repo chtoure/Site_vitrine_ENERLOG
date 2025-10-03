@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "question":" C'est quoi ENERLOG TECHNOLOGY & DIGITAL ?",
+        "reponse":"ENERLOG Togo est une entreprise technologique spécialisée dans la digitalisation des services pour les entreprises, institutions et organisateurs d’événements. Nous développons des solutions intelligentes pour simplifier la gestion, sécuriser les accès, optimiser la logistique et améliorer l’expérience client — le tout via des outils numériques sur mesure."
+    },
+    {
+        "id":2,
+        "question":"Quels types de clients accompagnez-vous ?",
+        "reponse":"Nous travaillons avec : Organisateurs d’événements (festivals, conférences, mariages, etc.), Entreprises (distribution, pétrole, retail, télécoms), Institutions publiques ou semi-publiques,Commerçants et réseaux de fidélité. Notre approche est modulable : que vous soyez une PME ou une grande structure, nous adaptons nos solutions à votre réalité."
+    },
+    {
+        "id":3,
+        "question":"Comment fonctionne votre système de gestion de billetterie et d’accès ?",
+        "reponse":"Notre plateforme permet : La création de billets numériques (avec QR code unique), La vente en ligne (intégration paiement sécurisé), Le contrôle d’accès en temps réel via smartphone ou tablette (même sans internet), Un tableau de bord live (nombre d’entrées, recettes, types de billets). Fini les contrefaçons, les files d’attente et les erreurs manuelles !"
+    },
+    {
+        "id":4,
+        "question":"Puis-je gérer plusieurs types de billets (VIP, gratuit, groupe, etc.) ?",
+        "reponse":"Oui ! Vous définissez autant de catégories de billets que nécessaire, avec : Prix différent, Quotas, Conditions d’accès, Validité temporelle. Tout est configurable depuis votre espace administrateur."
+    },
+    {
+        "id":5,
+        "question":"Offrez-vous un service de livraison physique ou juste du tracking ?",
+        "reponse":"ENERLOG Togo ne livre pas les colis elle-même, mais propose une solution logicielle de gestion et de suivi que vous (ou votre partenaire logistique) pouvez utiliser pour : Créer des bons de livraison, Suivre les colis en temps réel, Obtenir des preuves de livraison (photo, signature), Générer des rapports de performance. C’est un outil pour professionnels de la logistique, pas un service de messagerie."
+    },
+    {
+        "id":6,
+        "question":" Comment sécurisez-vous la gestion des cartes carburant ?",
+        "reponse":"Notre système permet de : Limiter les abus (plafonds mensuels, types de carburant autorisés, stations validées), Suivre en temps réel chaque transaction (montant, lieu, date, véhicule), Générer des alertes en cas d’usage anormal, Intégrer les données dans vos outils comptables.Idéal pour les flottes d’entreprise, les institutions ou les distributeurs."
+    }
+]
