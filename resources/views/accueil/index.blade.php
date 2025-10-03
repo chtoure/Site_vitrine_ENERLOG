@@ -100,12 +100,12 @@
                                 <div class="flex-1 space-y-3">
                                     <div class="flex items-center justify-between">
                                         <h3 class="text-xl font-semibold text-[#222222]">{{ $service['name'] }}</h3>
-                                        <div class="flex items-center space-x-2">
-                                            <span class="text-xl font-bold text-secondary">{{ $service['price'] }}fcfa</span>
-                                            <span class="text-sm text-gray-500">/mois</span>
-                                        </div>
                                     </div>
                                     <p class="text-gray-600 leading-relaxed">{{ Str::limit($service['description'], 150, '...') }}</p>
+
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xl font-bold text-secondary">{{ $service['price'] }}</span>
+                                    </div>
                                     
                                 </div>
                             </div>
@@ -136,7 +136,7 @@
                                         class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-3 rounded-lg text-sm font-semibold backdrop-blur-sm"
                                         title="Voir détails"
                                     >
-                                        <a href="{{route('public.services.index')}}#{{$service['id']}}" class="inline-flex items-center justify-center h-full w-full">
+                                        <a href="{{route('public.services.detail', $tab['id'])}}" class="inline-flex items-center justify-center h-full w-full">
                                             Détails
                                             <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
@@ -161,7 +161,7 @@
                                     x-show="activeTab === {{ $index }}"
                                     class="bg-[#312782] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
                                 >
-                                    À partir de {{ $tab['price'] }}FCFA/mois
+                                    {{ $tab['price'] }}
                                 </div>
                             @endforeach
                         </div>
