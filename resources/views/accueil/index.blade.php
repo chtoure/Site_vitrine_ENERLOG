@@ -111,7 +111,20 @@
                             </div>
                         </div>
                     @endforeach
+                    <button
+                        class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-3 rounded-lg text-sm font-semibold backdrop-blur-sm"
+                        title="Voir détails"
+                    >
+                        <a href="{{route('public.services.index')}}" class="inline-flex items-center justify-center h-full w-full">
+                            Voir plus
+                            <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        
+                    </button>
                 </div>
+
 
                 <div class="relative">
                     <div class="relative bg-white rounded-2xl p-4 shadow-2xl overflow-hidden">
