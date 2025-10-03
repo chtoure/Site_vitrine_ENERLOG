@@ -70,14 +70,15 @@
                                 </h3>
                             <div class="space-y-6">
                                     <ul class="space-y-3">
-                                        @foreach(array_keys($service['content']) as $feature)
+                                        @foreach($service['content'] as $content)
                                             <li class="flex items-center space-x-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                                                 </svg>
-                                                <span class="text-sm text-muted-foreground">{{ $feature }}</span>
+                                                <span class="text-sm text-muted-foreground">{{ $content }}</span>
                                             </li>
                                         @endforeach
+
                                     </ul>
                                 </div>
                             </div>
@@ -90,81 +91,36 @@
         </div>
     </section>
 
-    {{-- Articles similaires --}}
+    {{-- Quels que Services  --}}
     <section class="py-12 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
                 <h2 class="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-                    Articles similaires
+                    Quels que Services
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <a class="group block border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                        <img src="{{ asset('images/article2.jpg') }}"
-                             alt="Les tendances digitales"
-                             class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6 space-y-3">
-                            <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded">
-                                Business
-                            </span>
-                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary line-clamp-2">
-                                Les tendances digitales en 2025
-                            </h3>
-                            <p class="text-sm text-gray-600 line-clamp-2">
-                                Découvrez les principales tendances qui façonnent l’économie numérique.
-                            </p>
-                            <div class="flex items-center gap-4 text-xs text-gray-500">
-                                <span>4 min de lecture</span>
-                                <span>•</span>
-                                <span>01/09/2025</span>
+                   @foreach (collect($dataServices)->where('id', '!=', $service['id'])->take(3) as $itemService)
+                        <a href="{{ route('public.services.detail', $itemService['id']) }}" 
+                        class="group block border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                            <img src="{{ asset($itemService['images'][0] ?? '/fallback.jpg') }}"
+                                alt="{{ $itemService['name'] }}"
+                                class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary line-clamp-2">
+                                    {{ $itemService['name'] }}
+                                </h3>
+                                <p class="text-sm text-gray-600 line-clamp-2">
+                                    {{ Str::limit($itemService['description'], 80) }}
+                                </p>
                             </div>
-                        </div>
-                    </a>
-                    <a class="group block border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                        <img src="{{ asset('images/article3.jpg') }}"
-                             alt="IA et innovation"
-                             class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6 space-y-3">
-                            <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded">
-                                Innovation
-                            </span>
-                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary line-clamp-2">
-                                L’intelligence artificielle au service de l’innovation
-                            </h3>
-                            <p class="text-sm text-gray-600 line-clamp-2">
-                                Comment l’IA change la manière dont les entreprises innovent.
-                            </p>
-                            <div class="flex items-center gap-4 text-xs text-gray-500">
-                                <span>6 min de lecture</span>
-                                <span>•</span>
-                                <span>15/08/2025</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="group block border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                        <img src="{{ asset('images/article4.jpg') }}"
-                             alt="Cloud et productivité"
-                             class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6 space-y-3">
-                            <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded">
-                                Cloud
-                            </span>
-                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary line-clamp-2">
-                                Le cloud : booster de productivité
-                            </h3>
-                            <p class="text-sm text-gray-600 line-clamp-2">
-                                Découvrez comment le cloud améliore l’efficacité des entreprises modernes.
-                            </p>
-                            <div class="flex items-center gap-4 text-xs text-gray-500">
-                                <span>7 min de lecture</span>
-                                <span>•</span>
-                                <span>20/07/2025</span>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
+
                 </div>
             </div>
         </div>
     </section>
+
 
 </div>
 @endsection

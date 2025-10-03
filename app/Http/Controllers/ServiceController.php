@@ -33,6 +33,7 @@ class ServiceController extends Controller
     }
 
     public function getByIdService(int $idServ) {
+        $dataServices = ServicesService::getAll() ;
         $service = ServicesService::getById($idServ);
         $parameter= ParameterService::get();
 
@@ -49,7 +50,7 @@ class ServiceController extends Controller
 
         return view(
             'services.details',
-            ['service' => $service,  'parameter' => $parameter ]
+            ['service' => $service,  'parameter' => $parameter , 'dataServices' => $dataServices]
         );
     }
 }
