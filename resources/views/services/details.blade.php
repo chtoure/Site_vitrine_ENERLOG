@@ -1,6 +1,10 @@
 @extends("component.app")
 
 @section('content')
+
+@php $hasSidebar = is_array($service['content']) && count($service['content']) > 0; @endphp
+
+
 <div class="min-h-screen bg-gray-50">
 
     {{-- Progress bar mobile --}}
@@ -57,36 +61,29 @@
 
                         <hr class="my-8">
 
-                        {{-- Contenus --}}
-                        <div class="space-y-4">
-                            <h3 class="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                                Contenus Services
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 border rounded text-sm text-gray-600">Innovation</span>
-                                <span class="px-3 py-1 border rounded text-sm text-gray-600">Technologie</span>
-                                <span class="px-3 py-1 border rounded text-sm text-gray-600">Digital</span>
+                        @if ($hasSidebar)
+                                
+                            {{-- Contenus --}}
+                            <div class="space-y-4">
+                                <h3 class="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                                    Contenus Services
+                                </h3>
+                            <div class="space-y-6">
+                                    <ul class="space-y-3">
+                                        @foreach(array_keys($service['content']) as $feature)
+                                            <li class="flex items-center space-x-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                                </svg>
+                                                <span class="text-sm text-muted-foreground">{{ $feature }}</span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                            <hr class="my-8">
+                        @endif
 
-                        <hr class="my-8">
-
-                        {{-- Partage --}}
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
-                                     viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                          d="M4 12v.01M12 4v.01M20 12v.01M12 20v.01M12 12l8-8M12 12l-8-8M12 12l8 8M12 12l-8 8"/>
-                                </svg>
-                                <span class="text-gray-600">Partager cet article</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <a href="#" class="px-3 py-1 border rounded">LinkedIn</a>
-                                <a href="#" class="px-3 py-1 border rounded">Twitter</a>
-                                <a href="#" class="px-3 py-1 border rounded">Facebook</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
