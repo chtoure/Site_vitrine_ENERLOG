@@ -12,6 +12,13 @@
                     <p class="text-lg text-gray-900 mb-6 leading-relaxed">
                         {{$parameter['historique']}}
                     </p>
+
+                    <h2 class="text-5xl md:text-6xl font-bold mb-8 text-gray-900 leading-tight">
+                            Slogan
+                        </h2>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            {{$parameter['slogan']}}
+                    </p>
                 </div>
                 
                 <div class="relative">
@@ -56,10 +63,17 @@
 
                 <div>
                     <h2 class="text-5xl md:text-6xl font-bold mb-8 text-gray-900 leading-tight">
-                        Nous nous sommes fixer comme mission
+                        Notre Mission
                     </h2>
                     <p class="text-lg text-gray-600 leading-relaxed">
                         {{$parameter['mission']}}
+                    </p>
+                    <br>
+                    <h2 class="text-5xl md:text-6xl font-bold mb-8 text-gray-900 leading-tight">
+                        Nos Valeurs
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        {{$parameter['valeur']}}
                     </p>
                 </div>
     
