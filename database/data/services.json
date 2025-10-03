@@ -2,9 +2,27 @@
     
     {
         "id":1,
-        "name":"Carte rechargeable et de fidélité (Aminci)",
+        "name":"Carte pétrolière",
+        "description":"Solution de carte (prépayée/post-payée) pour les clients des services pétroliers : création de gammes, émission/activation/blocage, limitations géographiques/horaire/plafonds, rechargement, notification d’utilisation, transferts et fonctionnalités fidélité (cartes cadeaux, points, etc.).",
+        "images":["/images/services/carte-petroliere.png","/images/services/logo_carte.jpg"],
+        "content": [
+            "Création et gestion de gammes de cartes",
+            "Émission, activation, blocage et vente de cartes",
+            "Plafonnement et restrictions (géographique, horaire, montant, quantité)",
+            "Rechargement prépayé / opérations en ligne",
+            "Fonctions fidélité : cartes cadeaux, points, transfert carte-à-carte",
+            "Génération de tickets de consommation / bons de péage",
+            "Notifications instantanées et sécurité renforcée (code PIN)"
+        ],
+        "price":"À partir de 59 000 FCFA / site / mois "
+    },
+    
+    
+    {
+        "id":2,
+        "name":"Aminci-card (carte rechargeable & fidélité)",
         "description":"Aminci — proposé via la plateforme CPay — est une carte rechargeable (prépayée ou post-payée) destinée aux clients des services pétroliers. Elle permet à la compagnie de définir des limites géographiques et des seuils minima/maxima de recharge et de consommation selon la durée d’abonnement, et inclut aussi des cartes cadeaux et de fidélité que les entreprises peuvent créer et vendre.",
-        "images":["/images/services/solution_carte.jpeg","/images/services/logo_carte.jpg","/images/services/solution_carte.jpeg"],
+        "images":["/images/services/enerlog-icone-aminci.png","/images/services/logo_carte.jpg"],
         "content": [
             "Le car washing",
             "L’achat du carburant",
@@ -12,44 +30,157 @@
             "L’achat du gaz",
             "L’entretien de véhicule"
         ],
-        "price":20000
+        "price":" À partir de 59 000 FCFA / site / mois"
     },
 
     {
-        "id":2,
-        "name":"La billetterie digitalisée",
+        "id":3,
+        "name":"E-billet (Billetterie)",
         "description":"La billetterie digitalisée — proposée par CPay — permet aux organisateurs de créer et vendre des billets personnalisés directement sur la plateforme. Chaque type de billet peut porter des avantages spécifiques que le client peut ensuite consommer, offrant ainsi une expérience utilisateur enrichie et facilement gérable pour l’organisateur.",
-        "images":["/images/services/enerlog-icone-e-billet.png"],
-        "content": [],
-        "price":30000
+        "images":["/images/services/enerlog-icone-e-billet.png","/images/services/icon-e-com.png"],
+        "content": [
+            "Création et gestion de tickets électroniques",
+            "Distribution sponsorisée (packs par billet)",
+            "Option SMS pour envoi des billets aux clients",
+            "Statistiques et suivi des ventes en temps réel",
+            "Cet Service est disponible sans abonnement",
+            "cPay se rémunère seulement par une commission de vos vente ou un forfait sur chaque billet vendu"
+        ],
+        "price":"Commission de 5 % à 10 % par billet vendu OU à partir de 390 FCFA / billet distribué"
     },
     
     {
-        "id":3,
-        "name":"Accessibilité & inclusivité",
-        "description":"Accessibilité & inclusivité — cPay facilite l’accès pour un large public en acceptant les paiements mobile, en espèces et par cartes (Visa, Mastercard), permettant d’acheter des billets ou de participer aux programmes de fidélité facilement. La plateforme est optimisée pour les faibles connexions et s’appuie sur une stratégie de maillage et des partenariats B2B avec des points de vente agréés, offrant la possibilité d’acheter en espèces même sans connexion internet.",
-        "images":["/images/services/accessibilite-numerique-elearning-rgaa-cover_medium.jpg","/images/services/accessibilité2.webp"],
-        "content": [],
-        "price":15000
-    },
-
-
-    {
         "id":4,
-        "name": "Livraison de colis",
-        "description":"Livraison de colis — proposé par ENERLOG, ce service prend en charge l’expédition, le suivi et la remise sécurisée des colis pour les entreprises et les particuliers. Il offre un suivi en temps réel, des options de livraison (standard, express, jour même), gestion des créneaux horaires, paiements intégrés (en ligne), notifications automatiques, preuve de livraison numérique, assurance optionnelle et une API pour intégrer facilement la solution à votre e-commerce ou système interne.",
-        "images":["/images/services/livraison_collis.jpg"],
-        "content":[],
-        "price":10000
+        "name":"Gestion du réseau de distribution",
+        "description":"Gestion dématérialisée d'une station-service : gestion des points de vente, du personnel de piste, des pompes et du stock (cuves), de l’approvisionnement jusqu’à la vente.",
+        "images":["/images/services/gestion-distrubition.jpeg","/images/services/reseau-distribution.png"],
+        "content": [
+            "Gestion des points de vente (stations)",
+            "Gestion du personnel de piste",
+            "Supervision et configuration des pompes",
+            "Gestion et suivi des stocks de carburant (cuves)",
+            "Flux d'approvisionnement et suivi inventaire"
+        ],
+        "price":"À partir de 59 000 FCFA / site / mois"
     },
+
 
     {
         "id":5,
-        "name": "Tracking & géolocalisation",
-        "description":"Tracking & géolocalisation — proposé par ENERLOG — permet de suivre en temps réel les actifs, points de vente et opérations (véhicules, livraisons, transactions sur site) via la position GPS et les données réseau. Le service inclut le géofencing, des alertes personnalisées, l’historique des trajets et des rapports intégrés à la plateforme pour optimiser la logistique, renforcer la sécurité, prévenir la fraude et analyser les flux clients.",
-        "images":["/images/services/tracking.webp","/images/services/traking2.webp"],
+        "name":"Tableau de bord des performances",
+        "description":"Dashboard donne une vue d’ensemble de l’activité (journalière ou période), statistiques par gamme de carte, comparatif de performance des stations, et génération de rapports personnalisés.",
+        "images":["/images/services/enerlogo-tableau-bord.jpg","/images/services/tableau-bord.png"],
+        "content": [
+            "Vue d’ensemble de l’activité journalière ou périodique",
+            "Statistiques détaillées par gamme de carte",
+            "Supervision et configuration des pompes",
+            "Comparatifs de performance entre stations",
+            "Rapports personnalisés et exportables"
+        ],
+        "price":"À partir de 100 000 FCFA / site / mois"
+    },
+
+
+    {
+        "id":6,
+        "name": "CityGo (Livraison de colis)",
+        "description":"Livraison de colis — proposé par ENERLOG, ce service prend en charge l’expédition, le suivi et la remise sécurisée des colis pour les entreprises et les particuliers. Il offre un suivi en temps réel, des options de livraison (standard, express, jour même), gestion des créneaux horaires, paiements intégrés (en ligne), notifications automatiques, preuve de livraison numérique, assurance optionnelle et une API pour intégrer facilement la solution à votre e-commerce ou système interne.",
+        "images":["/images/services/enerlog-citygo.png","/images/services/livraison_collis.jpg"],
         "content":[],
-        "price":20000
+        "price":"À partir de 100 000 FCFA / site / mois"
+    },
+
+    {
+        "id":7,
+        "name": "E-voting (vote électronique pour Awards)",
+        "description":"Solution de vote en ligne sécurisée pour événements et awards : création de scrutins, authentification des votants, et comptage transparent des résultats.",
+        "images":["/images/services/enerlog-icone-voting.png"],
+        "content":[
+            "Création de scrutins (publiques ou privés)", 
+            "Authentification et contrôle d’unicité du vote",  
+            "Interface votant simple (web / mobile)",
+            "Résultats en temps réel et export des rapports",
+            "Options anti-fraude et audit des votes"
+        ],
+        "price":""
+    },
+
+    {
+        "id":8,
+        "name": "Cagnotte (collectez vos fonds)",
+        "description":"Outil de collecte de fonds en ligne pour événements, campagnes ou projets : création de cagnotte, contributions en ligne et suivi des montants.",
+        "images":["/images/services/cagnotte_enerlog.png"],
+        "content":[
+            "Création facile de cagnottes publiques ou privées", 
+            "Paiement en ligne et suivi des contributions",  
+            "Partage social et intégration sur page événement",
+            "Export des listes de contributeurs et reporting",
+            "Options de retrait/versement et règles de clôture"
+        ],
+        "price":""
+    },
+    
+    
+    {
+        "id":9,
+        "name": "Fleet card (carte flotte) ",
+        "description":"Carte dédiée aux flottes véhicules permettant contrôle des pleins, restrictions par véhicule, et suivi des consommations par flotte.",
+        "images":["/images/services/enerlog-icone-fleet-card.png"],
+        "content":[
+            "Attribution de cartes par véhicule / conducteur", 
+            "Plafonds et restrictions par carte (volume, horaire, zone)",  
+            "Suivi des consommations en temps réel et rapports par flotte",
+            "Rechargement et gestion centralisée des comptes flotte",
+            "Intégration aux outils de gestion de parc / facturation "
+        ],
+        "price":"À partir de 59 000 FCFA / site / mois  (A voir)"
+    },
+
+    {
+        "id":10,
+        "name": "cPay Cashless (paiement sans espèces)",
+        "description":"Solution de paiement cashless pour accepter paiements par QR, carte ou mobile — intégration   caisse et remise de preuves de paiement numériques.",
+        "images":["/images/services/enerlog-c-cashle.png"],
+        "content":[
+            "Acceptation des paiements sans espèces (QR, mobile, carte)", 
+            "Intégration au point de vente / caisse",  
+            "Historique et rapprochement des paiements",
+            "Gestion des remboursements et annulations",
+            "Options d’émission de reçus électroniques (SMS / e-mail)"
+        ],
+        "price":"À partir de 59 000 FCFA / site / mois  (A voir)"
+    },
+    {
+        "id":11,
+        "name": "Fataka (Gestion du portefeuille)",
+        "description":"Solution digitale de gestion de portefeuille électronique permettant aux utilisateurs de stocker, transférer et utiliser leur argent de façon sécurisée, sans dépendre exclusivement du cash ou des banques traditionnelles.",
+        "images":["/images/services/enerlog-Fataka logo.png"],
+        "content":[
+           "Création et gestion d’un portefeuille électronique (wallet)",
+           "Dépôt et retrait d’argent via agents, banques ou mobile money",
+           "Transfert d’argent entre portefeuilles Fataka et vers d’autres moyens de paiement",
+           "Paiement de services (factures, abonnements, achats marchands)",
+           "Historique des transactions et notifications en temps réel",
+           "Sécurité renforcée (code PIN, OTP, restrictions par utilisateur)"
+        ],
+        "price":""
+    },
+    {
+        "id":12,
+        "name": "Équipe de support dédiée",
+        "description":"Support technique et commercial : assistance incidents, veille technologique, traitement des demandes d’amélioration, support commercial pour accompagnement des campagnes marketing.",
+        "images":["/images/services/equipe-support.png"],
+        "content":[
+           "Support De Base (Gratuit) :",
+           "    E-mail uniquement",
+           "    Reponse sous 48-72h",
+           "    Pas d’accès prioritaire",
+           "Support Dédiée (Payant) :",
+           "    Support incidents & accompagnement technique",
+           "    Veille technologique et intégrations",
+           "    Support commercial et accompagnement campagnes marketing"
+        ],
+        "price":"À partir de 59 000 FCFA / site / mois"
     }
 ]
 

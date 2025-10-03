@@ -1,189 +1,170 @@
 @extends("component.app")
 
 @section('content')
-    @php
-        $hasSidebar = is_array($service['content']) && count($service['content']) > 0;
-    @endphp
 
-            <style>
-            :root {
-                --hero-bg-color: #080d10;
+@php $hasSidebar = is_array($service['content']) && count($service['content']) > 0; @endphp
 
-                --section-1-bg-color: #ffffff;
-                --section-2-bg-color: #eef4ed;
-                --section-3-bg-color: #111117; 
-                --section-3-bg-image: url('../../assets/images/bg-7.jpg');
-                --section-4-bg-color: #ffffff;
-            }
-        </style>
 
-        <!-- Hero -->
-        <section id="slider" class="hero p-0 odd featured">
-            <div class="swiper-container no-slider animation slider-h-50 slider-h-auto">
-                <div class="swiper-wrapper">
+<div class="min-h-screen bg-gray-50">
 
-                    <!-- Item 1 -->
-                    <div class="swiper-slide slide-center">
+    {{-- Progress bar mobile --}}
+    <div id="progress-mobile"
+        class="fixed top-0 left-0 h-1 bg-gradient-to-r from-orange-400/30 to-orange-400 md:hidden z-50"
+        style="width: 0%">
+    </div>
 
-                        <!-- Media -->
-                        {{-- <video class="full-image to-bottom" data-mask="70" playsinline autoplay muted loop>
-                            <source src="assets/videos/work.mp4" type="video/mp4" />
-                        </video>  --}}
+    {{-- Header Section --}}
+    <section class="bg-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
 
-                        <!-- Media -->
-                        <img src="{{ asset($service['images'][0]) }}" alt="Full Image" class="full-image" data-mask="80">
+                <a href="{{route("public.services.index")}}" class="inline-flex items-center text-primary hover:text-primary/80 mb-6">
+                    {{-- Icône retour --}}
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Retour aux Services
+                </a>
 
-                        <div class="slide-content row text-center">
-                            <div class="col-12 mx-auto inner">
-
-                                <!-- Content -->
-                                <nav data-aos="zoom-out-up" data-aos-delay="800" aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="/">Accueil</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">{{$service['name']}}</li>
-                                    </ol>
-                                </nav>
-                                <h1 class="mb-0 title effect-static-text">{{$service['name']}}</h1>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="space-y-4">
+                    <h1 class="text-4xl font-bold text-gray-900 leading-tight">
+                       {{$service["name"]}}
+                    </h1>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Single -->
-        <section id="single" class="section-1 single">
-            <div class="container">
-                <div class="row">
+    {{-- Main Article --}}
+    <section class="py-6 sm:py-8 lg:py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
 
-                    <!-- Main -->
-                    <div class="{{ $hasSidebar ? 'col-12 col-lg-8 p-0 text' : 'col-12 p-0 text' }}">
-                        <div class="row intro m-0">
-                            <div class="col-12">
-                                <span class="pre-title m-0">presentation service</span>
-                                <div class="title-icon">                                    
-                                    <h2>
-                                        <span class="featured"><span><i class="icon icon-globe-alt"></i></span></span> 
-                                        {{ $service['name'] }}
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 align-self-center">
-                                @foreach(explode('!', $service['description']) as $paragraph)
-                                    @if(trim($paragraph) !== '') 
-                                        <p>{{ trim($paragraph) }}</p>
-                                    @endif
-                                @endforeach
-                            </div>
-                        </div>        
+                    {{-- Left Column - Image --}}
+                    <div>
+                        {{-- <div class="h-64 overflow-hidden rounded-lg shadow-lg md:h-auto">
+                            <img src="{{ asset($service["images"][0]) }}"
+                                 alt="Comment l’innovation transforme le digital"
+                                 class="h-full w-full object-cover object-center">
+                        </div> --}}
+
+                        <img src="{{ $service["images"][0] ?? '/fallback1.jpg' }}" alt="{{ $service["name"] }} image 1" class="rounded-lg w-full h-auto">
+                        
                     </div>
 
-                    <!-- Sidebar -->
-                    @if($hasSidebar)
-                        <aside class="col-12 col-lg-4 pl-lg-5 p-0 float-right sidebar">                    
-                            <div class="row">
-                                <div class="col-12 align-self-center text-left">
-                                    <h4>Contenu Service</h4>
-                                    <ul class="list-group list-group-flush">
-                                        
-                                        @foreach($service['content'] as $content)
-                                            <li class="list-group-item d-flex ">{{ $content }}</li>
+                    {{-- Right Column - Content --}}
+                    <div>
+                        <p class="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-600">
+                            {{$service["description"]}}
+                        </p>
+
+                        <hr class="my-8">
+
+                        @if ($hasSidebar)
+                                
+                            {{-- Contenus --}}
+                            <div class="space-y-4">
+                                <h3 class="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                                    Contenus Services
+                                </h3>
+                            <div class="space-y-6">
+                                    <ul class="space-y-3">
+                                        @foreach(array_keys($service['content']) as $feature)
+                                            <li class="flex items-center space-x-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                                </svg>
+                                                <span class="text-sm text-muted-foreground">{{ $feature }}</span>
+                                            </li>
                                         @endforeach
-                                        
                                     </ul>
                                 </div>
                             </div>
-                        </aside>
-                    @endif
+                            <hr class="my-8">
+                        @endif
 
-                </div>
-            </div>
-        </section>
-
-
-
-
-        <!-- About 2 -->
-        <section id="about-2" class="section-3 odd highlights team image-right">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-8 align-self-top text">
-                        <div class="row intro m-0">
-                            <div class="col-12 p-0">
-                                <span class="pre-title m-0">Services</span>
-                                <h2><span class="featured"><span>Decouvrez</span></span> plus de services</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 p-0 pr-md-5">
-                                <p>Explorer la collection complete des services de ENERLOG TECHNOLOGY & DIGITAL SAS ( C'est une société par actions simplifiée avec un conseil d’administration) </p>
-                            </div>
-                        </div>
-                        
-                        <!-- Action -->
-                        <div data-aos="fade-up" class="buttons">
-                            <div class="d-sm-inline-flex">
-                                <a href="{{ route('public.services.index') }}" class=" mt-4 btn primary-button">Services</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-aos="zoom-in" class="col-12 col-lg-4 align-self-end">
-                        <div class="quote">
-                            <div class="quote-content">
-                                <h4>Discours Radio</h4>
-                                <p>Enerlog est spécialisée dans la création des solutions numériques innovantes.</p>
-                                <p>Nous accompagnons nos partenaires en les proposant des technologies stratégiques et performantes, conçues pour répondre aux besoins spécifiques de leur secteur afin de les booster.</p>
-                                <h5> TAIROU Mouhamed<br>Abdoul Tawab</h5>
-                            </div>
-                            <i class="quote-right fas fa-quote-right"></i>
-                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
+    {{-- Articles similaires --}}
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+                    Articles similaires
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a class="group block border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="{{ asset('images/article2.jpg') }}"
+                             alt="Les tendances digitales"
+                             class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6 space-y-3">
+                            <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded">
+                                Business
+                            </span>
+                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary line-clamp-2">
+                                Les tendances digitales en 2025
+                            </h3>
+                            <p class="text-sm text-gray-600 line-clamp-2">
+                                Découvrez les principales tendances qui façonnent l’économie numérique.
+                            </p>
+                            <div class="flex items-center gap-4 text-xs text-gray-500">
+                                <span>4 min de lecture</span>
+                                <span>•</span>
+                                <span>01/09/2025</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="group block border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="{{ asset('images/article3.jpg') }}"
+                             alt="IA et innovation"
+                             class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6 space-y-3">
+                            <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded">
+                                Innovation
+                            </span>
+                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary line-clamp-2">
+                                L’intelligence artificielle au service de l’innovation
+                            </h3>
+                            <p class="text-sm text-gray-600 line-clamp-2">
+                                Comment l’IA change la manière dont les entreprises innovent.
+                            </p>
+                            <div class="flex items-center gap-4 text-xs text-gray-500">
+                                <span>6 min de lecture</span>
+                                <span>•</span>
+                                <span>15/08/2025</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="group block border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="{{ asset('images/article4.jpg') }}"
+                             alt="Cloud et productivité"
+                             class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6 space-y-3">
+                            <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded">
+                                Cloud
+                            </span>
+                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary line-clamp-2">
+                                Le cloud : booster de productivité
+                            </h3>
+                            <p class="text-sm text-gray-600 line-clamp-2">
+                                Découvrez comment le cloud améliore l’efficacité des entreprises modernes.
+                            </p>
+                            <div class="flex items-center gap-4 text-xs text-gray-500">
+                                <span>7 min de lecture</span>
+                                <span>•</span>
+                                <span>20/07/2025</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+</div>
 @endsection
-
-
-
-
-
-
-
-
-
-
-{{-- 
-        <p>
-            <td>ID: {{ $service['id'] }}</td>
-            <td>Name: {{ $service['name'] }}</td>
-            <td>Description: {{ $service['description'] }}</td>
-            <td>
-    Images:
-    @if(is_array($service['images']))
-        <ul>
-            @foreach($service['images'] as $img)
-                <li>{{ $img }}</li>
-            @endforeach
-        </ul>
-    @else
-        {{ $service['images'] }}
-    @endif
-</td>
-            <td>
-    Content:
-    @if(is_array($service['content']))
-        <ul>
-            @foreach($service['content'] as $content)
-                <li>{{ $content }}</li>
-            @endforeach
-        </ul>
-    @else
-        {{ $service['content'] }}
-    @endif
-</td>
-        </p> --}}
