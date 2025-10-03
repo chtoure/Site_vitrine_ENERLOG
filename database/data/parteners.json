@@ -1,43 +1,23 @@
 [
-    {
-        "id":1,
-        "name": "ATD",
-        "logo": "/images/parteners/atd.jpg",
-        "adress": "Lome togo",
-        "email": "test@test.test",
-        "contact": "+228 25 25 25 25",
-        "description": " Au fil des années, la société a élargi son expertise dans la conception de technologies stratégiques adaptées aux besoins spécifiques de chaque secteur. C’est dans cette dynamique qu’est lancée la plateforme Cpay en 2023, un outil innovant destiné à moderniser la gestion de la billetterie, avec pour objectif d’offrir aux utilisateurs et aux entreprises une expérience fluide, sécurisée et personnalisée.",
-        "temoignage": " Au fil des années, la société a élargi son expertise dans la conception de technologies stratégiques adaptées aux besoins spécifiques de chaque secteur. C’est dans cette dynamique qu’est lancée la plateforme Cpay en 2023, un outil innovant destiné à moderniser la gestion de la billetterie, avec pour objectif d’offrir aux utilisateurs et aux entreprises une expérience fluide, sécurisée et personnalisée."
-        
-    },
-    {
-        "id":2,
-        "name": "GIZ",
-        "logo": "/images/parteners/giz.jpg",
-        "adress": "Lome togo",
-        "email": "test@test.test",
-        "contact": "+228 25 25 25 25",
-        "description": " Au fil des années, la société a élargi son expertise dans la conception de technologies stratégiques adaptées aux besoins spécifiques de chaque secteur. C’est dans cette dynamique qu’est lancée la plateforme Cpay en 2023, un outil innovant destiné à moderniser la gestion de la billetterie, avec pour objectif d’offrir aux utilisateurs et aux entreprises une expérience fluide, sécurisée et personnalisée.",
-        "temoignage": " Au fil des années, la société a élargi son expertise dans la conception de technologies stratégiques adaptées aux besoins spécifiques de chaque secteur. C’est dans cette dynamique qu’est lancée la plateforme Cpay en 2023, un outil innovant destiné à moderniser la gestion de la billetterie, avec pour objectif d’offrir aux utilisateurs et aux entreprises une expérience fluide, sécurisée et personnalisée."
-    },
-    {
-        "id":3,
-        "name": "MOOV",
-        "logo": "/images/parteners/moov.png",
-        "adress": "Lome togo",
-        "email": "test@test.test",
-        "contact": "+228 25 25 25 25",
-        "description": " Au fil des années, la société a élargi son expertise dans la conception de technologies stratégiques adaptées aux besoins spécifiques de chaque secteur. C’est dans cette dynamique qu’est lancée la plateforme Cpay en 2023, un outil innovant destiné à moderniser la gestion de la billetterie, avec pour objectif d’offrir aux utilisateurs et aux entreprises une expérience fluide, sécurisée et personnalisée.",
-        "temoignage": " Au fil des années, la société a élargi son expertise dans la conception de technologies stratégiques adaptées aux besoins spécifiques de chaque secteur. C’est dans cette dynamique qu’est lancée la plateforme Cpay en 2023, un outil innovant destiné à moderniser la gestion de la billetterie, avec pour objectif d’offrir aux utilisateurs et aux entreprises une expérience fluide, sécurisée et personnalisée."
-    },
-    {
-        "id":4,
-        "name": "YAS",
-        "logo": "/images/parteners/yas.png",
-        "adress": "Lome togo",
-        "email": "test@test.test",
-        "contact": "+228 25 25 25 25",
-        "description": " Au fil des années, la société a élargi son expertise dans la conception de technologies stratégiques adaptées aux besoins spécifiques de chaque secteur. C’est dans cette dynamique qu’est lancée la plateforme Cpay en 2023, un outil innovant destiné à moderniser la gestion de la billetterie, avec pour objectif d’offrir aux utilisateurs et aux entreprises une expérience fluide, sécurisée et personnalisée.",
-        "temoignage": " Au fil des années, la société a élargi son expertise dans la conception de technologies stratégiques adaptées aux besoins spécifiques de chaque secteur. C’est dans cette dynamique qu’est lancée la plateforme Cpay en 2023, un outil innovant destiné à moderniser la gestion de la billetterie, avec pour objectif d’offrir aux utilisateurs et aux entreprises une expérience fluide, sécurisée et personnalisée."
-    }
+  {
+    "id": 1,
+    "name": "Semassi FC",
+    "logo": "/images/parteners/semassi.png",
+    "description": "Club de football togolais partenaire dans la mise en œuvre de la solution cPay (billetterie, e-voting, cagnotte).",
+    "temoignage": "La solution cPay nous permet de moderniser notre billetterie et de renforcer la transparence vis-à-vis des supporters."
+  },
+  {
+    "id": 2,
+    "name": "Compagnies pétrolières locales",
+    "logo": "/images/parteners/petroliere-local.png",
+    "description": "Partenaires stratégiques pour la distribution et l’utilisation de la carte pétrolière Enerlog-cPay.",
+    "temoignage": "Grâce à la dématérialisation des cartes, nous suivons en temps réel les ventes et le stock carburant."
+  },
+  {
+    "id": 3,
+    "name": "Stations-service T-oil",
+    "logo": "/images/parteners/t-oil.png",
+    "description": "Réseaux de stations-service intégrées au système cPay pour la gestion des ventes, du personnel et du stock.",
+    "temoignage": "cPay nous aide à mieux gérer le personnel de piste, les pompes et les cuves de carburant."
+  }
 ]
