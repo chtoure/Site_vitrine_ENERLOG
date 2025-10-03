@@ -8,11 +8,17 @@
     "description": "ENERLOG TECHNOLOGY & DIGITAL SAS est une société par actions simplifiée spécialisée dans la création de solutions numériques. Elle accompagne ses partenaires par des technologies stratégiques, notamment la plateforme Cpay qui couvre la billetterie digitale/physique, la carte pétrolière, la gestion de réseaux de distribution et des programmes de fidélité.",
     "logo":"images/parameters/logo.png",
     "login_url": "https://cpay.enerlog.net/corpus/accueil/connexion",
+    "about": "Fondée en 2018, ENERLOG TECHNOLOGY & DIGITAL SAS (ETD) accompagne entreprises et particuliers avec des solutions numériques innovantes et accessibles. En 2023, nous avons lancé Cpay, une plateforme tout-en-un pour la billetterie, les cartes pétrolières, les réseaux de distribution et les programmes de fidélité.",
     "images": [
-        "/images/parameters/DSC_7034.JPG",
-        "/images/parameters/DSC_7038.JPG",
-        "/images/parameters/DSC_7041.JPG",
-        "/images/parameters/DSC_7042.JPG"
+        "/images/parameters/DSC_7046.JPG",
+        "/images/parameters/DSC_6977.JPG",
+        "/images/parameters/DSC_6976.JPG",
+        "/images/parameters/DSC_6973.JPG",
+        "/images/parameters/DSC_7011.JPG",
+        "/images/parameters/DSC_7042.JPG",
+        "/images/parameters/DSC_6974.JPG",
+        "/images/parameters/DSC_6963 (1).JPG",
+        "/images/parameters/DSC_7045.JPG"
     ],
     "contact": {
         "adress": "Immeuble Style Tahiti en face de lycée le Jourdain",
