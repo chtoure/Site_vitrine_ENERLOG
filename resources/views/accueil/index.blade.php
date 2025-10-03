@@ -189,23 +189,28 @@
                     <article 
                         class="group border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
                     >
-                        <div class="relative overflow-hidden">
-                            <div class="w-full h-56 object-cover">
+                        <div class="relative overflow-hidden w-full h-56">
+
+                            <div class="absolute inset-0 bg-center bg-cover filter blur-sm"
+                                style="background-image: url('{{ asset($new['images'][0]) }}');">
+                            </div>
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+                            <div class="relative z-10 w-full h-full flex items-center justify-center">
                                 <img
                                     src="{{ $new['images'][0] }}"
                                     alt="{{ $new['name'] }}"
                                     class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-700"
                                 />
-                            </div>
-                            
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                            <div class="absolute top-4 right-4">
-                                <span class="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                                    {{ $new['id'] }}
-                                </span>
+                                <div class="absolute top-4 right-4">
+                                    <span class="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                                        {{ $new['id'] }}
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                        
+
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-card-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                                 {{ $new['name'] }}
@@ -229,7 +234,7 @@
                                     <a 
                                         href="{{ $new['link'][0] }}" 
                                         target="_blank"
-                                        class="w-full inline-flex items-center justify-center gap-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground px-4 py-2 rounded-lg transition"
+                                        class="w-full inline-flex items-center justify-center gap-2 border border-primary text-primary hover:bg-secondary hover:border-secondary hover:text-primary-foreground px-4 py-2 rounded-lg transition"
                                     >
                                         Source alternative
                                     </a>
@@ -273,12 +278,12 @@
             </div>
 
             <div class="flex justify-center mb-8">
-                <div class="border-2 border-manga-purple/20 rounded-xl p-1 shadow-lg flex gap-2">
+                <div class=" flex gap-2 ">
                     @foreach($solution['process'] as $process)
                         <button
                             @click="changeProcess({{ $loop->index }})"
                             :class="currentView == {{ $process['id'] }} ? 'bg-primary text-white' : 'bg-secondary'"
-                            class="rounded-xl px-6 py-2 font-bold"
+                            class="rounded-xl px-6 py-2 font-bold italic"
                         >
                             {{ $process['name'] }}
                         </button>
@@ -463,22 +468,22 @@
 
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
                 @foreach($abonnements as $abonnement)
-                    <div class="relative bg-white rounded-2xl shadow-lg border p-6 {{ $abonnement['plan']=='Premium' ? 'border-orange-500 shadow-lg scale-105' : '' }}">
+                    <div class="relative bg-white rounded-2xl shadow-lg border p-6 {{ $abonnement['plan']=='Premium' ? 'border-orange-500 scale-105' : '' }}">
+                        
                         @if($abonnement['plan']=="Premium")
                             <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
                                 <div class="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-4 py-1 rounded-full text-xs font-medium flex items-center space-x-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27z"/>
                                     </svg>
-                                    <span>{{$abonnement['plan']}}</span>
+                                    <span>{{ $abonnement['plan'] }}</span>
                                 </div>
                             </div>
                         @endif
 
                         <div class="text-center pb-8">
-                            <h3 class="text-2xl font-bold">{{ $abonnement['plan'] }}</h3>
+                            <h3 class="text-2xl font-bold text-primary">{{ $abonnement['plan'] }}</h3>
                             <p class="text-sm text-muted-foreground mt-2">{{ $abonnement['description'] }}</p>
                             <div class="mt-4 flex items-baseline justify-center">
                                 <span class="text-4xl font-bold">${{ $abonnement['price'] }}</span>
@@ -486,24 +491,39 @@
                         </div>
 
                         <div class="space-y-6">
-                            <ul class="space-y-3">
-                                @foreach(array_keys($abonnement['content']) as $feature)
-                                    <li class="flex items-center space-x-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                                        </svg>
-                                        <span class="text-sm text-muted-foreground">{{ $feature }}</span>
+                            <ul class="space-y-3" x-data="{ openIndex: null }">
+                                @foreach($abonnement['content'] as $feature => $detail)
+                                    <li class="flex flex-col space-y-2 border-b pb-2">
+                                        <button
+                                            class="flex items-center justify-between w-full text-left p-2 hover:bg-gray-100 transition-colors rounded"
+                                            @click="openIndex === '{{ $feature }}' ? openIndex = null : openIndex = '{{ $feature }}'"
+                                        >
+                                            <span class="flex items-center space-x-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                                </svg>
+                                                <span class="font-semibold text-foreground">{{ $feature }}</span>
+                                            </span>
+                                            <span x-show="openIndex === '{{ $feature }}'">-</span>
+                                            <span x-show="openIndex !== '{{ $feature }}'">+</span>
+                                        </button>
+
+                                        <div x-show="openIndex === '{{ $feature }}'" x-transition class="pl-6 text-muted-foreground leading-relaxed italic">
+                                            {{ $detail }}
+                                        </div>
                                     </li>
                                 @endforeach
                             </ul>
 
-                            <a href="{{$parameter['login_url']}}" target="_blank" class="w-full inline-block text-center py-3 rounded-lg font-medium bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600 border border-gray-300 hover:bg-gray-100">
-                                Chosir ce plan
+                            <a href="{{ $parameter['login_url'] }}" target="_blank"
+                            class="w-full inline-block text-center py-3 rounded-lg font-medium bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600">
+                                Choisir ce plan
                             </a>
                         </div>
                     </div>
                 @endforeach
             </div>
+
 
         </div>
     </section>
