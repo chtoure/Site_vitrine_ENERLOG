@@ -8,6 +8,7 @@ use App\Http\Controllers\ParametersController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TarifsController;
 use App\Http\Controllers\TemoignagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -88,6 +89,14 @@ Route::name('public.')->prefix('/')->group(function () {
         'as' => 'emails.'
     ], function () {
         Route::post('', [EmailsController::class, 'contact'])->name('contact');
+    });
+
+
+     Route::group([
+        'prefix' => 'tarif',
+        'as' => 'tarif.'
+    ], function () {
+        Route::get('', [TarifsController::class,'index'])->name('index');
     });
 
     Route::fallback(function () {

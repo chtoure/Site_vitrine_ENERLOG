@@ -2,9 +2,9 @@
     
     {
         "id":1,
-        "name":"Carte pétrolière",
+        "name":"Carte pétrolière (Fleet card)",
         "description":"Solution de carte (prépayée/post-payée) pour les clients des services pétroliers : création de gammes, émission/activation/blocage, limitations géographiques/horaire/plafonds, rechargement, notification d’utilisation, transferts et fonctionnalités fidélité (cartes cadeaux, points, etc.).",
-        "images":["/images/services/carte-petroliere.png","/images/services/logo_carte.jpg"],
+        "images":["/images/services/enerlog-icone-fleet-card.png","/images/services/logo_carte.jpg"],
         "content": [
             "Création et gestion de gammes de cartes",
             "Émission, activation, blocage et vente de cartes",
@@ -14,7 +14,9 @@
             "Génération de tickets de consommation / bons de péage",
             "Notifications instantanées et sécurité renforcée (code PIN)"
         ],
-        "price":"À partir de 59 000 FCFA / site / mois "
+        "price":"À partir de 59 000 FCFA / site / mois ",
+        "plan":"basic",
+        "commentaire": "Basic : Inclus (fonctions de base : création, activation, plafonds, rechargement)."
     },
     
     
@@ -30,7 +32,9 @@
             "L’achat du gaz",
             "L’entretien de véhicule"
         ],
-        "price":" À partir de 59 000 FCFA / site / mois"
+        "price":" À partir de 59 000 FCFA / site / mois",
+        "plan":"basic",
+        "commentaire": "Basic : Inclus (fonctions de base : car washing, achat carburant )."
     },
 
     {
@@ -46,7 +50,9 @@
             "Cet Service est disponible sans abonnement",
             "cPay se rémunère seulement par une commission de vos vente ou un forfait sur chaque billet vendu"
         ],
-        "price":"Commission de 5 % à 10 % par billet vendu OU à partir de 390 FCFA / billet distribué"
+        "price":"Commission de 5 % à 10 % par billet vendu OU à partir de 390 FCFA / billet distribué",
+        "plan":"basic",
+        "commentaire": "Disponible sans abonnement"
     },
     
     {
@@ -61,7 +67,9 @@
             "Gestion et suivi des stocks de carburant (cuves)",
             "Flux d'approvisionnement et suivi inventaire"
         ],
-        "price":"À partir de 59 000 FCFA / site / mois"
+        "price":"À partir de 59 000 FCFA / site / mois",
+        "plan":"basic",
+        "commentaire": "Basic : Inclus (fonctions de base : gestion  stations , piste )."
     },
 
 
@@ -77,7 +85,9 @@
             "Comparatifs de performance entre stations",
             "Rapports personnalisés et exportables"
         ],
-        "price":"À partir de 100 000 FCFA / site / mois"
+        "price":"À partir de 100 000 FCFA / site / mois",
+        "plan":"pro",
+        "commentaire": "Pro : Accès basique (rapports simples)."
     },
 
 
@@ -87,7 +97,9 @@
         "description":"Livraison de colis — proposé par ENERLOG, ce service prend en charge l’expédition, le suivi et la remise sécurisée des colis pour les entreprises et les particuliers. Il offre un suivi en temps réel, des options de livraison (standard, express, jour même), gestion des créneaux horaires, paiements intégrés (en ligne), notifications automatiques, preuve de livraison numérique, assurance optionnelle et une API pour intégrer facilement la solution à votre e-commerce ou système interne.",
         "images":["/images/services/enerlog-citygo.png","/images/services/livraison_collis.jpg"],
         "content":[],
-        "price":"À partir de 100 000 FCFA / site / mois"
+        "price":"À partir de 100 000 FCFA / site / mois",
+        "plan":"pro",
+        "commentaire": "Pro : Accès basique (Expédition, suivi de remise de colis)."
     },
 
     {
@@ -102,14 +114,16 @@
             "Résultats en temps réel et export des rapports",
             "Options anti-fraude et audit des votes"
         ],
-        "price":""
+        "price":"",
+        "plan":"basic",
+        "commentaire": "Basic : Inclus (fonctions de base : Création de scrutins, Interface votant simple )."
     },
 
     {
         "id":8,
         "name": "Cagnotte (collectez vos fonds)",
         "description":"Outil de collecte de fonds en ligne pour événements, campagnes ou projets : création de cagnotte, contributions en ligne et suivi des montants.",
-        "images":["/images/services/cagnotte_enerlog.png"],
+        "images":["/images/services/enerlog-icone-crowdfunding.png"],
         "content":[
             "Création facile de cagnottes publiques ou privées", 
             "Paiement en ligne et suivi des contributions",  
@@ -117,30 +131,18 @@
             "Export des listes de contributeurs et reporting",
             "Options de retrait/versement et règles de clôture"
         ],
-        "price":""
+        "price":"",
+        "plan":"basic",
+        "commentaire": "Basic : Inclus (fonctions de base : Création de cagnottes, Paiement en ligne )."
     },
     
-    
-    {
-        "id":9,
-        "name": "Fleet card (carte flotte) ",
-        "description":"Carte dédiée aux flottes véhicules permettant contrôle des pleins, restrictions par véhicule, et suivi des consommations par flotte.",
-        "images":["/images/services/enerlog-icone-fleet-card.png"],
-        "content":[
-            "Attribution de cartes par véhicule / conducteur", 
-            "Plafonds et restrictions par carte (volume, horaire, zone)",  
-            "Suivi des consommations en temps réel et rapports par flotte",
-            "Rechargement et gestion centralisée des comptes flotte",
-            "Intégration aux outils de gestion de parc / facturation "
-        ],
-        "price":"À partir de 59 000 FCFA / site / mois  (A voir)"
-    },
+
 
     {
-        "id":10,
+        "id":9,
         "name": "cPay Cashless (paiement sans espèces)",
         "description":"Solution de paiement cashless pour accepter paiements par QR, carte ou mobile — intégration   caisse et remise de preuves de paiement numériques.",
-        "images":["/images/services/enerlog-c-cashle.png"],
+        "images":["/images/services/cashless.png"],
         "content":[
             "Acceptation des paiements sans espèces (QR, mobile, carte)", 
             "Intégration au point de vente / caisse",  
@@ -148,10 +150,12 @@
             "Gestion des remboursements et annulations",
             "Options d’émission de reçus électroniques (SMS / e-mail)"
         ],
-        "price":"À partir de 59 000 FCFA / site / mois  (A voir)"
+        "price":"À partir de 59 000 FCFA / site / mois  (A voir)",
+        "plan":"basic",
+        "commentaire": "Basic : Inclus (fonctions de base : paiements sans espèces)."
     },
     {
-        "id":11,
+        "id":10,
         "name": "Fataka (Gestion du portefeuille)",
         "description":"Solution digitale de gestion de portefeuille électronique permettant aux utilisateurs de stocker, transférer et utiliser leur argent de façon sécurisée, sans dépendre exclusivement du cash ou des banques traditionnelles.",
         "images":["/images/services/enerlog-Fataka logo.png"],
@@ -163,10 +167,12 @@
            "Historique des transactions et notifications en temps réel",
            "Sécurité renforcée (code PIN, OTP, restrictions par utilisateur)"
         ],
-        "price":""
+        "price":"",
+        "plan":"basic",
+        "commentaire": "Basic : Inclus (fonctions de base : Création et gestion d’un portefeuille électronique)."
     },
     {
-        "id":12,
+        "id":11,
         "name": "Équipe de support dédiée",
         "description":"Support technique et commercial : assistance incidents, veille technologique, traitement des demandes d’amélioration, support commercial pour accompagnement des campagnes marketing.",
         "images":["/images/services/equipe-support.png"],
@@ -180,7 +186,9 @@
            "    Veille technologique et intégrations",
            "    Support commercial et accompagnement campagnes marketing"
         ],
-        "price":"À partir de 59 000 FCFA / site / mois"
+        "price":"À partir de 59 000 FCFA / site / mois",
+        "plan":"basic",
+        "commentaire": "Basic : Inclus (fonctions de base : E-mail uniquement , Reponse sous 48-72h)."
     }
 ]
 
