@@ -13,11 +13,29 @@
                 </p>
 
                 {{-- Bouton vers le lien officiel si dispo --}}
-                @if(!empty($news['link']) && is_array($news['link']))
-                    <a href="{{ $news['link'][0] }}" target="_blank"
-                       class="inline-block px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
-                        Voir l'actualité complète
-                    </a>
+                @if(count($news['links']) > 0)
+                    <div class="flex items-center space-x-4">
+                        @foreach ($news['links'] as $link)
+                            @if(isset($link['icon']))
+                                @if ($link['icon'] == 'tiktok')
+                                    <a href="https://www.tiktok.com/@toncompte" target="_blank" class="text-secondary hover:text-secondary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                                            <path d="M12.5 2c.3 3.4 2.4 5.4 5.8 5.7v2.9a8.7 8.7 0 0 1-3.6-.7v4.9a6.4 6.4 0 1 1-6.4-6.4c.2 0 .5 0 .7.1v3a3.5 3.5 0 1 0 2.5 3.4V2h1z"/>
+                                        </svg>
+                                    </a>
+                                @else
+                                    <a 
+                                        href="{{ $link['url'] }}" 
+                                        target="_blank"
+                                        title="Voir sur {{ ucfirst($link['icon'] ?? 'lien') }}"
+                                        class="text-secondary hover:text-secondary"
+                                    >
+                                        <i data-lucide="{{$link['icon']}}" class="w-5 h-5"></i> 
+                                    </a>
+                                @endif
+                            @endif
+                        @endforeach
+                    </div>   
                 @endif
             </div>
         </div>
