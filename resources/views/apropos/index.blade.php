@@ -59,7 +59,7 @@
 
     <section class="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2  gap-12 items-center">
 
                 <div>
                     <h2 class="text-5xl md:text-6xl font-bold mb-8 text-gray-900 leading-tight">
@@ -69,8 +69,10 @@
                         {{$parameter['mission']}}
                     </p>
                     <br>
-                    <h2 class="text-5xl md:text-6xl font-bold mb-8 text-gray-900 leading-tight">
-                        Nos Valeurs
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-gray-900 leading-snug italic">
+                        <span class="bg-secondary px-4 py-2 rounded-lg text-gray-800">
+                            Nous incarnons des valeurs fortes dans tout ce que nous faisons
+                        </span>
                     </h2>
                     <p class="text-lg text-gray-600 leading-relaxed">
                         {{$parameter['valeur']}}

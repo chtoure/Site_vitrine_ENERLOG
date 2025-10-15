@@ -7,72 +7,12 @@
         use Illuminate\Support\Str;
     @endphp
 
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0">
-            <img src="{{ asset('/images/templates/equipe_1.JPG') }}" 
-                alt="Interface moderne de gestion digitale ENERLOG" 
-                class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/40"></div>
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.03\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"1\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
-        </div>
-        
-        <div class="absolute inset-0 z-5">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/8 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#312782]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center max-w-5xl mx-auto space-y-12">
-
-
-                <div class="space-y-8">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                        <span class="text-white italic">{{$parameter["name"]}}</span>
-                        <br>
-                        
-                    </h1>
-                    <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-bold italic">
-                        {{ Str::limit($parameter['description'], 200, '...') }}
-                    </p>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
-                    <a href="{{route('public.services.index')}}" class="group relative inline-flex items-center justify-center px-12 py-6 text-xl font-semibold text-white bg-secondary rounded-2xl shadow-2xl hover:shadow-secondary/40 transition-all duration-300 hover:scale-105 hover:bg-secondary/90">
-                        <span class="relative z-10">Découvrir nos services</span>
-                        <svg class="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </a>
-                    <button
-                        onclick="window.open('{{$parameter['login_url']}}', '_blank')"
-                        class="inline-flex items-center justify-center px-12 py-6 text-xl font-semibold text-white border-2 border-white/20 rounded-2xl backdrop-blur-md hover:bg-white/10 hover:border-white/30 transition-all duration-300"
-                    >
-                        Créer un compte
-                    </button>
-                </div>
-
-            </div>
-
-
-        </div>
-
-        <style>
-            @keyframes float {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
-            }
-            .animate-float {
-                animation: float 3s ease-in-out infinite;
-            }
-        </style>
-    </section>
-
     <section class="py-20 bg-gradient-to-br from-slate-50 to-gray-100" x-data="{ activeTab: 0 }">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance text-[#222222]">
-                    Nous développons des solutions numériques innovantes et collaborons avec un réseau de partenaires pour accompagner nos clients dans leurs projets.
+                    Quelques-uns de nos services
                 </h2>
             </div>
 
@@ -159,7 +99,7 @@
                                     </button>
                                     <button
                                         onclick="window.open('{{$parameter['login_url']}}', '_blank')"
-                                        class="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-[#312782] transition-all duration-300 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg text-sm font-semibold"
+                                        class="inline-flex items-center justify-center border-2 border-primary text-primary hover:bg-white hover:text-white hover:bg-primary transition-all duration-300  backdrop-blur-sm px-6 py-3 rounded-lg text-sm font-semibold"
                                         title="En savoir plus"
                                     >
                                         Créer un compte
@@ -187,7 +127,7 @@
     <style>[x-cloak]{display:none !important;}</style>
 
     <section class="py-20 relative">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
                     Nos Actualités
@@ -243,14 +183,29 @@
                                     </svg>
                                 </a>
                                 
-                                @if(count($new['link']) > 1)
-                                    <a 
-                                        href="{{ $new['link'][0] }}" 
-                                        target="_blank"
-                                        class="w-full inline-flex items-center justify-center gap-2 border border-primary text-primary hover:bg-secondary hover:border-secondary hover:text-primary-foreground px-4 py-2 rounded-lg transition"
-                                    >
-                                        Source alternative
-                                    </a>
+                                @if(count($new['links']) > 0)
+                                   <div class="flex items-center justify-center space-x-4">
+                                        @foreach ($new['links'] as $link)
+                                            @if(isset($link['icon']))
+                                                @if ($link['icon'] == 'tiktok')
+                                                    <a href="https://www.tiktok.com/@toncompte" target="_blank" class="text-primary hover:text-secondary">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                                                            <path d="M12.5 2c.3 3.4 2.4 5.4 5.8 5.7v2.9a8.7 8.7 0 0 1-3.6-.7v4.9a6.4 6.4 0 1 1-6.4-6.4c.2 0 .5 0 .7.1v3a3.5 3.5 0 1 0 2.5 3.4V2h1z"/>
+                                                        </svg>
+                                                    </a>
+                                                @else
+                                                    <a 
+                                                        href="{{ $link['url'] }}" 
+                                                        target="_blank"
+                                                        title="Voir sur {{ ucfirst($link['icon'] ?? 'lien') }}"
+                                                        class="text-primary hover:text-secondary"
+                                                    >
+                                                        <i data-lucide="{{$link['icon']}}" class="w-6 h-6"></i>
+                                                    </a>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </div>   
                                 @endif
                             </div>
                         </div>
@@ -268,35 +223,53 @@
 
     <div 
         x-data='{
-            processes: @json($solution['process']),
-            currentView: @json($solution['process'][0]['id']),
-            steps: @json($solution['process'][0]['steps']),
-            selectedStep: @json($solution['process'][0]['steps'][0]),
+            processes: @json($solution["process"]),
+            currentView: @json($solution["process"][0]["id"]),
+            steps: @json($solution["process"][0]["steps"]),
+            selectedStep: @json($solution["process"][0]["steps"][0]),
+            visibleStart: 0,
+            visibleCount: 2,
+
             changeProcess(index){
                 this.currentView = this.processes[index].id;
                 this.steps = this.processes[index].steps || [];
                 this.selectedStep = (this.steps && this.steps.length) ? this.steps[0] : { id: null, name: "", description: "", link: "" };
+                this.visibleStart = 0;
+            },
+            nextSteps(){
+                if (this.visibleStart + this.visibleCount < this.steps.length) {
+                    this.visibleStart += this.visibleCount;
+                }
+            },
+            prevSteps(){
+                if (this.visibleStart - this.visibleCount >= 0) {
+                    this.visibleStart -= this.visibleCount;
+                }
+            },
+            get visibleSteps(){
+                return this.steps.slice(this.visibleStart, this.visibleStart + this.visibleCount);
             }
         }'
         x-cloak
-        class=" p-4 md:p-8">
-        <div class="max-w-7xl mx-auto mb-8">
+        class="p-4 md:p-8"
+    >
+        <div class="max-w-screen-xl mx-auto mb-8">
             <div class="text-center mb-8">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance text-[#222222]">
-                    Processus <span class="font-bold text-secondary">{{$solution['name']}}</span>.
+                    Processus <span class="font-bold text-secondary">{{ $solution['name'] }}</span>.
                 </h2>
                 <p class="text-xl text-muted-foreground max-w-2xl mx-auto italic">
-                    {{$solution['description']}}
+                    {{ $solution['description'] }}
                 </p>
             </div>
 
             <div class="flex justify-center mb-8">
-                <div class=" flex gap-2 ">
+                <div class="flex gap-2 flex-wrap justify-center">
                     @foreach($solution['process'] as $process)
                         <button
                             @click="changeProcess({{ $loop->index }})"
-                            :class="currentView == {{ $process['id'] }} ? 'bg-primary text-white' : 'bg-secondary'"
-                            class="rounded-xl px-6 py-2 font-bold italic"
+                            :class="currentView == {{ $process['id'] }} ? 'bg-primary ' : 'bg-secondary'"
+                            class="rounded-md px-6 py-2 font-bold italic transition text-white"
                         >
                             {{ $process['name'] }}
                         </button>
@@ -306,60 +279,122 @@
         </div>
 
         <div class="max-w-6xl mx-auto">
-            <div class="border-2 border-foreground shadow-2xl overflow-hidden bg-white rounded-xl">
-                {{-- <div class="p-8">
-                    @foreach ($solution['process'] as $process)
-                        <div x-show="currentView == {{ $process['id'] }}" class="text-center" x-cloak>
-                            <h2 class="text-2xl font-bold text-foreground mb-6">
-                                {{ $process['name'] }} — {{ $process['description'] }}
-                            </h2>
-                            <div class="relative inline-block">
-                                <img src="{{ asset($process['image']) }}" alt="Processus - {{ $process['name'] }}" class="max-w-full max-h-[500px] rounded-2xl border-4 border-foreground shadow-xl">
+            <div class="bg-gradient-to-r from-manga-purple/10 to-manga-orange/10 p-6 rounded-2xl">
+                <template x-if="visibleStart > 0">
+                    <div class="flex justify-start mb-4">
+                        <button 
+                            @click="prevSteps" 
+                            class="flex items-center gap-1 text-secondary border-2 border-secondary hover:text-white px-4 py-2 rounded-lg hover:bg-secondary transition"
+                        >
+                            <span class="text-lg">−</span> Précédent
+                        </button>
+                    </div>
+                </template>
+
+                <div class="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
+                    <template x-for="(step, index) in visibleSteps" :key="step.id">
+                        <div class="flex md:contents" :class="index % 2 === 0 ? 'flex-row-reverse' : ''">
+                            
+                            <template x-if="index % 2 === 0">
+                                <div class="relative p-4 my-6 text-gray-800 bg-white border-2 border-secondary rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto group hover:bg-secondary/10 transition">
+                                    <h3 class="text-lg font-semibold lg:text-xl" x-text="step.name"></h3>
+                                    <p class="text-gray-600 leading-relaxed" x-text="step.description"></p>
+
+                                    <template x-if="step.link">
+                                        <button
+                                            @click="window.open(step.link, '_blank')"
+                                            class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
+                                        >
+                                            Accédez
+                                        </button>
+                                    </template>
+
+                                    <div class="absolute -top-24 left-1/2 transform -translate-x-1/2 hidden group-hover:block z-20">
+                                        <div class="relative w-72">
+                                            <div class="relative rounded-lg p-4 text-sm font-sans text-gray-800 shadow-md border-2 border-primary bg-white">
+                                                <template x-if="step.image">
+                                                    <img :src="step.image" alt="" class="object-contain rounded-md mb-2 w-full">
+                                                </template>
+                                                <p x-text="step.description" class="text-gray-600 leading-relaxed"></p>
+                                                <template x-if="step.link">
+                                                    <button
+                                                        @click="window.open(step.link, '_blank')"
+                                                        class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
+                                                    >
+                                                        Accédez
+                                                    </button>
+                                                </template>
+                                                <div class="absolute -bottom-2 left-8 h-4 w-4 rotate-45 bg-primary"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <div class="relative col-start-5 col-end-6 mr-7 md:mx-auto">
+                                <div class="flex items-center justify-center w-6 h-full">
+                                    <div class="w-1 h-full bg-primary rounded-t-full"></div>
+                                </div>
+                                <div class="absolute w-6 h-6 -mt-3 bg-primary border-4 border-white rounded-full top-1/2"></div>
                             </div>
+
+                            <template x-if="index % 2 === 1">
+                                <div class="relative p-4 my-6 text-gray-800 bg-white border-2 border-secondary rounded-xl col-start-6 col-end-10 mr-auto group hover:bg-secondary/10 transition">
+                                    <h3 class="text-lg font-semibold lg:text-xl" x-text="step.name"></h3>
+                                    <p class="text-gray-600 leading-relaxed" x-text="step.description"></p>
+                                    <template x-if="step.link">
+                                        <button
+                                            @click="window.open(step.link, '_blank')"
+                                            class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
+                                        >
+                                            Accédez
+                                        </button>
+                                    </template>
+
+                                    <div class="absolute -top-24 left-1/2 transform -translate-x-1/2 hidden group-hover:block z-20">
+                                        <div class="relative w-72">
+                                            <div class="relative rounded-lg p-4 border-2 border-primary text-sm font-sans text-gray-800 shadow-md bg-white">
+                                                <template x-if="step.image">
+                                                    <img :src="step.image" alt="" class="object-contain rounded-md mb-2 w-full">
+                                                </template>
+                                                <p x-text="step.description" class="text-gray-600 leading-relaxed"></p>
+                                                <template x-if="step.link">
+                                                    <button
+                                                        @click="window.open(step.link, '_blank')"
+                                                        class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
+                                                    >
+                                                        Accédez
+                                                    </button>
+                                                </template>
+                                                <div class="absolute -bottom-2 right-8 h-4 w-4 rotate-45 bg-primary"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
                         </div>
-                    @endforeach
-                </div> --}}
-
-                <div class="bg-gradient-to-r from-manga-purple/10 to-manga-orange/10 p-6 border-foreground">
-                    <h3 class="text-xl font-bold text-foreground mb-4 text-center">Étapes du Processus</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        <template x-for="step in steps" :key="step.id">
-                            <div 
-                                @click="selectedStep = step"
-                                class="flex items-center gap-3 p-3 bg-white/50 rounded-xl border-2 border-foreground/20 cursor-pointer hover:bg-white transition"
-                            >
-                                <div class="w-8 h-8 bg-manga-purple text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                    <span x-text="step.id"></span>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-foreground text-sm" x-text="step.name"></div>
-                                    <div class="text-xs text-muted-foreground" x-text="(step.description && step.description.length > 20) ? step.description.slice(0,20) + '...' : step.description"></div>
-                                </div>
-                            </div>
-                        </template>
-                    </div>
+                    </template>
                 </div>
-            </div>
 
-            <div class="mt-8 text-center">
-                <div class="border-2 border-foreground shadow-xl rounded-xl">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" x-text="selectedStep ? ('Détails étape ' + selectedStep.id + ' - ' + selectedStep.name) : 'Aucune étape sélectionnée'"></h3>
-                        <p class="text-sm opacity-90" x-text="selectedStep ? selectedStep.description : ''"></p>
-
-                        <template x-if="selectedStep && selectedStep.link">
-                            <p class="mt-3 italic">
-                                veuillez cliquer sur le lien:
-                                <a :href="selectedStep.link" target="_blank" class="underline text-secondary" x-text="selectedStep.link"></a>
-                            </p>
-                        </template>
+                <template x-if="visibleStart + visibleCount < steps.length">
+                    <div class="flex justify-center mt-6">
+                        <button 
+                            @click="nextSteps" 
+                            class="flex items-center gap-1 text-secondary border-2 border-secondary hover:text-white px-4 py-2 rounded-lg hover:bg-secondary transition"
+                        >
+                            <span class="text-lg">+</span> Voir plus
+                        </button>
                     </div>
-                </div>
+                </template>
             </div>
         </div>
     </div>
 
+
+
+
     <section 
+        id="parteners"
         x-data="partnersCarousel({{ json_encode($partners) }})" 
         x-init="init()"
         class="py-20 px-4 sm:px-6 lg:px-8  relative overflow-hidden">
@@ -368,7 +403,7 @@
         <div class="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-float"></div>
         <div class="absolute bottom-20 right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl animate-float delay-300"></div>
 
-        <div class="max-w-7xl mx-auto relative z-10">
+        <div class="max-w-screen-xl mx-auto relative z-10">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">
                     Nos <span class="bg-primary to-accent bg-clip-text text-transparent">Partenaires</span>
@@ -556,7 +591,7 @@
                 </p>
             </div>
 
-            <div class=" max-w-4xl mx-auto space-y-4" x-data="{ openIndex: 0 }">
+            <div class="max-w-screen-xl mx-auto space-y-4" x-data="{ openIndex: 0 }">
 
                 @foreach($faqs as $index => $faq)
                     <div class="bg-white rounded-2xl shadow overflow-hidden">

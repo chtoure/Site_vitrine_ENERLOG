@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\services\NewsServices;
 use App\Services\ParameterService;
 use App\Services\SeoService;
+use App\services\ServicesService;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -14,6 +15,7 @@ class NewsController extends Controller
         // Récupère toutes les news (array)
         $allNews = NewsServices::getAll();
         $parameter = ParameterService::get();
+        $services = ServicesService::getAll();
 
         // Metas SEO
         SeoService::setMeta(
@@ -26,13 +28,15 @@ class NewsController extends Controller
         // On envoie TOUTES les actualités à la vue (plus de pagination)
         return view('news.listes', [
             'dataNews'  => $allNews,
-            'parameter' => $parameter
+            'parameter' => $parameter,
+            'services' => $services
         ]);
     }
 public function getByIdNews(int $idNew)
 {
     $news = NewsServices::getById($idNew);
     $parameter = ParameterService::get();
+    $services = ServicesService::getAll();
 
     if (!$news) {
         return redirect()->route('public.404');
@@ -47,7 +51,11 @@ public function getByIdNews(int $idNew)
 
     return view(
         'news.details',
-        ['news' => $news, 'parameter' => $parameter]
+        [
+            'news' => $news,
+            'parameter' => $parameter,
+            'services' => $services
+        ]
     );
 }
 
