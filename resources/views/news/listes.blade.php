@@ -38,7 +38,7 @@
                     <div>
                         <h2 class="text-3xl font-bold text-gray-900 mb-6">{{ $item['name'] }}</h2>
                         <p class="text-gray-600 mb-6">
-                            {{ \Illuminate\Support\Str::limit($item['content'] ?? '', 350, '...') }}
+                            {{ Str::limit($item['content'] ?? '', 350, '...') }}
                         </p>
 
                         {{-- Lien vers le détail --}}
