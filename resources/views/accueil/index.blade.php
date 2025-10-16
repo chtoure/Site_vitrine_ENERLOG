@@ -308,6 +308,14 @@
                                             Accédez
                                         </button>
                                     </template>
+                                    <template x-if="step.detail">
+                                        <button
+                                            @click="window.open(step.detail, '_blank')"
+                                            class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
+                                        >
+                                            voir plus
+                                        </button>
+                                    </template>
 
                                     <div class="absolute -top-24 left-1/2 transform -translate-x-1/2 hidden group-hover:block z-20">
                                         <div class="relative w-72">
@@ -322,6 +330,14 @@
                                                         class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
                                                     >
                                                         Accédez
+                                                    </button>
+                                                </template>
+                                                <template x-if="step.detail">
+                                                    <button
+                                                        @click="window.open(step.detail, '_blank')"
+                                                        class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
+                                                    >
+                                                        voir plus
                                                     </button>
                                                 </template>
                                                 <div class="absolute -bottom-2 left-8 h-4 w-4 rotate-45 bg-primary"></div>
@@ -350,6 +366,14 @@
                                             Accédez
                                         </button>
                                     </template>
+                                    <template x-if="step.detail">
+                                        <button
+                                            @click="window.open(step.detail, '_blank')"
+                                            class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
+                                        >
+                                            voir plus
+                                        </button>
+                                    </template>
 
                                     <div class="absolute -top-24 left-1/2 transform -translate-x-1/2 hidden group-hover:block z-20">
                                         <div class="relative w-72">
@@ -364,6 +388,14 @@
                                                         class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
                                                     >
                                                         Accédez
+                                                    </button>
+                                                </template>
+                                                <template x-if="step.detail">
+                                                    <button
+                                                        @click="window.open(step.detail, '_blank')"
+                                                        class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
+                                                    >
+                                                        voir plus
                                                     </button>
                                                 </template>
                                                 <div class="absolute -bottom-2 right-8 h-4 w-4 rotate-45 bg-primary"></div>
