@@ -14,6 +14,12 @@ class TarifsController extends Controller {
         $parameter = ParameterService::get();
         $abonnements = AbonnementService::getAll();
         $services = ServicesService::getAll();
+        
+
+        $parameter["name"]="Tarifs";
+        $parameter["summarize"]="Des tarifs simples et compréhensifs.";
+        $parameter["hero_image"]="/images/tarif/tarifs.jpg";
+
 
         SeoService::setMeta(
             $parameter['name'] ?? 'ENERLOG',

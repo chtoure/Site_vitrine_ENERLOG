@@ -75,6 +75,7 @@
     $navigation = [
         ['name' => 'Services', 'href' => route('public.services.index')],
         ['name' => 'News', 'href' => route('public.news.index')],
+        ['name' => 'Tarifs', 'href' => route('public.tarif.index')],
     ];
 @endphp
 
