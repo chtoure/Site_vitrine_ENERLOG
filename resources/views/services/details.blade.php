@@ -14,12 +14,11 @@
     </div>
 
     {{-- Header Section --}}
-    <section class="bg-white py-8">
+    {{-- <section class="bg-white py-8">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
 
                 <a href="{{route("public.services.index")}}" class="inline-flex items-center text-primary hover:text-primary/80 mb-6">
-                    {{-- Icône retour --}}
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                     </svg>
@@ -33,7 +32,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- Main Article --}}
     <section class="py-6 sm:py-8 lg:py-12">
@@ -99,7 +98,7 @@
                     Quels que Services
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                   @foreach (collect($dataServices)->where('id', '!=', $service['id'])->take(3) as $itemService)
+                   @foreach (collect($services)->where('id', '!=', $service['id'])->take(3) as $itemService)
                         <a href="{{ route('public.services.detail', $itemService['id']) }}" 
                         class="group block border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
                             <img src="{{ asset($itemService['images'][0] ?? '/fallback.jpg') }}"

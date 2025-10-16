@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\services\NewsServices;
 use App\Services\ParameterService;
 use App\Services\SeoService;
+use App\services\ServicesService;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -14,8 +15,12 @@ class NewsController extends Controller
         // Récupère toutes les news (array)
         $allNews = NewsServices::getAll();
         $parameter = ParameterService::get();
+        $services = ServicesService::getAll();
 
-        // Metas SEO
+        $parameter["name"]="News";
+        $parameter["summarize"]="Découvrez nos actualités digitales et restez informé sur les tendances de la transformation numérique.";
+        $parameter["hero_image"]="/images/news/news.webp";
+
         SeoService::setMeta(
             $parameter['name'] ?? 'ENERLOG',
             "ENERLOG - La liste des actualités de l'entreprise.",
@@ -23,16 +28,21 @@ class NewsController extends Controller
             asset($parameter['logo'] ?? '')
         );
 
-        // On envoie TOUTES les actualités à la vue (plus de pagination)
         return view('news.listes', [
             'dataNews'  => $allNews,
-            'parameter' => $parameter
+            'parameter' => $parameter,
+            'services' => $services
         ]);
     }
 public function getByIdNews(int $idNew)
 {
     $news = NewsServices::getById($idNew);
     $parameter = ParameterService::get();
+    $services = ServicesService::getAll();
+
+    $parameter["name"]="News";
+    $parameter["summarize"]="Découvrez nos actualités digitales et restez informé sur les tendances de la transformation numérique.";
+    $parameter["hero_image"]="/images/news/news.webp";
 
     if (!$news) {
         return redirect()->route('public.404');
@@ -47,7 +57,11 @@ public function getByIdNews(int $idNew)
 
     return view(
         'news.details',
-        ['news' => $news, 'parameter' => $parameter]
+        [
+            'news' => $news,
+            'parameter' => $parameter,
+            'services' => $services
+        ]
     );
 }
 

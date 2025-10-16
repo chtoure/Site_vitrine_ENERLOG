@@ -1,4 +1,5 @@
 [
+  
   {
     "plan": "Basic",
     "description": "Donne accès à la plateforme de base : gestion des cartes (fonctions cœur), gestion d’un site (inventaire basique, pompes), accès limité au dashboard (rapports simples). Les fonctions avancées (multi-sites, rapports pro) ne sont pas incluses.",

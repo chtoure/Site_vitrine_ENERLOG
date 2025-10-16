@@ -1,7 +1,7 @@
     <html lang="en">
         <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/default.css'])
-            <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             {!! \Artesaos\SEOTools\Facades\SEOTools::generate() !!}
 
@@ -10,14 +10,58 @@
             {{-- <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}"> --}}
 
         </head>
-        <body className="font-sans">
-          <main className="min-h-screen">
-              @include('component.layouts.header')
-          
-                  @yield('content')
-              
-              @include('component.layouts.footer')
-          </main>
+        <body class="font-sans">
+            @php
+                use Illuminate\Support\Str;
+            @endphp
+            <main id="main-container" class="min-h-screen relative">
+                @include('component.layouts.header')
+                @include('component.layouts.hero')
 
+                @yield('content')
+                
+                @include('component.layouts.footer')
+            </main>
+
+            <a
+                href="{{$parameter['play_store_url']}}"
+                target="_blank"
+                id="floating-btn"
+                class="fixed bottom-6 right-6 bg-primary text-white shadow-lg p-1 transition-transform hover:scale-110"
+            >
+                <img
+                    src="{{asset($parameter['qr_code'])}}"
+                    alt="QR code"
+                    class="object-contain h-16 w-16"
+                />
+            </a>
         </body>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('floating-btn');
+            const footer = document.getElementById('footer');
+            const margin = 16; 
+            function updateButton() {
+                const footerTop = footer.getBoundingClientRect().top + window.scrollY;
+                const windowBottom = window.scrollY + window.innerHeight;
+
+                const overlap = windowBottom - footerTop;
+
+                if (overlap > 0) {
+                    btn.style.bottom = `${overlap + margin}px`;
+                } else {
+
+                    btn.style.bottom = `${margin}px`;
+                }
+            }
+
+            window.addEventListener('scroll', updateButton);
+            window.addEventListener('resize', updateButton);
+            updateButton(); 
+        });
+    </script>
+
+
     </html>
