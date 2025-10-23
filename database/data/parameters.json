@@ -1,6 +1,7 @@
 
 {
-    "name": " ENERLOG - TECHNOLOGY & DIGITAL SAS",
+    "business_name": "ENERLOG",
+    "full_name": " ENERLOG - TECHNOLOGY & DIGITAL SAS",
     "slogan": "Enerlog, Making difference for you",
     "mission": "Fournir des solutions numériques innovantes, stratégiques et adaptées aux besoins spécifiques.",
     "valeur": "Transparence, innovation, sécurité et proximité.",
@@ -8,12 +9,16 @@
     "description": "ENERLOG TECHNOLOGY & DIGITAL SAS est une société par actions simplifiée spécialisée dans la création de solutions numériques. Elle accompagne ses partenaires par des technologies stratégiques, notamment la plateforme Cpay qui couvre la billetterie digitale/physique, la carte pétrolière, la gestion de réseaux de distribution et des programmes de fidélité.",
     "summarize": "De la carte pétrolière à la billetterie, tout devient plus simple.",
     "logo":"images/parameters/logo.png",
-    "hero_image":"https://cdn.tailgrids.com/1.0/assets/images/hero/hero-image-01.png",
+    "footer_logo":"/images/parameters/footer_logo.png",
+    "hero_image":"/images/parameters/Gemini_Generated_Image_u4ut4zu4u.png",
+    "hero_icon":"/icons/image.svg",
     "login_url": "https://cpay.enerlog.net/corpus/accueil/connexion",
     "about": "Fondée en 2018, ENERLOG TECHNOLOGY & DIGITAL SAS (ETD) accompagne entreprises et particuliers avec des solutions numériques innovantes et accessibles. En 2023, nous avons lancé Cpay, une plateforme tout-en-un pour la billetterie, les cartes pétrolières, les réseaux de distribution et les programmes de fidélité.",
     "play_store_url":"https://play.google.com/store/apps/details?id=enerlog.cpay.cpay&pcampaignid=web_share",
     "app_store_url":"https://apps.apple.com/us/app/cpay-tpe/id6747050923",
     "qr_code":"images/parameters/cpay_qr_code.jpeg",
+    "policy_url":"https://cpay.enerlog.net/support/PolitiqueConfidentialite",
+
     "images": [
         "/images/parameters/DSC_7046.JPG",
         "/images/parameters/DSC_6977.JPG",
@@ -32,21 +37,19 @@
     },
     "comptes": [
         {
-            "logo": "/images/comptes/facebook.png",
             "name": "Facebook",
             "link": "https://www.facebook.com/people/Enerlog/61568425995002/?locale=pt_BR",
-            "icon": "facebook"
-        },
-                {
-            "logo": "/images/comptes/whatsapp.png",
-            "name": "Whatsapp",
-            "link": "https://chat.whatsapp.com/G4TcAeNmBcU3XaruiJueME"
+            "icon": "/icons/facebook.svg"
         },
         {
-            "logo": "/images/comptes/tiktok.png",
+            "name": "Whatsapp",
+            "link": "https://chat.whatsapp.com/G4TcAeNmBcU3XaruiJueME",
+            "icon": "/icons/whatsapp.svg"
+        },
+        {
             "name": "TikTok",
             "link": "https://www.tiktok.com/@enerlog?_t=ZM-8zYQ57CAHk0&_r=1",
-            "icon": "tiktok"
+            "icon": "/icons/tiktok.svg"
         }
     ]
 

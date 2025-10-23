@@ -41,11 +41,28 @@
                             {{ Str::limit($item['content'] ?? '', 350, '...') }}
                         </p>
 
+                        @if(count($item['links']) > 0)
+                                   <div class="flex items-center space-x-4">
+                                        @foreach ($item['links'] as $link)
+                                            @if(isset($link['icon']))
+                                                    <a 
+                                                        href="{{ $link['url'] }}" 
+                                                        target="_blank"
+                                                        title="Voir sur {{ ucfirst($link['icon'] ?? 'lien') }}"
+                                                        class="text-primary hover:text-secondary"
+                                                    >
+                                                        <img src="{{asset($link['icon'])}}" class="w-6 h-6"/>
+                                                    </a>
+                                            @endif
+                                        @endforeach
+                                    </div>   
+                                @endif
+
                         {{-- Lien vers le détail --}}
-                        <a href="{{ route('public.news.detail', $item['id']) }}"
+                        {{-- <a href="{{ route('public.news.detail', $item['id']) }}"
                            class="inline-block px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg">
                             Lire plus
-                        </a>
+                        </a> --}}
                     </div>
 
                     {{-- Images --}}
