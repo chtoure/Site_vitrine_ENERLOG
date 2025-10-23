@@ -62,15 +62,22 @@
            
             @php
                 $footerLinks = [
-                    'company' =>[
+                    'informations' =>[
                         ['name' => 'À propos de nous', 'href' => route('public.about.index')],
                         ['name' => 'Nos actualités et conseils', 'href' => route('public.news.index')],
                         ['name' => 'Nos services disponibles', 'href' => route('public.services.index')],
                         ['name' => 'Nos partenaires et clients de confiances', 'href' =>"#parteners"],
-                        ['name' => 'Contactez-nous', 'href' => $parameter['url_contact_form']],
+                        // ['name' => 'Contactez-nous', 'href' => $parameter['url_contact_form']],
                         ['name' => 'Centre d\'aide', 'href' => 'https://cpay.enerlog.net/support/assistance/elearning'],
                         
+                    ],
+                    'footer_contents' =>[
+                        ['name' => 'Politique de confidentialité', 'href' => $parameter['policy_url']],
+                        ['name' => 'Assistance', 'href' => 'https://cpay.enerlog.net/support/assistance'],
+                        ['name' => 'Conditions d\'utilisation', 'href' => 'https://cpay.enerlog.net/support/cgu'],
                     ]
+
+
                 ];
             @endphp
             
@@ -93,13 +100,18 @@
             <div>
                 <h3 class="font-semibold text-secondary mb-4 text-lg">Informations utiles</h3>
                 <ul class="space-y-3">
-                    @foreach($footerLinks['company'] as $link)
+                    @foreach($footerLinks['informations'] as $link)
                         <li>
                             <a href="{{ $link['href'] }}" class="text-white/70 hover:text-secondary transition-colors text-sm hover:translate-x-1 transform duration-200 block">
                                 {{ $link['name'] }}
                             </a>
                         </li>
                     @endforeach
+                    <li>
+                        <a href="{{ $parameter['url_contact_form'] }}" target="_blank" class="text-white/70 hover:text-secondary transition-colors text-sm hover:translate-x-1 transform duration-200 block">
+                            Contactez-nous
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div>
@@ -111,10 +123,20 @@
 
         </div>
 
+        @php
+            $footer_content=[
+                "Politique"=>$parameter['policy_url'],
+                "Assistance"=>"https://cpay.enerlog.net/support/assistance",
+                "Condition d'utilisation"=>"https://cpay.enerlog.net/support/cgu"
+            ]
+        @endphp
+
         <div class="border-t border-[#F29100]/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm pb-6">
             <div class=" text-white/60 mb-4 md:mb-0">{{$parameter['full_name']}}</div>
-            <div class="text-secondary">
-                <a href="{{$parameter['policy_url']}}" target="_blank">Notre Politique de Confidentialité</a>
+            <div class="flex items-center gap-4 underline text-secondary">
+                @foreach ($footerLinks['footer_contents'] as $item)
+                    <a href="{{$item['href']}}" target="_blank">{{$item['name']}}</a> 
+                @endforeach
             </div>
         </div>
     </div>

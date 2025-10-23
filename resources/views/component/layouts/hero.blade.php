@@ -175,10 +175,10 @@
                         </p>
 
                         <a 
-                            href="#get-started" 
+                            href="{{ $parameter['login_url'] }}" 
                             class="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 rounded-md text-sm md:text-base font-semibold transition-all duration-300 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                         >
-                            Get started
+                            Connexion
                         </a>
                     </div>
                 </div>
