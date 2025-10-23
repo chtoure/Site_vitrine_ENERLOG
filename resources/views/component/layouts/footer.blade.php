@@ -67,7 +67,7 @@
                         ['name' => 'Nos actualités et conseils', 'href' => route('public.news.index')],
                         ['name' => 'Nos services disponibles', 'href' => route('public.services.index')],
                         ['name' => 'Nos partenaires et clients de confiances', 'href' =>"#parteners"],
-                        ['name' => 'Contactez-nous', 'href' => "https://docs.google.com/forms/d/e/1FAIpQLSffJuKDuQd3N3ziht1zJ0xdDW4DZOGxMnSpDsTzFwnZ5PNIRQ/viewform?usp=header"],
+                        ['name' => 'Contactez-nous', 'href' => $parameter['url_contact_form']],
                         ['name' => 'Centre d\'aide', 'href' => 'https://cpay.enerlog.net/support/assistance/elearning'],
                         
                     ]
