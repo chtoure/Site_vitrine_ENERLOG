@@ -7,11 +7,11 @@
         use Illuminate\Support\Str;
     @endphp
 
-    <section class="py-20 bg-gradient-to-br from-slate-50 to-gray-100" x-data="{ activeTab: 0 }">
+    <section class="py-8 bg-gradient-to-br from-slate-50 to-gray-100" x-data="{ activeTab: 0 }">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance text-[#222222]">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold mb-4 text-balance text-[#222222]">
                     Quelques-uns de nos services
                 </h2>
             </div>
@@ -44,7 +44,7 @@
                                     <p class="text-gray-600 leading-relaxed">{{ Str::limit($service['description'], 150, '...') }}</p>
 
                                     <div class="flex items-center space-x-2">
-                                        <span class="text-xl font-bold text-secondary">{{ $service['price'] }}</span>
+                                        <span class="text-sm font-bold text-secondary">{{ $service['price'] }}</span>
                                     </div>
                                     
                                 </div>
@@ -99,7 +99,7 @@
                                     </button>
                                     <button
                                         onclick="window.open('{{$parameter['login_url']}}', '_blank')"
-                                        class="inline-flex items-center justify-center border-2 border-primary text-primary hover:bg-white hover:text-white hover:bg-primary transition-all duration-300  backdrop-blur-sm px-6 py-3 rounded-lg text-sm font-semibold"
+                                        class="inline-flex items-center justify-center border-2 border-primary text-secondary hover:text-white hover:bg-primary transition-all duration-300  backdrop-blur-sm px-6 py-3 rounded-lg text-sm font-semibold"
                                         title="En savoir plus"
                                     >
                                         Créer un compte
@@ -112,7 +112,7 @@
                             @foreach($services as $index => $tab)
                                 <div 
                                     x-show="activeTab === {{ $index }}"
-                                    class="bg-[#312782] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+                                    class="bg-[#312782] text-white px-4 py-2 rounded-full font-bold shadow-lg"
                                 >
                                     {{ $tab['price'] }}
                                 </div>
@@ -126,10 +126,10 @@
 
     <style>[x-cloak]{display:none !important;}</style>
 
-    <section class="py-20 relative">
+    <section class="py-8 relative">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl  font-bold text-foreground mb-4">
                     Nos Actualités
                 </h2>
                 <p class="text-muted-foreground text-lg max-w-2xl mx-auto italic">
@@ -156,15 +156,15 @@
                                     alt="{{ $new['name'] }}"
                                     class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-700"
                                 />
-                                <div class="absolute top-4 right-4">
+                                {{-- <div class="absolute top-4 right-4">
                                     <span class="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
                                         {{ $new['id'] }}
                                     </span>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
 
-                        <div class="p-6">
+                        <div class="p-3">
                             <h3 class="text-xl font-bold text-card-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
                                 {{ $new['name'] }}
                             </h3>
@@ -172,8 +172,8 @@
                                 {{ $new['content'] }}
                             </p>
                             
-                            <div class="flex flex-col gap-3">
-                                <a 
+                            <div class="flex flex-col mb-2">
+                                {{-- <a 
                                     href="{{ route('public.news.detail',  $new['id']) }}" 
                                     class="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg transition"
                                 >
@@ -181,28 +181,20 @@
                                     <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                                     </svg>
-                                </a>
+                                </a> --}}
                                 
                                 @if(count($new['links']) > 0)
-                                   <div class="flex items-center justify-center space-x-4">
+                                   <div class="flex items-center space-x-4">
                                         @foreach ($new['links'] as $link)
                                             @if(isset($link['icon']))
-                                                @if ($link['icon'] == 'tiktok')
-                                                    <a href="https://www.tiktok.com/@toncompte" target="_blank" class="text-primary hover:text-secondary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
-                                                            <path d="M12.5 2c.3 3.4 2.4 5.4 5.8 5.7v2.9a8.7 8.7 0 0 1-3.6-.7v4.9a6.4 6.4 0 1 1-6.4-6.4c.2 0 .5 0 .7.1v3a3.5 3.5 0 1 0 2.5 3.4V2h1z"/>
-                                                        </svg>
-                                                    </a>
-                                                @else
                                                     <a 
                                                         href="{{ $link['url'] }}" 
                                                         target="_blank"
                                                         title="Voir sur {{ ucfirst($link['icon'] ?? 'lien') }}"
                                                         class="text-primary hover:text-secondary"
                                                     >
-                                                        <i data-lucide="{{$link['icon']}}" class="w-6 h-6"></i>
+                                                        <img src="{{asset($link['icon'])}}" class="w-6 h-6"/>
                                                     </a>
-                                                @endif
                                             @endif
                                         @endforeach
                                     </div>   
@@ -251,14 +243,13 @@
             }
         }'
         x-cloak
-        class="p-4 md:p-8"
     >
         <div class="max-w-screen-xl mx-auto mb-8">
             <div class="text-center mb-8">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance text-[#222222]">
+                <h2 class="text-2xl font-bold mb-4 text-balance text-[#222222]">
                     Processus <span class="font-bold text-secondary">{{ $solution['name'] }}</span>.
                 </h2>
-                <p class="text-xl text-muted-foreground max-w-2xl mx-auto italic">
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto italic">
                     {{ $solution['description'] }}
                 </p>
             </div>
@@ -300,7 +291,7 @@
                                     <h3 class="text-lg font-semibold lg:text-xl" x-text="step.name"></h3>
                                     <p class="text-gray-600 leading-relaxed" x-text="step.description"></p>
 
-                                    <template x-if="step.link">
+                                    {{-- <template x-if="step.link">
                                         <button
                                             @click="window.open(step.link, '_blank')"
                                             class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
@@ -315,7 +306,7 @@
                                         >
                                             voir plus
                                         </button>
-                                    </template>
+                                    </template> --}}
 
                                     <div class="absolute -top-24 left-1/2 transform -translate-x-1/2 hidden group-hover:block z-20">
                                         <div class="relative w-72">
@@ -357,8 +348,8 @@
                             <template x-if="index % 2 === 1">
                                 <div class="relative p-4 my-6 text-gray-800 bg-white border-2 border-secondary rounded-xl col-start-6 col-end-10 mr-auto group hover:bg-secondary/10 transition">
                                     <h3 class="text-lg font-semibold lg:text-xl" x-text="step.name"></h3>
-                                    <p class="text-gray-600 leading-relaxed" x-text="step.description"></p>
-                                    <template x-if="step.link">
+                                    <p class="text-gray-600 leading-relaxed " x-text="step.description"></p>
+                                    {{-- <template x-if="step.link">
                                         <button
                                             @click="window.open(step.link, '_blank')"
                                             class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 bg-white/10 backdrop-blur-sm px-3 py-1 mt-2 rounded-lg text-sm font-semibold"
@@ -373,7 +364,7 @@
                                         >
                                             voir plus
                                         </button>
-                                    </template>
+                                    </template> --}}
 
                                     <div class="absolute -top-24 left-1/2 transform -translate-x-1/2 hidden group-hover:block z-20">
                                         <div class="relative w-72">
@@ -429,7 +420,7 @@
         id="parteners"
         x-data="partnersCarousel({{ json_encode($partners) }})" 
         x-init="init()"
-        class="py-20 px-4 sm:px-6 lg:px-8  relative overflow-hidden">
+        class="py-4 relative overflow-hidden">
 
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,hsl(var(--primary)/0.1),transparent)] opacity-50"></div>
         <div class="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-float"></div>
@@ -437,16 +428,16 @@
 
         <div class="max-w-screen-xl mx-auto relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                <h2 class="text-2xl font-bold text-foreground">
                     Nos <span class="bg-primary to-accent bg-clip-text text-transparent">Partenaires</span>
                 </h2>
-                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
                     Nous collaborons avec les leaders de l'industrie...
                 </p>
             </div>
 
-            <div class="relative mb-12" @mouseenter="pause()" @mouseleave="play()">
-                <div class=" backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-200 relative overflow-hidden">
+            <div class="relative mb-6 " @mouseenter="pause()" @mouseleave="play()">
+                <div class=" backdrop-blur-xl rounded-3xl p-4 md:p-6 border border-gray-200 relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl"></div>
 
                     <div class="relative z-10">
@@ -459,7 +450,7 @@
                                             <img :src="partner.logo" :alt="partner.name + ' logo'" class="object-contain w-full h-full transition-all duration-500">
                                         </div>
                                         <h3 class="text-lg font-semibold text-center text-foreground group-hover:text-primary transition-colors duration-300 mb-2" x-text="partner.name"></h3>
-                                        <p class="text-center text-muted-foreground italic text-sm" x-text="partner.temoignage"></p>
+                                        <p class="text-center text-muted-foreground italic " x-text="partner.temoignage"></p>
                                     </div>
                                 </div>
                             </template>
@@ -535,13 +526,13 @@
         }
     </script>
 
-    <section class="py-20">
+    <section class="py-4">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold mb-4 text-balance">
                     Tarification simple et transparente
                 </h2>
-                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
                     Choisissez l’abonnement qui correspond le mieux à vos besoins. Tous les forfaits incluent nos fonctionnalités essentielles, sans frais cachés.
                 </p>
             </div>
@@ -549,7 +540,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 @foreach($abonnements as $abonnement)
-                    <div class="relative bg-white rounded-2xl shadow-lg border p-6 {{ $abonnement['plan']=='Premium' ? 'border-orange-500 scale-105' : '' }}">
+                    <div class="relative bg-white rounded-xl shadow-lg border p-3 {{ $abonnement['plan']=='Premium' ? 'border-orange-500 scale-105' : '' }}">
                         
                         @if($abonnement['plan']=="Premium")
                             <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -562,18 +553,18 @@
                             </div>
                         @endif
 
-                        <div class="text-center pb-8">
-                            <h3 class="text-2xl font-bold text-primary">{{ $abonnement['plan'] }}</h3>
-                            <p class="text-sm text-muted-foreground mt-2">{{ $abonnement['description'] }}</p>
+                        <div class="text-center pb-2">
+                            <h3 class="text-xl font-bold text-primary">{{ $abonnement['plan'] }}</h3>
+                            <p class=" text-muted-foreground mt-2">{{ $abonnement['description'] }}</p>
                             <div class="mt-4 flex items-baseline justify-center">
-                                <span class="text-4xl font-bold">${{ $abonnement['price'] }}</span>
+                                <span class=" font-bold">{{ $abonnement['price'] }}</span>
                             </div>
                         </div>
 
                         <div class="space-y-6">
-                            <ul class="space-y-3" x-data="{ openIndex: null }">
+                            <ul class="space-y-1" x-data="{ openIndex: null }">
                                 @foreach($abonnement['content'] as $feature => $detail)
-                                    <li class="flex flex-col space-y-2 border-b pb-2">
+                                    <li class="flex flex-col space-y-2 border-b pb-2 ">
                                         <button
                                             class="flex items-center justify-between w-full text-left p-2 hover:bg-gray-100 transition-colors rounded"
                                             @click="openIndex === '{{ $feature }}' ? openIndex = null : openIndex = '{{ $feature }}'"
@@ -614,11 +605,11 @@
 
 
     
-    <section id="faqs" class="py-20">
+    <section id="faqs" class="py-8">
         <div class="grid grid-cols-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center gap-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">Questions Fréquemment Posées</h2>
-                <p class="text-xl text-muted-foreground max-w-2xl mx-auto italic">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl mb-4 text-balance font-bold">Questions Fréquemment Posées</h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto italic">
                     Trouvez des réponses aux questions courantes sur les outils et services ScrewFast.
                 </p>
             </div>
@@ -631,7 +622,7 @@
                             class="w-full text-left p-6 flex items-center justify-between hover:bg-gray-100 transition-colors"
                             @click="openIndex === {{ $index }} ? openIndex = null : openIndex = {{ $index }}"
                         >
-                            <span class="font-semibold text-foreground pr-4">{{ $faq['question'] }}</span>
+                            <span class="font-semibold text-foreground pr-4 ">{{ $faq['question'] }}</span>
                             <span class="flex-shrink-0">
                                 <svg x-show="openIndex !== {{ $index }}" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
@@ -642,7 +633,7 @@
                             </span>
                         </button>
                         <div x-show="openIndex === {{ $index }}" x-transition class="px-6 pb-6">
-                            <p class="text-muted-foreground leading-relaxed italic">{{ $faq['reponse'] }}</p>
+                            <p class=" text-muted-foreground leading-relaxed italic">{{ $faq['reponse'] }}</p>
                         </div>
                     </div>
                 @endforeach

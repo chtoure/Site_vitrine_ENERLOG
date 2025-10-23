@@ -7,10 +7,8 @@
 
             <link rel="shortcut icon" href="{{ asset($parameter['logo']) }}">
 
-            {{-- <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}"> --}}
-
         </head>
-        <body class="font-sans">
+        <body class="font-sans text-base">
             @php
                 use Illuminate\Support\Str;
             @endphp
@@ -24,8 +22,7 @@
             </main>
 
             <a
-                href="{{$parameter['play_store_url']}}"
-                target="_blank"
+                href="http://127.0.0.1:8000/download"
                 id="floating-btn"
                 class="fixed bottom-6 right-6 bg-primary text-white shadow-lg p-1 transition-transform hover:scale-110"
             >
