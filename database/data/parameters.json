@@ -5,6 +5,8 @@
     "slogan": "Enerlog, Making difference for you",
     "mission": "Fournir des solutions numériques innovantes, stratégiques et adaptées aux besoins spécifiques.",
     "valeur": "Transparence, innovation, sécurité et proximité.",
+    "innovation":"Apporter des technologies de pointe et innover pour relever les défis numériques de nos communautés.",
+    "engagement":"Offrir des solutions technologiques durables et inclusives.",
     "historique": "Créée en 2018, ENERLOG TECHNOLOGY & DIGITAL SAS (ETD) est née pour proposer aux entreprises et particuliers togolais des solutions numériques innovantes et accessibles. Elle a lancé la plateforme Cpay en 2023, destinée à la gestion de la billetterie, des cartes pétrolières et des programmes de fidélité.",
     "description": "ENERLOG TECHNOLOGY & DIGITAL SAS est une société par actions simplifiée spécialisée dans la création de solutions numériques. Elle accompagne ses partenaires par des technologies stratégiques, notamment la plateforme Cpay qui couvre la billetterie digitale/physique, la carte pétrolière, la gestion de réseaux de distribution et des programmes de fidélité.",
     "summarize": "De la carte pétrolière à la billetterie, tout devient plus simple.",
@@ -17,6 +19,7 @@
     "play_store_url":"https://play.google.com/store/apps/details?id=enerlog.cpay.cpay&pcampaignid=web_share",
     "app_store_url":"https://apps.apple.com/us/app/cpay-tpe/id6747050923",
     "qr_code":"images/parameters/cpay_qr_code.jpeg",
+    "url_contact_form":"https://docs.google.com/forms/d/e/1FAIpQLSffJuKDuQd3N3ziht1zJ0xdDW4DZOGxMnSpDsTzFwnZ5PNIRQ/viewform?usp=header",
     "policy_url":"https://cpay.enerlog.net/support/PolitiqueConfidentialite",
 
     "images": [
