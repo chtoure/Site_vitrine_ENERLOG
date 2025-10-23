@@ -57,9 +57,9 @@ Route::name('public.')->prefix('/')->group(function () {
         'as' => 'news.'
     ], function () {
         Route::get('', [NewsController::class,'getAllNews'])->name('index');
-        Route::get('/{id}', [NewsController::class,'getByIdNews'])
-            ->where('id', '[0-9]+')
-            ->name('detail');
+        // Route::get('/{id}', [NewsController::class,'getByIdNews'])
+        //     ->where('id', '[0-9]+')
+        //     ->name('detail');
     });
 
     // Route::group([
