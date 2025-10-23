@@ -2,39 +2,39 @@
     {
         "id": 1,
         "name": "cPay",
-        "description": "cPay est une plateforme en ligne et une application mobile permettant l'achat de billets électroniques, la gestion de cartes de fidélité et l'accès à des services connexes...",
+        "description": "cPay est une plateforme en ligne et une application mobile permettant l'achat de billets électroniques, la gestion de cartes de fidélité et l'accès à divers services connexes.",
         "process": [
             {
                 "id": 1,
                 "name": "Android",
                 "image": "/images/solutions/process1.png",
-                "description": "Interface web moderne.",
+                "description": "Interface mobile moderne.",
                 "steps": [
                     {
                         "id": 1,
                         "name": "Téléchargement",
-                        "description": "Pour télécharger la plateforme cPay, vous devez vous rendre sur le Play Store.",
+                        "description": "Rendez-vous sur le Play Store pour télécharger l’application.",
                         "link": "https://play.google.com/store/apps/details?id=enerlog.cpay.cpay",
                         "image": "/images/solutions/play_store_download_1.jpeg"
                     },
                     {
                         "id": 2,
-                        "name": "Création d’un Compte",
-                        "description": "Après avoir accédé à la plateforme, vous devez créer un compte (compte marchant ou compte client) ou vous connecter.",
+                        "name": "Création d’un compte",
+                        "description": "Choisissez le type de compte (marchand ou client), puis remplissez le formulaire.",
                         "link": "https://cpay.enerlog.net/corpus/accueil/connexion",
-                        "detail":"https://vm.tiktok.com/ZMAXFnBRn/",
+                        "detail": "https://vm.tiktok.com/ZMAXFnBRn/",
                         "image": "/images/solutions/cree_compte.png"
                     },
                     {
                         "id": 3,
-                        "name": "Gestion d’un Compte",
-                        "description": "Vous pouvez gérer votre compte sur l'application.",
-                        "detail":"https://www.tiktok.com/@enerlog/photo/7470973707163340038?is_from_webapp=1&sender_device=pc&web_id=7554332539156219448"
+                        "name": "Gestion du compte",
+                        "description": "Vous pouvez gérer votre compte directement depuis l’application.",
+                        "detail": "https://www.tiktok.com/@enerlog/photo/7470973707163340038?is_from_webapp=1&sender_device=pc&web_id=7554332539156219448"
                     },
                     {
                         "id": 4,
-                        "name": "Protection des Données",
-                        "description": "Collecte des données, droits des utilisateurs et partage des données.",
+                        "name": "Protection des données",
+                        "description": "Collecte des données, droits des utilisateurs et partage des informations personnelles.",
                         "detail": "https://vm.tiktok.com/ZMAXFsQyV/"
                     }
                 ]
@@ -43,67 +43,67 @@
                 "id": 2,
                 "name": "Web",
                 "image": "/images/solutions/process2.png",
-                "description": "Interface mobile moderne.",
+                "description": "Interface web moderne.",
                 "steps": [
                     {
                         "id": 1,
-                        "name": "Accédez à la plateforme",
-                        "description": "Pour commencer, vous devez accéder à l'interface web de la plateforme.",
+                        "name": "Accéder à la plateforme",
+                        "description": "Accédez à l’interface web de la plateforme.",
                         "link": "https://cpay.enerlog.net/corpus/accueil/connexion"
                     },
                     {
                         "id": 2,
-                        "name": "Création d’un Compte",
-                        "description": "Après avoir accédé à la plateforme, vous devez créer un compte  (compte marchant ou compte client) ou vous connecter.",
+                        "name": "Création d’un compte",
+                        "description": "Choisissez le type de compte (marchand ou client), puis remplissez le formulaire.",
                         "link": "https://cpay.enerlog.net/corpus/accueil/connexion",
-                        "detail":"https://vm.tiktok.com/ZMAXFnBRn/",
+                        "detail": "https://vm.tiktok.com/ZMAXFnBRn/",
                         "image": "/images/solutions/cree_compte.png"
                     },
                     {
                         "id": 3,
-                        "name": "Gestion d’un Compte",
-                        "description": "Vous pouvez gérer votre compte sur l'application.",
-                        "detail":"https://www.tiktok.com/@enerlog/photo/7470973707163340038?is_from_webapp=1&sender_device=pc&web_id=7554332539156219448"
+                        "name": "Gestion du compte",
+                        "description": "Vous pouvez gérer votre compte depuis l’interface web.",
+                        "detail": "https://www.tiktok.com/@enerlog/photo/7470973707163340038?is_from_webapp=1&sender_device=pc&web_id=7554332539156219448"
                     },
                     {
                         "id": 4,
-                        "name": "Protection des Données",
-                        "description": "Collecte des données, droits des utilisateurs et partage des données.",
+                        "name": "Protection des données",
+                        "description": "Collecte des données, droits des utilisateurs et partage des informations personnelles.",
                         "detail": "https://vm.tiktok.com/ZMAXFsQyV/"
                     }
                 ]
             },
             {
                 "id": 3,
-                "name": "IOS",
+                "name": "iOS",
                 "image": "/images/solutions/process2.png",
                 "description": "Interface mobile moderne.",
                 "steps": [
                     {
                         "id": 1,
                         "name": "Téléchargement",
-                        "description": "Pour télécharger la plateforme cPay, vous devez vous rendre sur le Play Store.",
+                        "description": "Pour télécharger l’application cPay, rendez-vous sur l’App Store.",
                         "link": "https://play.google.com/store/apps/details?id=enerlog.cpay.cpay",
                         "image": "/images/solutions/play_store_download_1.jpeg"
                     },
                     {
                         "id": 2,
-                        "name": "Création d’un Compte",
-                        "description": "Après avoir accédé à la plateforme, vous devez créer un compte (compte marchant ou compte client) ou vous connecter.",
+                        "name": "Création d’un compte",
+                        "description": "Choisissez le type de compte (marchand ou client), puis remplissez le formulaire.",
                         "link": "https://cpay.enerlog.net/corpus/accueil/connexion",
-                        "detail":"https://vm.tiktok.com/ZMAXFnBRn/",
+                        "detail": "https://vm.tiktok.com/ZMAXFnBRn/",
                         "image": "/images/solutions/cree_compte.png"
                     },
                     {
                         "id": 3,
-                        "name": "Gestion d’un Compte",
-                        "description": "Vous pouvez gérer votre compte sur l'application.",
-                        "detail":"https://www.tiktok.com/@enerlog/photo/7470973707163340038?is_from_webapp=1&sender_device=pc&web_id=7554332539156219448"
+                        "name": "Gestion du compte",
+                        "description": "Vous pouvez gérer votre compte directement depuis l’application.",
+                        "detail": "https://www.tiktok.com/@enerlog/photo/7470973707163340038?is_from_webapp=1&sender_device=pc&web_id=7554332539156219448"
                     },
                     {
                         "id": 4,
-                        "name": "Protection des Données",
-                        "description": "Collecte des données, droits des utilisateurs et partage des données.",
+                        "name": "Protection des données",
+                        "description": "Collecte des données, droits des utilisateurs et partage des informations personnelles.",
                         "detail": "https://vm.tiktok.com/ZMAXFsQyV/"
                     }
                 ]

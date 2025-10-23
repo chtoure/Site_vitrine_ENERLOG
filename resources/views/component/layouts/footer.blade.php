@@ -1,9 +1,9 @@
-<footer id="footer" class="bg-gradient-to-b from-[#222222] to-[#222222]/95 border-t border-[#F29100]/30 pt-20">
+<footer id="footer" class="bg-gradient-to-b from-[#222222] to-[#222222]/95 border-t border-[#F29100]/30 pt-10">
     <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="items-center space-x-2 mb-6">
                 <div class="text-3xl font-bold">
-                    <img src="{{asset($parameter['logo'])}}" alt="logo" class="h-24 w-auto">
+                    <img src="{{asset($parameter['footer_logo'])}}" alt="logo" class="h-24 w-auto">
                 </div>
                 <div class="space-y-3 text-sm">
                     <h3 class="font-semibold text-secondary mb-4 text-lg">Contactez nous</h3>
@@ -48,6 +48,15 @@
                             {{$parameter['contact']['adress']}}
                         </a>
                     </div>
+
+                    <h3 class="font-semibold text-secondary mb-4 text-lg">Nous sommes aussi sur</h3>
+                    <div class="flex space-x-3">
+                        @foreach($parameter['comptes'] as $social)
+                            <button onclick="window.open('{{ $social['link'] }}', '_blank')" class="w-10 h-10 bg-[#F29100]/20 hover:bg-[#F29100]/30 rounded-lg flex items-center justify-center text-secondary hover:text-white transition-all duration-200 hover:scale-110 border border-secondary" aria-label="{{ $social['name'] }}">
+                                <img src="{{asset($social['icon'])}}" alt="" class="h-6 w-6">
+                            </button>
+                        @endforeach
+                    </div>
                 </div>
             </div>
            
@@ -57,10 +66,8 @@
                         ['name' => 'À propos de nous', 'href' => route('public.about.index')],
                         ['name' => 'Nos actualités et conseils', 'href' => route('public.news.index')],
                         ['name' => 'Nos services disponibles', 'href' => route('public.services.index')],
-                        ['name' => 'Nos services disponibles', 'href' => route('public.services.index')],
                         ['name' => 'Nos partenaires et clients de confiances', 'href' =>"#parteners"],
-                        ['name' => 'Contactez-nous', 'href' => route('public.about.index')],
-                        ['name' => 'Actualités et annonces', 'href' => 'https://cpay.enerlog.net/'],
+                        ['name' => 'Contactez-nous', 'href' => "https://docs.google.com/forms/d/e/1FAIpQLSffJuKDuQd3N3ziht1zJ0xdDW4DZOGxMnSpDsTzFwnZ5PNIRQ/viewform?usp=header"],
                         ['name' => 'Centre d\'aide', 'href' => 'https://cpay.enerlog.net/support/assistance/elearning'],
                         
                     ]
@@ -69,14 +76,14 @@
             
 
             <div>
-                <h3 class="font-semibold text-secondary mb-4 text-lg">Services</h3>
+                <h3 class="font-semibold text-secondary mb-4 text-lg">Produits & Services</h3>
                 <ul class="space-y-3">
                     
                     <div class="space-y-3 text-sm">
                         @foreach ($services as $service)
-                            <div class="flex items-center space-x-3 text-white/70 hover:text-secondary transition-colors">
+                            <a href="{{route('public.services.detail', $service['id'])}}" class="flex items-center space-x-3 text-white/70 hover:text-secondary transition-colors">
                                 <span> {{ Str::limit( $service['name'], 50, '...') }}</span>
-                            </div>
+                            </a>
                         @endforeach
 
                     </div>
@@ -104,14 +111,10 @@
 
         </div>
 
-        <div class="border-t border-[#F29100]/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-sm text-white/60 mb-4 md:mb-0">© 2025 ENERLOG. Tous droits réservés.</div>
-            <div class="flex space-x-3">
-                @foreach($parameter['comptes'] as $social)
-                    <button onclick="window.open('{{ $social['link'] }}', '_blank')" class="w-10 h-10 bg-[#F29100]/20 hover:bg-[#F29100]/30 rounded-lg flex items-center justify-center text-secondary hover:text-white transition-all duration-200 hover:scale-110 border border-secondary" aria-label="{{ $social['name'] }}">
-                        <img src="{{asset($social['logo'])}}" alt="" class="h-6 w-6">
-                    </button>
-                @endforeach
+        <div class="border-t border-[#F29100]/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm pb-6">
+            <div class=" text-white/60 mb-4 md:mb-0">{{$parameter['full_name']}}</div>
+            <div class="text-secondary">
+                <a href="{{$parameter['policy_url']}}" target="_blank">Notre Politique de Confidentialité</a>
             </div>
         </div>
     </div>

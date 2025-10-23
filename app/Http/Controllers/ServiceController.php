@@ -19,7 +19,7 @@ class ServiceController extends Controller
 
         $parameter["name"]="Services";
         $parameter["summarize"]="Explorez nos services digitaux conçus pour accompagner votre transformation numérique.";
-        $parameter["hero_image"]="/images/services/solution_carte.jpeg";
+        // $parameter["hero_image"]="/images/services/solution_carte.jpeg";
 
         SeoService::setMeta(
             $parameter['name'] ?? 'ENERLOG',
@@ -49,7 +49,7 @@ class ServiceController extends Controller
 
         $parameter["name"]=$service["name"];
         $parameter["summarize"]=Str::limit($service['description'], 70, '...');
-        $parameter["hero_image"]=$service["images"][0];
+        // $parameter["hero_image"]=$service["images"][0];
 
          SeoService::setMeta(
             $parameter['name'] ?? 'ENERLOG',

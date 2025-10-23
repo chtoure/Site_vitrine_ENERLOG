@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\AbonnementService;
+use App\Services\DownloadService;
 use App\Services\EquipeService;
 use App\services\NewsServices;
 use App\Services\ParameterService;
@@ -48,6 +49,32 @@ class ParametersController extends Controller
             'temoignages' => $temoignages,
             'news' => $news,
             'faqs' => $faqs,
+        ]);
+    }
+
+
+    public function download()
+    {
+        $parameter = ParameterService::get();
+        $download = DownloadService::get();
+        $solution = SolutionService::getById(1);
+        $services = ServicesService::getAll();
+        
+
+
+
+        SeoService::setMeta(
+            $parameter['name'] ?? 'ENERLOG',
+            $parameter['description'] ?? 'ENERLOG - Création de solutions numériques innovantes pour entreprises et institutions.',
+            route('public.index'),
+            asset($parameter['logo']) 
+        );
+
+        return view('accueil.download', [
+            'parameter' => $parameter,
+            'download' => $download,
+            'solution' => $solution,
+            'services' => $services,
         ]);
     }
 
