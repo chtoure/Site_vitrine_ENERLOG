@@ -16,7 +16,7 @@ class TarifsController extends Controller {
         $services = ServicesService::getAll();
         
 
-        $parameter["name"]="Tarifs";
+        $parameter["business_name"]="Tarifs";
         $parameter["summarize"]="Des tarifs simples et compréhensifs.";
         $parameter["hero_image"]="/images/tarif/tarifs.jpg";
 

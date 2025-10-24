@@ -16,7 +16,7 @@
         ],
         "price":"À partir de 59 000 FCFA / site / mois ",
         "plan":"basic",
-        "commentaire": "Basic : Inclus (fonctions de base : création, activation, plafonds, rechargement)."
+        "commentaire": "Basic : Inclus (fonctions de base: création, activation, plafonds, rechargement)."
     },
 
     {
@@ -27,7 +27,7 @@
         "content": [],
         "price":" À partir de 59 000 FCFA / site / mois",
         "plan":"basic",
-        "commentaire": "Basic : Inclus (fonctions de base : créez boutique, encaissez, livrez)."
+        "commentaire": "Basic : Inclus (fonctions de base: créez boutique, encaissez, livrez)."
     },
     
     {
@@ -62,7 +62,7 @@
         ],
         "price":" À partir de 59 000 FCFA / site / mois",
         "plan":"basic",
-        "commentaire": "Basic : Inclus (fonctions de base : car washing, achat carburant )."
+        "commentaire": "Basic : Inclus (fonctions de base: car washing, achat carburant)."
     },
 
     {
@@ -79,7 +79,7 @@
         ],
         "price":"",
         "plan":"basic",
-        "commentaire": "Basic : Inclus (fonctions de base : Création de cagnottes, Paiement en ligne )."
+        "commentaire": "Basic : Inclus (fonctions de base: Création de cagnottes, Paiement en ligne)."
     },
 
     {
@@ -119,7 +119,7 @@
         ],
         "price":"À partir de 59 000 FCFA / site / mois",
         "plan":"basic",
-        "commentaire": "Basic : Inclus (fonctions de base : gestion  stations , piste )."
+        "commentaire": "Basic : Inclus (fonctions de base: gestion stations, piste)."
     },
 
 
@@ -166,7 +166,7 @@
         ],
         "price":"",
         "plan":"basic",
-        "commentaire": "Basic : Inclus (fonctions de base : Création de scrutins, Interface votant simple )."
+        "commentaire": "Basic : Inclus (fonctions de base : Création de scrutins, Interface votant simple)."
     },
 
     {
@@ -208,18 +208,18 @@
         "description":"Avec notre Équipe de support dédiée, bénéficiez d’un accompagnement technique et commercial réactif pour booster vos performances.",
         "images":["/images/services/equipe-support.png"],
         "content":[
-           "Support De Base (Gratuit) :",
+           "Support De Base (Gratuit):",
            "    E-mail uniquement",
-           "    Reponse sous 48-72h",
+           "    Réponse entre 48h et 72h",
            "    Pas d’accès prioritaire",
-           "Support Dédiée (Payant) :",
+           "Support Dédiée (Payant):",
            "    Support incidents & accompagnement technique",
            "    Veille technologique et intégrations",
            "    Support commercial et accompagnement campagnes marketing"
         ],
         "price":"À partir de 59 000 FCFA / site / mois",
         "plan":"basic",
-        "commentaire": "Basic : Inclus (fonctions de base : E-mail uniquement , Reponse sous 48-72h)."
+        "commentaire": "Basic : Inclus (fonctions de base : E-mail uniquement, Reponse dans 48-72h)."
     }
 ]
 
