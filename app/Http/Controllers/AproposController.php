@@ -16,7 +16,7 @@ class AproposController extends Controller
         $parameter= ParameterService::get();
         $services = ServicesService::getAll();
 
-        $parameter["name"]="Apropos D'Enerlog";
+        $parameter["business_name"]="Apropos D'Enerlog";
         $parameter["summarize"]="";
 
         SeoService::setMeta(

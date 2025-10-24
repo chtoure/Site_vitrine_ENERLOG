@@ -17,7 +17,7 @@ class ServiceController extends Controller
         $solution= SolutionService::getById(1);
 
 
-        $parameter["name"]="Services";
+        $parameter["business_name"]="Services";
         $parameter["summarize"]="Explorez nos services digitaux conçus pour accompagner votre transformation numérique.";
         // $parameter["hero_image"]="/images/services/solution_carte.jpeg";
 
@@ -47,7 +47,7 @@ class ServiceController extends Controller
             return redirect()->route('public.404');
         }
 
-        $parameter["name"]=$service["name"];
+        $parameter["business_name"]=$service["name"];
         $parameter["summarize"]=Str::limit($service['description'], 70, '...');
         // $parameter["hero_image"]=$service["images"][0];
 

@@ -174,7 +174,7 @@
             </div>
 
             <h5 class="mt-6 text-lg font-medium text-gray-800">Ensemble, donnons vie au futur numérique de l’Afrique.</h5>
-            <h4 class="mt-1 text-xl font-semibold text-gray-900">Abdoul Djalilou NEKERE</h4>
+            <h4 class="mt-1 text-xl font-semibold text-gray-900">Abdou-Djalilou NEKERE</h4>
         </div>
 
         <!-- Image -->
@@ -196,8 +196,8 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 <div class="bg-white rounded-2xl shadow-lg p-8 lg:p-10">
                     <div class="mb-8">
-                        <h2 class="text-4xl font-bold text-gray-900 mb-2">Commentaire</h2>
-                        <p class="text-gray-600">Laissez nous un commentaire</p>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-2">Laissez nous un commentaire</h2>
+                        {{-- <p class="text-gray-600"></p> --}}
                     </div>
 
                     <form class="space-y-6" method="POST" action="{{ route('public.emails.contact') }}">
@@ -224,10 +224,10 @@
                         </div>
                         
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Commentaire<i class="text-secondary">*</i></label>
                             <textarea 
                                 name="message" 
-                                placeholder="Écrivez votre message ici..." 
+                                placeholder="Écrivez votre commentaire ici..." 
                                 rows="6" 
                                 class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent resize-none transition-all"
                                 required
@@ -238,7 +238,7 @@
                             type="submit" 
                             class="w-full bg-primary hover:bg-secondary text-white font-semibold py-4 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
                         >
-                            Envoyer le message
+                            Envoyer
                         </button>
                     </form>
 
