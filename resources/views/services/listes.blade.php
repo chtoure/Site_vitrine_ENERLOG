@@ -39,7 +39,7 @@
                                 </div>
 
                                 <p class="text-gray-600">{{ $service['description'] }}</p>        
-                                <span class="text-2xl font-extrabold text-[#F29100]">{{ $service['price'] ?? "" }}</span>
+                                <span class="text-sm font-bold text-secondary">{{ $service['price'] ?? "" }}</span>
                             </div>
 
                             <div class="grid grid-cols-2 gap-4">
@@ -68,7 +68,7 @@
                                         </h2>
                             </div>
                             <p class="text-gray-600 mb-6">{{ $service["description"] }}</p>
-                            <span class="text-2xl font-extrabold text-[#F29100]">{{ $service['price'] ?? "" }}</span>
+                            <span class="text-sm font-bold text-secondary">{{ $service['price'] ?? "" }}</span>
                         </div>
                     </div>
                 </div>
