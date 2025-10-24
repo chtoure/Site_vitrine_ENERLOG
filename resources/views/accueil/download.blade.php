@@ -51,20 +51,13 @@
                     </a>
                     
                 </div>
-                <div class="flex items-center space-x-4 font-bold">
-                    <a 
-                        href="{{ $parameter['login_url'] }}"
-                        target="_blank"
-                        class="text-base text-secondary hover:bg-secondary hover:text-white border-2 border-secondary rounded-xl py-2 px-3 hover:bg-opacity-90 transition-colors"
-                    >
-                        Login
-                    </a>
+                <div class="space-x-4 font-bold">
                     <a 
                         href="{{ $parameter['login_url'] }}"
                         target="_blank"
                         class="text-base  text-white bg-primary rounded-xl py-2 px-3 hover:bg-opacity-90 transition-colors"
                     >
-                        Créer compte
+                        Connexion
                     </a>
                 </div> 
             </div>
