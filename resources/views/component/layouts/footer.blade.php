@@ -87,10 +87,16 @@
                 <ul class="space-y-3">
                     
                     <div class="space-y-3 text-sm">
-                        @foreach ($services as $service)
-                            <a href="{{route('public.services.detail', $service['id'])}}" class="flex items-center space-x-3 text-white/70 hover:text-secondary transition-colors">
-                                <span> {{ Str::limit( $service['name'], 50, '...') }}</span>
-                            </a>
+                        @foreach ($services as $solution)
+                            <h3 class="font-semibold text-secondary mb-4 text-lg">Solution {{$solution["solution"]}}</h3>
+                            @foreach ($solution["services"] as $service)
+
+                                <a href="{{route('public.services.detail', $service['id'])}}" class="flex items-center space-x-3 text-white/70 hover:text-secondary transition-colors">
+                                    <span> {{ Str::limit( $service['name'], 50, '...') }}</span>
+                                </a>
+                                
+                            @endforeach
+                            
                         @endforeach
 
                     </div>
@@ -110,6 +116,11 @@
                     <li>
                         <a href="{{ $parameter['url_contact_form'] }}" target="_blank" class="text-white/70 hover:text-secondary transition-colors text-sm hover:translate-x-1 transform duration-200 block">
                             Contactez-nous
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ $parameter['join_us_url'] }}" target="_blank" class="text-white/70 hover:text-secondary transition-colors text-sm hover:translate-x-1 transform duration-200 block">
+                            Nous rejoindre
                         </a>
                     </li>
                 </ul>
