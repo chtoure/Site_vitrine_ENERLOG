@@ -117,7 +117,7 @@
                 "id":8,
                 "name":"Gestion du réseau de distribution",
                 "description":"Avec la Gestion du Réseau de Distribution, pilotez vos stations-service en temps réel, du stock aux ventes, où que vous soyez.",
-                "images":["/images/services/gestion-distrubition.jpeg","/images/services/reseau-distribution.png"],
+                "images":["/images/services/gestion-distrubition.jpeg"],
                 "content": [
                     "Gestion des points de vente (stations)",
                     "Gestion du personnel de piste",
