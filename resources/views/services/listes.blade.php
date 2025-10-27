@@ -23,7 +23,8 @@
     </section> --}}
 
 
-    @foreach ($services as $service)
+    @foreach ($services as $solution)
+        @foreach ($solution["services"] as $service)
             @if($loop->odd)
                 <!-- Layout A : texte à gauche, images à droite -->
                 <section id="{{$service['id']}}" class="py-16">
@@ -53,27 +54,29 @@
                     </div>
                 </section>
             @else
-            <!-- Layout B : images à gauche, texte à droite -->
-            <section id="{{$service['id']}}" class="py-16 bg-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <img src="{{ $service["images"][0] ?? '/fallback1.jpg' }}" alt="{{ $service["name"] }} image 1" class="rounded-lg w-full h-auto">
-                        </div>
-                        <div>
-                             <div class="mb-6">
-                                        <h2 class="flex flex-col sm:flex-row justify-center items-baseline gap-2 sm:gap-6 text-center text-gray-900 mb-2">
-                                            <span class="text-3xl font-bold">{{ $service['name'] }}</span>
-                                            <a href="{{ route('public.services.detail', $service['id']) }}" class="hover:text-orange-600 text-orange-500 px-6 py-3">Lire Plus</a>
-                                        </h2>
+                <!-- Layout B : images à gauche, texte à droite -->
+                <section id="{{$service['id']}}" class="py-16 bg-white">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <img src="{{ $service["images"][0] ?? '/fallback1.jpg' }}" alt="{{ $service["name"] }} image 1" class="rounded-lg w-full h-auto">
                             </div>
-                            <p class="text-gray-600 mb-6">{{ $service["description"] }}</p>
-                            <span class="text-sm font-bold text-secondary">{{ $service['price'] ?? "" }}</span>
+                            <div>
+                                <div class="mb-6">
+                                            <h2 class="flex flex-col sm:flex-row justify-center items-baseline gap-2 sm:gap-6 text-center text-gray-900 mb-2">
+                                                <span class="text-3xl font-bold">{{ $service['name'] }}</span>
+                                                <a href="{{ route('public.services.detail', $service['id']) }}" class="hover:text-orange-600 text-orange-500 px-6 py-3">Lire Plus</a>
+                                            </h2>
+                                </div>
+                                <p class="text-gray-600 mb-6">{{ $service["description"] }}</p>
+                                <span class="text-sm font-bold text-secondary">{{ $service['price'] ?? "" }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        @endif
+                </section>
+            @endif
+        @endforeach
+           
     @endforeach
 
 </div>
