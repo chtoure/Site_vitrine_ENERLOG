@@ -9,10 +9,10 @@
     "engagement":"Offrir des solutions technologiques durables et inclusives.",
     "historique": "Créée en 2018, ENERLOG TECHNOLOGY & DIGITAL SAS (ETD) est née pour proposer aux entreprises et particuliers togolais des solutions numériques innovantes et accessibles. Elle a lancé la plateforme Cpay en 2023, destinée à la gestion de la billetterie, des cartes pétrolières et des programmes de fidélité.",
     "description": "ENERLOG TECHNOLOGY & DIGITAL SAS est une société par actions simplifiée spécialisée dans la création de solutions numériques. Elle accompagne ses partenaires par des technologies stratégiques, notamment la plateforme Cpay qui couvre la billetterie digitale/physique, la carte pétrolière, la gestion de réseaux de distribution et des programmes de fidélité.",
-    "summarize": "De la carte pétrolière à la billetterie, tout devient plus simple.",
+    "summarize": "L’innovation numérique au service de votre quotidien.",
     "logo":"images/parameters/logo.png",
     "footer_logo":"/images/parameters/footer_logo.png",
-    "hero_image":"/images/parameters/Gemini_Generated_Image_u4ut4zu4u.png",
+    "hero_image":"/images/parameters/hero.png",
     "hero_icon":"/icons/image.svg",
     "login_url": "https://cpay.enerlog.net/corpus/accueil/connexion",
     "about": "Fondée en 2018, ENERLOG TECHNOLOGY & DIGITAL SAS (ETD) accompagne entreprises et particuliers avec des solutions numériques innovantes et accessibles. En 2023, nous avons lancé Cpay, une plateforme tout-en-un pour la billetterie, les cartes pétrolières, les réseaux de distribution et les programmes de fidélité.",
@@ -21,6 +21,7 @@
     "qr_code":"images/parameters/cpay_qr_code.jpeg",
     "url_contact_form":"https://docs.google.com/forms/d/e/1FAIpQLSffJuKDuQd3N3ziht1zJ0xdDW4DZOGxMnSpDsTzFwnZ5PNIRQ/viewform?usp=header",
     "policy_url":"https://cpay.enerlog.net/support/PolitiqueConfidentialite",
+    "join_us_url":"https://docs.google.com/forms/d/e/1FAIpQLScVvx04kDU6yvYjIRY2N3T_IAg4Kl86GY37Axg9ETONBxxw0Q/viewform?usp=header",
 
     "images": [
         "/images/parameters/DSC_7046.JPG",

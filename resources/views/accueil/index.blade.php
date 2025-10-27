@@ -18,7 +18,7 @@
 
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    @foreach(array_slice($services, 0, 3) as $index => $service)
+                    @foreach(array_slice($services[0]["services"], 0, 3) as $index => $service)
                         <div
                             class="cursor-pointer transition-all duration-300 border rounded-xl shadow-lg p-6 bg-white hover:shadow-xl"
                             :class="activeTab === {{ $index }} ? 'border-secondary bg-gradient-to-r from-secondary/5 to-[#312782]/5 shadow-xl' : 'border-gray-200 hover:border-secondary/30'"
@@ -70,7 +70,7 @@
                     <div class="relative bg-white rounded-2xl p-4 shadow-2xl overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10 pointer-events-none"></div>
                         
-                        @foreach($services as $index => $tab)
+                        @foreach($services[0]["services"] as $index => $tab)
                             <img
                                 x-show="activeTab === {{ $index }}"
                                 x-transition:enter="transition ease-out duration-300"
@@ -83,7 +83,7 @@
                         @endforeach
 
                         <div class="absolute bottom-6 right-6 z-20 flex flex-col gap-3">
-                            @foreach($services as $index => $tab)
+                            @foreach($services[0]["services"] as $index => $tab)
                                 <div x-show="activeTab === {{ $index }}" class="flex flex-col gap-2">
                                     <button
                                         class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-3 rounded-lg text-sm font-semibold backdrop-blur-sm"
@@ -99,7 +99,7 @@
                                     </button>
                                     <button
                                         onclick="window.open('{{$parameter['login_url']}}', '_blank')"
-                                        class="inline-flex items-center justify-center border-2 border-primary text-secondary hover:text-white hover:bg-primary transition-all duration-300  backdrop-blur-sm px-6 py-3 rounded-lg text-sm font-semibold"
+                                        class="inline-flex items-center justify-center border-2 border-secondary text-secondary hover:text-white hover:bg-secondary transition-all duration-300  backdrop-blur-lg px-6 py-3 rounded-lg text-sm font-semibold"
                                         title="En savoir plus"
                                     >
                                         Créer un compte
@@ -109,10 +109,10 @@
                         </div>
 
                         <div class="absolute top-6 left-6 z-20">
-                            @foreach($services as $index => $tab)
+                            @foreach($services[0]["services"] as $index => $tab)
                                 <div 
                                     x-show="activeTab === {{ $index }}"
-                                    class="bg-[#312782] text-white px-4 py-2 rounded-full font-bold shadow-lg"
+                                    class="bg-primary text-white px-4 py-2 rounded-full font-bold shadow-lg"
                                 >
                                     {{ $tab['price'] }}
                                 </div>

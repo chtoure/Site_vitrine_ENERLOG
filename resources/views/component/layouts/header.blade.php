@@ -1,4 +1,3 @@
-
 @php
     $navigation = [
         ['name' => 'Services', 'href' => route('public.services.index')],
@@ -13,8 +12,6 @@
 >
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between py-4">
-
-            <!-- Logo + Desktop nav -->
             <div class="flex items-center space-x-4">
                 <a href="{{ route('public.index') }}" class="block">
                     <img 
@@ -23,7 +20,6 @@
                         class="h-10 w-auto"
                     />
                 </a>
-
                 <nav class="hidden lg:flex items-center space-x-6">
                     @foreach($navigation as $item)
                         <a 
@@ -36,21 +32,30 @@
                 </nav>
             </div>
 
-            <div class="flex items-center space-x-4 font-bold">
-                <a 
-                    href="{{ $parameter['login_url'] }}"
-                    target="_blank"
-                    class="text-base  text-white bg-primary rounded-xl py-2 px-3 hover:bg-opacity-90 transition-colors"
-                >
-                    Connexion
-                </a>
+            <div class="flex items-center font-bold">
+
+                <div class="hidden lg:flex items-center space-x-2">
+                    <a 
+                        href="{{ $parameter['login_url'] }}"
+                        target="_blank"
+                        class="text-base text-secondary border-2 border-secondary rounded-xl py-2 px-2 hover:bg-opacity-90 transition-colors"
+                    > 
+                        Se connecter
+                    </a>
+                    <a 
+                        href="{{ $parameter['login_url'] }}"
+                        target="_blank"
+                        class="text-base text-white bg-primary rounded-xl py-2 px-2 hover:bg-opacity-90 transition-colors border-2 border-primary"
+                    >
+                        Créer compte
+                    </a>
+                </div>
 
                 <button 
                     @click="navbarOpen = !navbarOpen"
-                    class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
+                    class="lg:hidden inline-flex items-center justify-center p-2 ml-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
                     aria-expanded="false"
                 >
-
                     <svg x-show="!navbarOpen" x-cloak class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -60,11 +65,9 @@
                     </svg>
                 </button>
             </div>
-            
         </div>
     </div>
 
-    <!-- Mobile menu -->
     <div 
         x-show="navbarOpen" 
         x-transition
@@ -80,6 +83,22 @@
                     {{ $item['name'] }}
                 </a>
             @endforeach
+            <div class="flex items-center space-x-2">
+                <a 
+                    href="{{ $parameter['login_url'] }}"
+                    target="_blank"
+                    class="text-base text-secondary border-2 border-secondary rounded-xl py-2 px-2 hover:bg-opacity-90 transition-colors"
+                > 
+                    Se connecter
+                </a>
+                <a 
+                    href="{{ $parameter['login_url'] }}"
+                    target="_blank"
+                    class="text-base text-white bg-primary rounded-xl py-2 px-2 hover:bg-opacity-90 transition-colors border-2 border-primary"
+                >
+                    Créer compte
+                </a>
+            </div>
         </div>
     </div>
 </header>
