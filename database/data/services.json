@@ -1,5 +1,6 @@
 [
     {
+        "id":1,
         "solution": "Cpay",
         "services": [
              
@@ -105,13 +106,7 @@
                 "price":"",
                 "plan":"basic",
                 "commentaire": "Disponible sans abonnement"
-            }
-        ]
-    },
-    {
-        "solution": "Fataka",
-        "services": [
-
+            },
 
             {
                 "id":8,
@@ -193,25 +188,11 @@
                 "plan":"basic",
                 "commentaire": "Basic : Inclus (fonctions de base : paiements sans espèces)."
             },
+            
+            
+            
             {
                 "id":13,
-                "name": "Fataka (Gestion du portefeuille)",
-                "description":"Avec Fataka, gérez votre argent en toute liberté : stockez, transférez et payez sans contrainte, où que vous soyez.",
-                "images":["/images/services/enerlog-Fataka logo.png"],
-                "content":[
-                "Création et gestion d’un portefeuille électronique (wallet)",
-                "Dépôt et retrait d’argent via agents, banques ou mobile money",
-                "Transfert d’argent entre portefeuilles Fataka et vers d’autres moyens de paiement",
-                "Paiement de services (factures, abonnements, achats marchands)",
-                "Historique des transactions et notifications en temps réel",
-                "Sécurité renforcée (code PIN, OTP, restrictions par utilisateur)"
-                ],
-                "price":"",
-                "plan":"basic",
-                "commentaire": "Basic : Inclus (fonctions de base : Création et gestion d’un portefeuille électronique)."
-            },
-            {
-                "id":14,
                 "name": "Équipe de support dédiée",
                 "description":"Avec notre Équipe de support dédiée, bénéficiez d’un accompagnement technique et commercial réactif pour booster vos performances.",
                 "images":["/images/services/equipe-support.png"],
@@ -229,6 +210,15 @@
                 "plan":"basic",
                 "commentaire": "Basic : Inclus (fonctions de base : E-mail uniquement, Reponse dans 48-72h)."
             }
+        ]
+    },
+    {
+        "id":2,
+        "solution": "Fataka",
+        "services": [
+
+
+            
 
 
 

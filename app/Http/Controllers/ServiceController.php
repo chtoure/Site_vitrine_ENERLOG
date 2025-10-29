@@ -38,9 +38,11 @@ class ServiceController extends Controller
         ) ;
     }
 
-    public function getByIdService(int $idServ) {
+    public function getByIdService(int $id, int $idservice) {
         $dataServices = ServicesService::getAll() ;
-        $service = ServicesService::getById($idServ);
+        $service = ServicesService::getById($id,$idservice);
+
+        // dd($service);
         $parameter= ParameterService::get();
 
         if (!$service) {
@@ -51,12 +53,13 @@ class ServiceController extends Controller
         $parameter["summarize"]=Str::limit($service['description'], 70, '...');
         // $parameter["hero_image"]=$service["images"][0];
 
-         SeoService::setMeta(
+        SeoService::setMeta(
             $parameter['name'] ?? 'ENERLOG',
             "ENERLOG - La Page de details du service ".$service['name'],
-            route('public.services.detail', $service['id']),
+            route('public.services.detail', [ $id, $idservice]),
             asset($parameter['logo']) 
         );
+
 
         return view(
             'services.details',
