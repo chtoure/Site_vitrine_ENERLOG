@@ -98,8 +98,9 @@
                     Quels que Services
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                   @foreach (collect($services)->where('id', '!=', $service['id'])->take(3) as $itemService)
-                        <a href="{{ route('public.services.detail', $itemService['id']) }}" 
+                    
+                    @foreach (collect($services[0]['services'])->where('id', '!=', $service['id'])->take(3) as $itemService)
+                        <a href="{{ route('public.services.detail',[$services[0]['id'],  $itemService['id']]) }}" 
                         class="group block border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
                             <img src="{{ asset($itemService['images'][0] ?? '/fallback.jpg') }}"
                                 alt="{{ $itemService['name'] }}"

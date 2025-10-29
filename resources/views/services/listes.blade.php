@@ -34,7 +34,9 @@
                                 <div class="mb-6">
                                         <h2 class="flex flex-col sm:flex-row justify-center items-baseline gap-2 sm:gap-6 text-center text-gray-900 mb-2">
                                             <span class="text-3xl font-bold">{{ $service['name'] }}</span>
-                                            <a href="{{ route('public.services.detail', $service['id']) }}" class="hover:text-orange-400 text-orange-500 px-6 py-3">Lire Plus</a>
+                                            
+
+                                            <a href="{{ route('public.services.detail',[$solution['id'] ,$service['id']]) }}" class="hover:text-orange-400 text-orange-500 px-6 py-3">Lire Plus</a>
                                         </h2>
                                         
                                 </div>
@@ -65,7 +67,7 @@
                                 <div class="mb-6">
                                             <h2 class="flex flex-col sm:flex-row justify-center items-baseline gap-2 sm:gap-6 text-center text-gray-900 mb-2">
                                                 <span class="text-3xl font-bold">{{ $service['name'] }}</span>
-                                                <a href="{{ route('public.services.detail', $service['id']) }}" class="hover:text-orange-600 text-orange-500 px-6 py-3">Lire Plus</a>
+                                                <a href="{{ route('public.services.detail', [$solution['id'] ,$service['id']]) }}" class="hover:text-orange-600 text-orange-500 px-6 py-3">Lire Plus</a>
                                             </h2>
                                 </div>
                                 <p class="text-gray-600 mb-6">{{ $service["description"] }}</p>
