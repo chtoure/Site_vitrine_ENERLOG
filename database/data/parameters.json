@@ -36,7 +36,7 @@
     ],
     "contact": {
         "adress": "Immeuble Style Tahiti en face de lycée le Jourdain",
-        "email": "enerlog.togo@gmail.com",
+        "email": "support@enerlog.net",
         "phone": "+22893533043"
     },
     "comptes": [
@@ -54,6 +54,16 @@
             "name": "TikTok",
             "link": "https://www.tiktok.com/@enerlog?_t=ZM-8zYQ57CAHk0&_r=1",
             "icon": "/icons/tiktok.svg"
+        },
+        {
+            "name": "Instagram",
+            "link": "https://www.instagram.com/enerlog.togo/",
+            "icon": "/icons/instagram.svg"
+        },
+        {
+            "name": "Youtube",
+            "link": "https://youtube.com/@enerlog?si=MLc5CqqNyrMSGIXW",
+            "icon": "/icons/youtube.svg"
         }
     ]
 

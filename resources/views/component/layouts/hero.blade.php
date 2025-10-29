@@ -32,7 +32,7 @@
                         </li>
                         
                     </ul>
-                    <ul class="flex flex-wrap items-center">
+                    {{-- <ul class="flex flex-wrap items-center">
                         <li>
                             <a
                                 href="{{$parameter['play_store_url']}}"
@@ -57,7 +57,7 @@
 
                             </a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
 
