@@ -35,7 +35,7 @@
 </head>
 <body class="bg-gray-50">
 
-    <header 
+    {{-- <header 
         x-data="{ navbarOpen: false }"
         class="sticky top-0 z-50 w-full border-b border-[#F29100]/30 backdrop-blur-lg shadow-lg bg-white/70"
     >
@@ -62,7 +62,9 @@
                 </div> 
             </div>
         </div>
-    </header>
+    </header> --}}
+
+    @include('component.layouts.header')
 
     <main class="min-h-screen flex items-center justify-center py-12 overflow-hidden">
         <div class="max-w-[1800px] w-full px-4 sm:px-6 lg:px-12 xl:px-20">
