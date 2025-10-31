@@ -1,4 +1,4 @@
-<div class="relative pt-[70px] lg:pt-[100px] pb-[110px] overflow-hidden">
+<div class="relative pt-[70px] lg:pt-[100px] min-h-screen overflow-hidden">
 
     <div 
         class="absolute inset-0 bg-cover bg-center blur-lg scale-105"
@@ -12,11 +12,11 @@
       
             <div class="w-full lg:w-5/12 px-4">
                 <div class="hero-content">
-                    <h1 class="text-secondary font-bold text-4xl sm:text-[42px] lg:text-[40px] xl:text-[42px] leading-snug mb-3">
+                    <h1 class="text-secondary font-bold italic text-4xl sm:text-[42px] lg:text-6xl xl:text-7xl leading-snug mb-3">
                         {{$parameter['business_name']}}
                     </h1>
 
-                    <p class="text-2xl mb-8 text-white/80 max-w-[480px]">
+                    <p class="text-2xl mb-8 text-white italic max-w-[480px]">
                         {{$parameter['summarize']}}
                     </p>
 
@@ -70,7 +70,7 @@
                             <img
                                 src="{{asset($parameter['hero_image'])}}"
                                 alt="hero"
-                                class="max-w-full"
+                                class="max-w-full  rounded-xl rounded-tl-[200px]"
                             />
                             <span class="absolute -left-8 -bottom-8 z-[-1]">
                                 <svg
