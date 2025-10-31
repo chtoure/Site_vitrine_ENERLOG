@@ -66,10 +66,20 @@
 
     @include('component.layouts.header')
 
-    <main class="min-h-screen flex items-center justify-center py-12 overflow-hidden">
-        <div class="max-w-[1800px] w-full px-4 sm:px-6 lg:px-12 xl:px-20">
+    <main class=" flex items-center justify-center overflow-hidden">
+        <div class="max-w-[1800px] w-full ">
             
-            <div class="grid grid-cols-1 lg:grid-cols-[1.4fr_0.8fr] gap-10 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.4fr] gap-10 items-center">
+
+                <div class="flex justify-start lg:justify-start relative ">
+                    <div class="phone-mockup relative transform scale-100  transition-transform duration-500">
+                        <img 
+                            src="{{ asset($download['image']) }}" 
+                            alt="Application sur mobile"
+                            class=" "
+                        />
+                    </div>
+                </div>
 
                 <div class="space-y-4 max-w-2xl mx-auto text-center lg:text-left">
                     <div>
@@ -81,7 +91,7 @@
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pb-4">
                         @foreach ($download['downloads'] as $down)
                             <div class="flex flex-col items-center space-y-4">
                                 <div class="qr-code shadow-md">
@@ -109,15 +119,7 @@
                     </div>
                 </div>
 
-                <div class="flex justify-end lg:justify-end relative">
-                    <div class="phone-mockup relative transform scale-100 sm:scale-110 lg:scale-125 xl:scale-150 transition-transform duration-500">
-                        <img 
-                            src="{{ asset($download['image']) }}" 
-                            alt="Application sur mobile"
-                            class="block w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto m-0 p-0"
-                        />
-                    </div>
-                </div>
+                
 
             </div>
         </div>

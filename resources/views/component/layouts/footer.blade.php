@@ -72,9 +72,9 @@
                         
                     ],
                     'footer_contents' =>[
-                        ['name' => 'Politique de confidentialité', 'href' => $parameter['policy_url']],
+                        ['name' => 'Politique confidentialité', 'href' => $parameter['policy_url']],
                         ['name' => 'Assistance', 'href' => 'https://cpay.enerlog.net/support/assistance'],
-                        ['name' => 'Conditions d\'utilisation', 'href' => 'https://cpay.enerlog.net/support/cgu'],
+                        ['name' => 'Conditions utilisation', 'href' => 'https://cpay.enerlog.net/support/cgu'],
                     ]
 
 
@@ -126,21 +126,13 @@
                 </ul>
             </div>
             <div>
-                <h3 class="font-semibold text-secondary mb-4 text-lg">Profitez la Super App Cpay</h3>
+                <h3 class="font-semibold text-secondary mb-4 text-lg">Profitez la Super App cPay</h3>
                 <a target="_blank" href="{{$parameter['play_store_url']}}">
                     <img src="{{ asset($parameter['qr_code']) }}" alt="QR Code" class="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 object-contain">
                 </a>
             </div>
 
         </div>
-
-        @php
-            $footer_content=[
-                "Politique"=>$parameter['policy_url'],
-                "Assistance"=>"https://cpay.enerlog.net/support/assistance",
-                "Condition d'utilisation"=>"https://cpay.enerlog.net/support/cgu"
-            ]
-        @endphp
 
         <div class="border-t border-[#F29100]/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm pb-6">
             <div class=" text-white/60 mb-4 md:mb-0">{{$parameter['full_name']}}</div>
