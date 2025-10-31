@@ -10,101 +10,168 @@
 
     <style>[x-cloak]{display:none !important;}</style>
 
-    <section class="py-8 relative">
+
+
+    <section class="py-8 relative" 
+        x-data="{
+            currentIndex: 0,
+            itemsPerPage: 3,
+            autoScrollInterval: null,
+            totalItems: 6,
+
+            init() {
+                this.updateItemsPerPage();
+                this.startAutoScroll();
+                window.addEventListener('resize', () => this.updateItemsPerPage());
+            },
+
+            updateItemsPerPage() {
+                if (window.innerWidth < 768) {
+                    this.itemsPerPage = 1;
+                } else if (window.innerWidth < 1024) {
+                    this.itemsPerPage = 2;
+                } else {
+                    this.itemsPerPage = 3;
+                }
+            },
+
+            get totalPages() {
+                return Math.ceil(this.totalItems / this.itemsPerPage);
+            },
+
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.totalPages;
+            },
+
+            prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.totalPages) % this.totalPages;
+            },
+
+            goToPage(index) {
+                this.currentIndex = index;
+            },
+
+            startAutoScroll() {
+                this.stopAutoScroll(); // ← empêche plusieurs intervalles simultanés
+                this.autoScrollInterval = setInterval(() => {
+                    this.next();
+                }, 5000);
+            },
+
+            stopAutoScroll() {
+                if (this.autoScrollInterval) {
+                    clearInterval(this.autoScrollInterval);
+                    this.autoScrollInterval = null;
+                }
+            },
+
+            resumeAutoScroll() {
+                this.startAutoScroll();
+            }
+        }"
+        @mouseenter="stopAutoScroll()" 
+        @mouseleave="resumeAutoScroll()"
+    >
+
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl lg:text-5xl font-bold text-primary mb-8 lg:mb-12">
-                Nos Actualités
-                <div class="flex gap-1 mt-2">
-                    <span class="w-2 h-2 bg-secondary rounded-full"></span>
-                    <span class="w-2 h-2 bg-secondary rounded-full"></span>
-                    <span class="w-2 h-2 bg-secondary rounded-full"></span>
-                    <span class="flex-1 h-0.5 bg-primary self-center ml-1"></span>
-                </div>
-            </h2>
-            {{-- <div class="text-center mb-6">
-                <h2 class="text-2xl  font-bold text-foreground mb-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">
                     Nos Actualités
                 </h2>
-                <p class="text-muted-foreground text-lg max-w-2xl mx-auto italic">
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto italic">
                     Suivez nos dernières innovations et collaborations
                 </p>
-            </div> --}}
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                @foreach(array_slice($news, 0, 3)  as $new)
-                    <article 
-                        class="group border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
-                    >
-                        <div class="relative overflow-hidden w-full h-56">
-
-                            <div class="absolute inset-0 bg-center bg-cover filter blur-sm"
-                                style="background-image: url('{{ asset($new['images'][0]) }}');">
-                            </div>
-
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
-                            <div class="relative z-10 w-full h-full flex items-center justify-center">
-                                <img
-                                    src="{{ $new['images'][0] }}"
-                                    alt="{{ $new['name'] }}"
-                                    class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-700"
-                                />
-                                {{-- <div class="absolute top-4 right-4">
-                                    <span class="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                                        {{ $new['id'] }}
-                                    </span>
-                                </div> --}}
-                            </div>
-                        </div>
-
-                        <div class="p-3">
-                            <h3 class="text-xl font-bold text-card-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                                {{ $new['name'] }}
-                            </h3>
-                            <p class="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3 italic">
-                                {{ $new['content'] }}
-                            </p>
-                            
-                            <div class="flex flex-col mb-2">
-                                {{-- <a 
-                                    href="{{ route('public.news.detail',  $new['id']) }}" 
-                                    class="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg transition"
-                                >
-                                    Lire l'article
-                                    <svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                    </svg>
-                                </a> --}}
-                                
-                                @if(count($new['links']) > 0)
-                                   <div class="flex items-center space-x-4">
-                                        @foreach ($new['links'] as $link)
-                                            @if(isset($link['icon']))
-                                                    <a 
-                                                        href="{{ $link['url'] }}" 
-                                                        target="_blank"
-                                                        title="Voir sur {{ ucfirst($link['icon'] ?? 'lien') }}"
-                                                        class="text-primary hover:text-secondary"
-                                                    >
-                                                        <img src="{{asset($link['icon'])}}" class="w-6 h-6"/>
-                                                    </a>
-                                            @endif
-                                        @endforeach
-                                    </div>   
-                                @endif
-                            </div>
-                        </div>
-                    </article>
-                @endforeach
             </div>
-            <div class="mt-6">
+
+            <div class="relative">
+                <button 
+                    @click="prev()"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-primary hover:text-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 group"
+                    aria-label="Previous"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+
+                <button 
+                    @click="next()"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-primary hover:text-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 group"
+                    aria-label="Next"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <div class="overflow-hidden">
+                    <div 
+                        class="flex transition-transform duration-500 ease-out"
+                        :style="`transform: translateX(-${currentIndex * 100}%)`"
+                    >
+                        @foreach ($news as $new)
+                            <article class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                                <div class="group border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+                                
+
+                                    <div class="relative overflow-hidden w-full h-56">
+                                        <div class="absolute inset-0 bg-center bg-cover filter blur-sm"
+                                            style="background-image: url('{{asset($new['images'][0])}}');">
+                                        </div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                        <div class="relative z-10 w-full h-full flex items-center justify-center">
+                                            <img
+                                                src="{{asset($new['images'][0])}}"
+                                                alt="{{$new['name']}}"
+                                                class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-700"
+                                            />
+                                        </div>
+                                    </div>
+                                        
+                                    
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-secondary transition-colors">
+                                            {{$new['name']}}
+                                        </h3>
+                                        <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 italic">
+                                            {{$new['content']}}
+                                        </p>
+                                        <div class="flex items-center space-x-4">
+                                            @foreach ($new['links'] as $link)
+                                                <a href="{{$link['url']}}" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                                                    <img src="{{asset($link['icon'])}}" class="w-6 h-6"/>
+                                                </a>
+                                            @endforeach
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center gap-2 mt-8">
+                    <template x-for="(page, index) in totalPages" :key="index">
+                        <button
+                            @click="goToPage(index)"
+                            class="transition-all duration-300"
+                            :class="currentIndex === index ? 'w-8 h-3 bg-primary rounded-full' : 'w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400'"
+                            :aria-label="'Go to page ' + (index + 1)"
+                        ></button>
+                    </template>
+                </div>
+            </div>
+
+            <div class="mt-6 ">
                 <a href="{{route('public.news.index')}}" 
-                    class="bg-secondary hover:bg-secondary-600 text-white px-6 py-3 rounded-lg">
+                    class="inline-block bg-secondary text-white px-8 py-3 rounded-lg font-medium transition-colors duration-300 shadow-md hover:shadow-lg">
                     Voir plus
                 </a>
             </div>
         </div>
     </section>
+
 
 
     <section class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -136,7 +203,8 @@
             </div>
 
             <div class="mt-8">
-                <button
+                <a
+                    href="{{route('public.services.index')}}"
                     class="inline-flex items-center justify-center bg-[#F29100] hover:bg-[#F29100]/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-3 rounded-lg text-base font-semibold"
                     title="Voir détails"
                 >
@@ -144,7 +212,7 @@
                     <svg class="ml-2 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -176,6 +244,83 @@
 
 
 
+
+
+
+
+
+    {{-- <section class="py-8 relative">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl  font-bold text-foreground mb-4">
+                    Nos Actualités
+                </h2>
+                <p class="text-muted-foreground text-lg max-w-2xl mx-auto italic">
+                    Suivez nos dernières innovations et collaborations
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @foreach($news as $new)
+                    <article 
+                        class="group border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                    >
+                        <div class="relative overflow-hidden w-full h-56">
+
+                            <div class="absolute inset-0 bg-center bg-cover filter blur-sm"
+                                style="background-image: url('{{ asset($new['images'][0]) }}');">
+                            </div>
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+                            <div class="relative z-10 w-full h-full flex items-center justify-center">
+                                <img
+                                    src="{{ $new['images'][0] }}"
+                                    alt="{{ $new['name'] }}"
+                                    class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-700"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="p-3">
+                            <h3 class="text-xl font-bold text-card-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                                {{ $new['name'] }}
+                            </h3>
+                            <p class="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3 italic">
+                                {{ $new['content'] }}
+                            </p>
+                            
+                            <div class="flex flex-col mb-2">
+                                
+                                @if(count($new['links']) > 0)
+                                   <div class="flex items-center space-x-4">
+                                        @foreach ($new['links'] as $link)
+                                            @if(isset($link['icon']))
+                                                    <a 
+                                                        href="{{ $link['url'] }}" 
+                                                        target="_blank"
+                                                        title="Voir sur {{ ucfirst($link['icon'] ?? 'lien') }}"
+                                                        class="text-primary hover:text-secondary"
+                                                    >
+                                                        <img src="{{asset($link['icon'])}}" class="w-6 h-6"/>
+                                                    </a>
+                                            @endif
+                                        @endforeach
+                                    </div>   
+                                @endif
+                            </div>
+                        </div>
+                    </article>
+                @endforeach
+            </div>
+            <div class="mt-6">
+                <a href="{{route('public.news.index')}}" 
+                    class="bg-secondary hover:bg-secondary-600 text-white px-6 py-3 rounded-lg">
+                    Voir plus
+                </a>
+            </div>
+        </div>
+    </section> --}}
 
 
 
@@ -813,9 +958,9 @@
                         <div class="text-center pb-2">
                             <h3 class="text-xl font-bold text-primary">{{ $abonnement['plan'] }}</h3>
                             <p class=" text-muted-foreground mt-2">{{ $abonnement['description'] }}</p>
-                            <div class="mt-4 flex items-baseline justify-center">
+                            {{-- <div class="mt-4 flex items-baseline justify-center">
                                 <span class=" font-bold">{{ $abonnement['price'] }}</span>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="space-y-6">
@@ -843,9 +988,9 @@
                                 @endforeach
                             </ul>
 
-                            <a href="{{ $parameter['login_url'] }}" target="_blank"
+                            <a href="{{ $parameter['url_contact_form'] }}" target="_blank"
                             class="w-full inline-block text-center py-3 rounded-lg font-medium bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600">
-                                Choisir ce plan
+                                En savoir plus
                             </a>
                         </div>
                     </div>
