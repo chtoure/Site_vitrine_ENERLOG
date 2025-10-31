@@ -17,9 +17,10 @@
             currentIndex: 0,
             itemsPerPage: 3,
             autoScrollInterval: null,
-            totalItems: 6,
+            totalItems: 0, // sera calculé automatiquement
 
             init() {
+                this.totalItems = $el.querySelectorAll('article').length;
                 this.updateItemsPerPage();
                 this.startAutoScroll();
                 window.addEventListener('resize', () => this.updateItemsPerPage());
@@ -52,10 +53,8 @@
             },
 
             startAutoScroll() {
-                this.stopAutoScroll(); // ← empêche plusieurs intervalles simultanés
-                this.autoScrollInterval = setInterval(() => {
-                    this.next();
-                }, 5000);
+                this.stopAutoScroll();
+                this.autoScrollInterval = setInterval(() => this.next(), 5000);
             },
 
             stopAutoScroll() {
@@ -72,6 +71,7 @@
         @mouseenter="stopAutoScroll()" 
         @mouseleave="resumeAutoScroll()"
     >
+
 
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
