@@ -194,7 +194,7 @@
                                 <img class="" src="{{$service['icon']}}" alt="">
                             </div>
                             <div class="text-white">
-                                <p class="text-sm font-medium uppercase tracking-wide">{{$service["description"]}}</p>
+                                <p class="hidden md:block text-sm font-medium uppercase tracking-wide">{{$service["description"]}}</p>
                                 <p class="text-xl font-bold">{{$service["name"]}}</p>
                             </div>
                         </div>
