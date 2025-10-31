@@ -78,7 +78,7 @@
                 "id":4,
                 "name":"Aminci-card (carte rechargeable & fidélité)",
                 "description":"Avec Aminci-Card, récompensez et fidélisez vos clients tout en contrôlant leurs dépenses, simplement et en toute sécurité.",
-                "images":["/images/services/fideliter.jpeg","/images/services/logo_carte.jpg"],
+                "images":["/images/services/fideliter.jpeg","/images/services/enerlog-icone-aminci.png"],
                 "icon":"/images/services/enerlog-icone-aminci.png",
                 "content": [
                     "Le car washing",
@@ -98,7 +98,7 @@
                 "id":6,
                 "name": "E-taxi",
                 "description":"e-Taxi, votre course en un clic.",
-                "images":["/images/services/e-taxi.jpeg","/images/services/icon-e-taxi.png"],
+                "images":["/images/services/e-taxi.png","/images/services/icon-e-taxi.png"],
                 "icon":"/images/services/e-taxi.jpeg",
                 "content":[],
                 "price":"",
@@ -110,7 +110,7 @@
                 "id":7,
                 "name": "C-bus",
                 "description":"Avec C-Bus, reliez vos villes en tooute simplicité.",
-                "images":["/images/services/c-bus.jpeg","/images/services/icon-c-bus.png"],
+                "images":["/images/services/c-bus.png","/images/services/icon-c-bus.png"],
                 "icon":"/images/services/c-bus.jpeg",
                 "content":[],
                 "price":"",
@@ -122,7 +122,7 @@
                 "id":8,
                 "name":"Gestion du réseau de distribution",
                 "description":"Avec la Gestion du Réseau de Distribution, pilotez vos stations-service en temps réel, du stock aux ventes, où que vous soyez.",
-                "images":["/images/services/gestion-distrubition.jpeg"],
+                "images":["/images/services/gestion-distribution.png","/images/services/gestion-distrubition.jpeg"],
                 "icon":"/images/services/gestion-distrubition.jpeg",
                 "content": [
                     "Gestion des points de vente (stations)",
@@ -141,7 +141,7 @@
                 "id":9,
                 "name":"Tableau de bord des performances",
                 "description":"Avec le Tableau de bord des performances, analysez vos ventes, comparez vos stations et prenez des décisions éclairées en un coup d’œil.",
-                "images":["/images/services/enerlogo-tableau-bord.jpg","/images/services/tableau-bord.png"],
+                "images":["/images/services/dashbord.png","/images/services/enerlogo-tableau-bord.jpg"],
                 "icon":"/images/services/enerlogo-tableau-bord.jpg",
                 "content": [
                     "Vue d’ensemble de l’activité journalière ou périodique",
@@ -160,7 +160,7 @@
                 "id":10,
                 "name": "CityGo (Livraison de colis)",
                 "description":"Avec CityGo, simplifiez vos livraisons : expédiez, suivez et recevez vos colis en toute sécurité, rapidement et sans stress.",
-                "images":["/images/services/enerlog-citygo.png","/images/services/livraison_collis.jpg"],
+                "images":["/images/services/citygo.png","/images/services/enerlog-citygo.png","/images/services/livraison_collis.jpg"],
                 "icon":"/images/services/enerlog-citygo.png",
                 "content":[],
                 "price":"À partir de 100 000 FCFA / site / mois",
@@ -172,7 +172,7 @@
                 "id":11,
                 "name": "E-voting (vote électronique pour Awards)",
                 "description":"Avec E-voting, organisez vos votes et concours en ligne facilement, en toute transparence et en toute sécurité.",
-                "images":["/images/services/enerlog-icone-voting.png"],
+                "images":["/images/services/voting.png","/images/services/enerlog-icone-voting.png"],
                 "icon":"/images/services/enerlog-icone-voting.png",
                 "content":[
                     "Création de scrutins (publiques ou privés)", 
@@ -190,7 +190,7 @@
                 "id":12,
                 "name": "cPay Cashless (paiement sans espèces)",
                 "description":"Avec cPay Cashless, encaissez sans espèces : simple, rapide et sécurisé, par QR, carte ou mobile.",
-                "images":["/images/services/cashless.png"],
+                "images":["/images/services/cashles.png","/images/services/cashless.png"],
                 "icon":"/images/services/cashless.png",
                 "content":[
                     "Acceptation des paiements sans espèces (QR, mobile, carte)", 
@@ -206,11 +206,12 @@
             
             
             
+            
             {
                 "id":13,
                 "name": "Équipe de support dédiée",
                 "description":"Avec notre Équipe de support dédiée, bénéficiez d’un accompagnement technique et commercial réactif pour booster vos performances.",
-                "images":["/images/services/equipe-support.png"],
+                "images":["/images/services/equipe.png","/images/services/equipe-support.png"],
                 "icon":"/images/services/equipe-support.png",
                 "content":[
                 "Support De Base (Gratuit):",
