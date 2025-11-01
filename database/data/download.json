@@ -1,0 +1,23 @@
+{
+    "title": "ENERLOG, l’innovation qui vous accompagne",
+    "subtitle": "Téléchargez l'application qui vous récompense.",
+    "image": "/images/templates/download.png",
+    "downloads": [
+        {
+            "id": "1",
+            "plateforme": "Cpay TPE sur Ios",
+            "name": "App Store",
+            "code_qr": "/images/parameters/cpay_qr_code.jpeg",
+            "link": "https://apps.apple.com/us/app/cpay-tpe/id6747050923",
+            "icon": "/icons/app-store.svg"
+        },
+        {
+            "id": "2",
+            "plateforme": "Cpay TPE sur Android",
+            "name": "Google Play",
+            "code_qr": "/images/parameters/cpay_qr_code.jpeg",
+            "link": "https://play.google.com/store/apps/details?id=enerlog.cpay.cpay&pcampaignid=web_share",
+            "icon": "/icons/google-play.svg"
+        }
+    ]
+}

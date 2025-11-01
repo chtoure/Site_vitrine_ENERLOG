@@ -17,9 +17,9 @@ class ServiceController extends Controller
         $solution= SolutionService::getById(1);
 
 
-        $parameter["name"]="Services";
+        $parameter["business_name"]="Services";
         $parameter["summarize"]="Explorez nos services digitaux conçus pour accompagner votre transformation numérique.";
-        $parameter["hero_image"]="/images/services/solution_carte.jpeg";
+        // $parameter["hero_image"]="/images/services/solution_carte.jpeg";
 
         SeoService::setMeta(
             $parameter['name'] ?? 'ENERLOG',
@@ -38,25 +38,28 @@ class ServiceController extends Controller
         ) ;
     }
 
-    public function getByIdService(int $idServ) {
+    public function getByIdService(int $id, int $idservice) {
         $dataServices = ServicesService::getAll() ;
-        $service = ServicesService::getById($idServ);
+        $service = ServicesService::getById($id,$idservice);
+
+        // dd($service);
         $parameter= ParameterService::get();
 
         if (!$service) {
             return redirect()->route('public.404');
         }
 
-        $parameter["name"]=$service["name"];
+        $parameter["business_name"]=$service["name"];
         $parameter["summarize"]=Str::limit($service['description'], 70, '...');
-        $parameter["hero_image"]=$service["images"][0];
+        // $parameter["hero_image"]=$service["images"][0];
 
-         SeoService::setMeta(
+        SeoService::setMeta(
             $parameter['name'] ?? 'ENERLOG',
             "ENERLOG - La Page de details du service ".$service['name'],
-            route('public.services.detail', $service['id']),
+            route('public.services.detail', [ $id, $idservice]),
             asset($parameter['logo']) 
         );
+
 
         return view(
             'services.details',

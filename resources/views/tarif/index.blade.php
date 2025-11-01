@@ -5,21 +5,21 @@
 
 <body class="bg-gray-50">
 
-    <section class="py-20">
+<section class="py-8">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold mb-4 text-balance">
                     Tarification simple et transparente
                 </h2>
-                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
                     Choisissez l’abonnement qui correspond le mieux à vos besoins. Tous les forfaits incluent nos fonctionnalités essentielles, sans frais cachés.
                 </p>
             </div>
 
 
-            <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 @foreach($abonnements as $abonnement)
-                    <div class="relative bg-white rounded-2xl shadow-lg border p-6 {{ $abonnement['plan']=='Premium' ? 'border-orange-500 scale-105' : '' }}">
+                    <div class="relative bg-white rounded-xl shadow-lg border p-3 {{ $abonnement['plan']=='Premium' ? 'border-orange-500 scale-105' : '' }}">
                         
                         @if($abonnement['plan']=="Premium")
                             <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -32,18 +32,18 @@
                             </div>
                         @endif
 
-                        <div class="text-center pb-8">
-                            <h3 class="text-2xl font-bold text-primary">{{ $abonnement['plan'] }}</h3>
-                            <p class="text-sm text-muted-foreground mt-2">{{ $abonnement['description'] }}</p>
+                        <div class="text-center pb-2">
+                            <h3 class="text-xl font-bold text-primary">{{ $abonnement['plan'] }}</h3>
+                            <p class=" text-muted-foreground mt-2">{{ $abonnement['description'] }}</p>
                             <div class="mt-4 flex items-baseline justify-center">
-                                <span class="text-4xl font-bold">${{ $abonnement['price'] }}</span>
+                                <span class=" font-bold">{{ $abonnement['price'] }}</span>
                             </div>
                         </div>
 
                         <div class="space-y-6">
-                            <ul class="space-y-3" x-data="{ openIndex: null }">
+                            <ul class="space-y-1" x-data="{ openIndex: null }">
                                 @foreach($abonnement['content'] as $feature => $detail)
-                                    <li class="flex flex-col space-y-2 border-b pb-2">
+                                    <li class="flex flex-col space-y-2 border-b pb-2 ">
                                         <button
                                             class="flex items-center justify-between w-full text-left p-2 hover:bg-gray-100 transition-colors rounded"
                                             @click="openIndex === '{{ $feature }}' ? openIndex = null : openIndex = '{{ $feature }}'"
@@ -81,7 +81,7 @@
 
 <div class="max-w-7xl mx-auto px-4 py-8">
   <div class="text-center mb-8">
-    <h1 class="text-3xl font-bold text-gray-900 mb-4">Comparer toutes les fonctionnalités</h1>
+    <h1 class="text-2xl font-bold text-gray-900 mb-4">Comparer toutes les fonctionnalités</h1>
   </div>
 
   <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
