@@ -8,6 +8,7 @@ use App\Http\Controllers\ParametersController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServiceControllerBackup;
 use App\Http\Controllers\TarifsController;
 use App\Http\Controllers\TemoignagesController;
 use Illuminate\Support\Facades\Route;
@@ -62,6 +63,9 @@ Route::name('public.')->prefix('/')->group(function () {
         //     ->where('id', '[0-9]+')
         //     ->name('detail');
     });
+
+    Route::get('/test', [ServiceControllerBackup::class, 'getAllServices']);
+
 
     // Route::group([
     //     'prefix' => 'equipes',
