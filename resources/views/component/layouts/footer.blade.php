@@ -88,7 +88,7 @@
                     
                     <div class="space-y-3 text-sm">
                         @foreach ($services as $solution)
-                            <h3 class="font-semibold text-secondary mb-4 text-lg">Solution {{$solution["solution"]}}</h3>
+                            <h3 class="font-semibold text-secondary mb-4 text-lg">Solution {{$solution["solution"] ?? " " }}</h3>
                             @foreach ($solution["services"] as $service)
 
                                 <a href="{{route('public.services.detail', [$solution['id'] ,$service['id']])}}" class="flex items-center space-x-3 text-white/70 hover:text-secondary transition-colors">

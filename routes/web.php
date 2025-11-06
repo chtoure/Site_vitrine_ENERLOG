@@ -64,7 +64,7 @@ Route::name('public.')->prefix('/')->group(function () {
         //     ->name('detail');
     });
 
-    Route::get('/test', [ServiceControllerBackup::class, 'getAllServices']);
+    // Route::get('/test', [ServiceControllerBackup::class, 'getAllServices']);
 
 
     // Route::group([

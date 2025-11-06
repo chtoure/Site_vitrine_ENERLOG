@@ -1,6 +1,19 @@
-@extends('component.app')
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Télécharger l'Application</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/default.css'])
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {!! \Artesaos\SEOTools\Facades\SEOTools::generate() !!}
 
-@section('content')
+    <link rel="shortcut icon" href="{{ asset($parameter['logo']) }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="bg-gray-50">
+  @include('component.layouts.header')
 
 <section class="bg-gray-50 py-16">
   <div class="max-w-5xl mx-auto px-4">
@@ -44,6 +57,6 @@
     </div>
   </div>
 </section>
-
-
-@endsection
+    @include('component.layouts.footer')
+</body>
+</html>

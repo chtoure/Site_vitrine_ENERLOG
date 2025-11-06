@@ -1,4 +1,4 @@
-
+{{-- 
 
 
 @extends('component.app')
@@ -12,10 +12,14 @@
   <h1>Liste des services</h1>
   <ul>
     @foreach ($services as $service)
-      <li> Description : {{ $film['acf']['description'] ?? 'Non défini' }}</li>
+        <li>
+            <strong>Titre :</strong> {{ $service['acf']['titre'] ?? 'Non défini' }}<br>
+            <strong>Description :</strong> {{ $service['acf']['description'] ?? 'Non définie' }}
+        </li>
     @endforeach
-  </ul>
+</ul>
+
 </body>
 
 
-@endsection
+@endsection --}}
