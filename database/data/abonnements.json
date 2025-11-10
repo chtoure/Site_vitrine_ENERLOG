@@ -8,7 +8,7 @@
       "Programme de fidélité": "Non inclus (ou module basique non activé). Si l’entreprise veut la fidélité, il faudra monter en Pro+ ou activer le module (avec frais d’usage possibles).",
       "Support": "Support de base (mail / réponse standard, limité)."
     },
-    "price": "59 000 FCFA / site / mois"
+    "price": ""
   },
   {
     "plan": "Premium",
@@ -18,7 +18,7 @@
       "Programme de fidélité": "Inclus et plus complet (reporting fidélité, campagnes, possible quota client inclus selon négociation). Des frais d’usage peuvent rester pour SMS, points, gros volumes.",
       "Support": "Support dédié / prioritaire inclus (SLA, interlocuteur attitré) ou disponible sans surcoût selon ce qui est négocié."
     },
-    "price": "150 000 FCFA / site / mois"
+    "price": ""
   },
   {
     "plan": "Pro+",
@@ -28,6 +28,6 @@
       "Programme de fidélité": "Inclus (fonctions de base du module fidélité). L’entreprise peut créer et gérer un programme. Attention : coûts d’usage (cotisation par site, coût par client actif, SMS, etc.) peuvent s’appliquer.",
       "Support": "Support standard (meilleur que Basic), support prioritaire possible en option."
     },
-    "price": "100 000 FCFA / site / mois"
+    "price": ""
   }
 ]

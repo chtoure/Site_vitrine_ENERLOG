@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AproposController;
+use App\Http\Controllers\ControllerBackup;
 use App\Http\Controllers\EmailsController;
 use App\Http\Controllers\EquipesController;
 use App\Http\Controllers\ErrorController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\ParametersController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServiceControllerBackup;
 use App\Http\Controllers\TarifsController;
 use App\Http\Controllers\TemoignagesController;
 use Illuminate\Support\Facades\Route;
@@ -62,6 +64,9 @@ Route::name('public.')->prefix('/')->group(function () {
         //     ->where('id', '[0-9]+')
         //     ->name('detail');
     });
+
+    Route::get('/test', [ControllerBackup::class, 'getParameter']);
+
 
     // Route::group([
     //     'prefix' => 'equipes',

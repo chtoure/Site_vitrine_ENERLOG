@@ -65,9 +65,9 @@
                                 @endforeach
                             </ul>
 
-                            <a href="{{ $parameter['login_url'] }}" target="_blank"
+                            <a href="{{ $parameter['url_contact_form'] }}" target="_blank"
                             class="w-full inline-block text-center py-3 rounded-lg font-medium bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:from-orange-600 hover:to-yellow-600">
-                                Choisir ce plan
+                                En savoir plus
                             </a>
                         </div>
                     </div>
@@ -105,7 +105,8 @@
 
         <tbody class="divide-y divide-gray-100">
 
-          @foreach ($services as $service)
+        @foreach ($services as $solution)
+          @foreach ($solution["services"] as $service)
             <tr>
               <td class="px-6 py-6">
                 <div class="font-medium text-gray-900"> {{$service["name"]}} </div>
@@ -124,6 +125,7 @@
              
             </tr>
           @endforeach
+        @endforeach
 
           
 
