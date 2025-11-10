@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AproposController;
+use App\Http\Controllers\ControllerBackup;
 use App\Http\Controllers\EmailsController;
 use App\Http\Controllers\EquipesController;
 use App\Http\Controllers\ErrorController;
@@ -64,7 +65,7 @@ Route::name('public.')->prefix('/')->group(function () {
         //     ->name('detail');
     });
 
-    Route::get('/test', [ServiceControllerBackup::class, 'getAllServices']);
+    Route::get('/test', [ControllerBackup::class, 'getParameter']);
 
 
     // Route::group([

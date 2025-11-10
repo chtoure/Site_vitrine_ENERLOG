@@ -12,7 +12,7 @@
   <h1>Liste des services</h1>
   <ul>
     @foreach ($services as $service)
-      <li> Description : {{ $film['acf']['description'] ?? 'Non défini' }}</li>
+      <li> Description : {{ $service['acf']['description'] ?? 'Non défini' }}</li>
     @endforeach
   </ul>
 </body>

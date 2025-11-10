@@ -87,7 +87,7 @@
                 <ul class="space-y-3">
                     
                     <div class="space-y-3 text-sm">
-                        @foreach ($services as $solution)
+                        {{-- @foreach ($services as $solution)
                             <h3 class="font-semibold text-secondary mb-4 text-lg">Solution {{$solution["solution"]}}</h3>
                             @foreach ($solution["services"] as $service)
 
@@ -97,7 +97,7 @@
                                 
                             @endforeach
                             
-                        @endforeach
+                        @endforeach --}}
 
                     </div>
                 </ul>
