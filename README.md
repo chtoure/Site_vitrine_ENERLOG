@@ -225,7 +225,7 @@ Ce projet s'inscrit dans une suite applicative complète développée pour Enerl
 **Chabane TOURE**  
 *Développeur Full-Stack | Ingénieur Logiciel*  
 - **GitHub :** [@chtoure](https://github.com/chtoure)  
-- **Portfolio / Profil :** [github.com/chtoure](https://github.com/chtoure)
+- **Linkedin:** [Linkedin](http://www.linkedin.com/in/chabane-toure-94a83a350)
 
 ---
 *Projet réalisé dans le cadre du développement des plateformes digitales d'Enerlog — Tous droits réservés.*
